@@ -1,0 +1,26 @@
+DIR = ../Test-auto
+CXX = gcc
+STD = c++17
+CXXFLAGS = -g -Wall -std=${STD} -pedantic
+CPPFLAGS = -DP0 -I${DIR} -I.
+VPATH = ${DIR}:.
+OBJS = test-caso0-fecha-auto.o test-caso0-cadena-auto.o test-auto.o fecha.o cadena.o
+EXE = test-P0-auto.exe
+
+all: test-auto
+
+test-auto: $(OBJS)
+	$(CXX) $(CXXFLAGS) $(CPPFLAGS) $(OBJS) -o $(EXE)
+
+test-caso0-fecha-auto.o test-caso0-cadena-auto.o test-auto.o: \
+	test-caso0-fecha-auto.cpp test-caso0-cadena-auto.cpp \
+	test-auto.cpp test-auto.hpp fecha.hpp cadena.hpp
+
+fecha.o: fecha.cpp fecha.hpp
+	$(CXX) $(CXXFLAGS) $< -c $@
+
+cadena.o: cadena.cpp cadena.hpp
+	$(CXX) $(CXXFLAGS) $< -c $@
+
+clean:
+	$(RM) $(OBJ) $(EXE)

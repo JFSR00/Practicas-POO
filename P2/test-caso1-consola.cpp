@@ -1,8 +1,8 @@
 /* $Id: test-caso1-consola.cpp 381 2017-03-24 20:25:35Z gerardo $
- * Comprobación de las clases Articulo, Usuario, Tarjeta y
+ * ComprobaciÃ³n de las clases Articulo, Usuario, Tarjeta y
  * asociadas: Clave y Numero
- * LIBRERÍA
- * ©2009-2020 Los profesores de POO
+ * LIBRERÃ�A
+ * Â©2009-2020 Los profesores de POO
  */
 
 #include "usuario.hpp"		// Usuario, Clave, mostrar_carro
@@ -13,11 +13,11 @@
 
 void numero_incorrecto(Numero::Incorrecto);
 
-int main()
+int fun2()
 {
   std::locale aqui("");
   std::cout.imbue(aqui);
-  // Constructor de usuario: id, nombre, apellidos, dirección, clave
+  // Constructor de usuario: id, nombre, apellidos, direcciÃ³n, clave
   // Datos aleatorios obtenidos de https://fakenamegenerator.com
   Usuario
     sabacio("sabacio", "Sabacio", "Garibay Menchaca",
@@ -27,10 +27,10 @@ int main()
     nazarena("nazarena", "nazarena", "Marrero Rubio",
 	  "Estrela, 18 (Suances)", "ahxo2Aht"),
     anabel("anabel", "Anabel", "Barrera Navarrete",
-	 "Caño, 75 (A Coruña)", "Roh9aa5v");
+	 "CaÃ±o, 75 (A CoruÃ±a)", "Roh9aa5v");
   // Constructor de Tarjeta: Numero, Usuario, fecha de caducidad
-  // Para evitar problemas con las fechas y sus caducidades, ponemos año 0
-  // (el actual) y sumamos uno o más años.
+  // Para evitar problemas con las fechas y sus caducidades, ponemos aÃ±o 0
+  // (el actual) y sumamos uno o mÃ¡s aÃ±os.
   Tarjeta
     visa1(Numero("4539 4512 0398 7356"), sabacio, Fecha(31, 12, 0) + 3 * 365),
     american_express(Numero("378282246310005"),
@@ -54,12 +54,12 @@ int main()
   // Pruebas de excepciones
   try {
     Usuario aitor("aitor", "Aitor", "Tilla de Papas", "C/ del Pez", "ok");
-    // Clave corta (¿solo la clave?)
+    // Clave corta (Â¿solo la clave?)
   }
   catch(Clave::Incorrecta &e) {
     switch (e.razon()) {
     case Clave::CORTA:
-      std::cerr << "La contraseña es demasiado corta. "
+      std::cerr << "La contraseÃ±a es demasiado corta. "
 	               "Debe tener al menos 5 caracteres."
 		        << std::endl;
       break;
@@ -67,15 +67,15 @@ int main()
       std::cerr << "crypt(): ERROR." << std::endl;
    }
   }
-  Clave c2("TeDaKuén");	  // Prueba de verificación de clave
-  if (!c2.verifica("TeDaCuén")) // Deberá imprimir el mensaje de error
-    std::cerr << "Error de verificación de clave: "
-	      << "\"TeDaKuén\" != \"TeDaCuén\"." << std::endl;
-  if (c2.verifica("TeDaKuén"))
-    std::cerr << "OK, clave \"TeDaKuén\" verificada." << std::endl;
-  else			// Esto no debe ocurrir, no imprimirá nada
-    std::cerr << "Error de verificación de clave: "
-	      << "\"TeDaKuén\" != \"TeDaKuén\". (\?\?\?)" << std::endl;
+  Clave c2("TeDaKuÃ©n");	  // Prueba de verificaciÃ³n de clave
+  if (!c2.verifica("TeDaCuÃ©n")) // DeberÃ¡ imprimir el mensaje de error
+    std::cerr << "Error de verificaciÃ³n de clave: "
+	      << "\"TeDaKuÃ©n\" != \"TeDaCuÃ©n\"." << std::endl;
+  if (c2.verifica("TeDaKuÃ©n"))
+    std::cerr << "OK, clave \"TeDaKuÃ©n\" verificada." << std::endl;
+  else			// Esto no debe ocurrir, no imprimirÃ¡ nada
+    std::cerr << "Error de verificaciÃ³n de clave: "
+	      << "\"TeDaKuÃ©n\" != \"TeDaKuÃ©n\". (\?\?\?)" << std::endl;
   try {		 // O938 en vez de 0938 ;-) (era una O, no un cero)
     Tarjeta falsa(Numero("4539 4512 O398 7356"), sabacio, "31/12/2020");
   }
@@ -104,21 +104,21 @@ int main()
     Tarjeta rota(Numero(" 4222222222222 "), sabacio, "1O/O4/2O2O");
   }
   catch(Fecha::Invalida &e) {
-    std::cerr << "Error: fecha de caducidad inválida. " << e.por_que()
+    std::cerr << "Error: fecha de caducidad invÃ¡lida. " << e.por_que()
 	      << std::endl;
   }
 
-  // Constructor de Articulo: referencia, título, fecha de publicación,
+  // Constructor de Articulo: referencia, tÃ­tulo, fecha de publicaciÃ³n,
   // precio, stock
   Articulo
-    poo("100", "Programación Orientada a Objetos", "01/08/2000", 32.50, 5),
+    poo("100", "ProgramaciÃ³n Orientada a Objetos", "01/08/2000", 32.50, 5),
     cpp("110", "Fundamentos de C++", "20/06/1998", 35.95, 10),
     stl("111", "The Standard Template Library", "05/10/2002", 42.10, 3),
-    ada("103", "Análisis y Diseño de Algoritmos", "01/02/2001", 39.95, 2);
+    ada("103", "AnÃ¡lisis y DiseÃ±o de Algoritmos", "01/02/2001", 39.95, 2);
 
-  // Añadir y quitar artículos al carrito y ver el carrito
-  // Comprar: Articulo, Cantidad (1 por omisión, 0 elimina el artículo)
-  std::cout << "\n\nCARRITOS VACÍOS\n\n";
+  // AÃ±adir y quitar artÃ­culos al carrito y ver el carrito
+  // Comprar: Articulo, Cantidad (1 por omisiÃ³n, 0 elimina el artÃ­culo)
+  std::cout << "\n\nCARRITOS VACÃ�OS\n\n";
   mostrar_carro(std::cout, sabacio);
   mostrar_carro(std::cout, miguel);
   mostrar_carro(std::cout, nazarena);
@@ -146,23 +146,23 @@ int main()
   anabel.compra(poo, 2);
   anabel.compra(cpp, 3);
   anabel.compra(stl);
-  anabel.compra(ada, 0); // no hace nada, ada no está en el carro );
+  anabel.compra(ada, 0); // no hace nada, ada no estÃ¡ en el carro );
   anabel.compra(ada);
   mostrar_carro(std::cout, anabel);
 }
 
-// Función llamada desde los catch(Numero::Incorrecto) que comprueba
-// la razón y muestra un mensaje apropiado.
+// FunciÃ³n llamada desde los catch(Numero::Incorrecto) que comprueba
+// la razÃ³n y muestra un mensaje apropiado.
 void numero_incorrecto(Numero::Incorrecto e)
 {
-  std::cerr << "Error: El número de la tarjeta ";
+  std::cerr << "Error: El nÃºmero de la tarjeta ";
   switch (e.razon()) {
   case Numero::DIGITOS:
-    std::cerr << "tiene caracteres no numéricos ni blancos"
+    std::cerr << "tiene caracteres no numÃ©ricos ni blancos"
 	      << std::endl;
     break;
   case Numero::NO_VALIDO:
-    std::cerr << "no es válido, error de CRC." << std::endl;
+    std::cerr << "no es vÃ¡lido, error de CRC." << std::endl;
     break;
   case Numero::LONGITUD:
     std::cerr << "es de una longitud incorrecta." << std::endl;

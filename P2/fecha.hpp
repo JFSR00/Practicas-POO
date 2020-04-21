@@ -4,7 +4,6 @@
 #define FECHA_HPP
 #include <ostream>
 #include <istream>
-#include <iostream>
 
 class Fecha {
 public:
@@ -20,7 +19,7 @@ public:
 	// Años máximo y mínimo:
 	static const int AnnoMaximo=2037, AnnoMinimo=1902;
 
-	// Constructores y destructor
+	// Constructores
 	explicit Fecha(int d=0, int m=0, int a=0);
 	Fecha(const char*);
 
@@ -63,7 +62,7 @@ private:
 static const Fecha::Invalida ERROR_FORMATO{"Formato erroneo",0};
 static const Fecha::Invalida ERROR_DIA{"Dia erroneo",1};
 static const Fecha::Invalida ERROR_MES{"Mes erroneo",2};
-static const Fecha::Invalida ERROR_ANNO{"Año erroneo",3};
+static const Fecha::Invalida ERROR_ANNO{"Anno erroneo",3};
 
 // Sobrecarga de operadores booleanos
 bool const operator <(const Fecha&, const Fecha&) noexcept;
@@ -73,6 +72,8 @@ bool const operator >=(const Fecha&, const Fecha&) noexcept;
 bool const operator ==(const Fecha&, const Fecha&) noexcept;
 bool const operator !=(const Fecha&, const Fecha&) noexcept;
 
+// Sobrecarga operadores de inserción y extracción
 std::ostream& operator <<(std::ostream&, const Fecha&);
 std::istream& operator >>(std::istream&, Fecha&);
+
 #endif

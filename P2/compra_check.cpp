@@ -3,7 +3,7 @@
  * 1 y 2 del S. G. L.
  * (c) 2020 Los profesores de POO
 */
-#include "caclibrary.h"
+/*#include "caclibrary.h"
 #include <vector>
 #include <iostream>
 
@@ -99,4 +99,4 @@ int main(int argc, const char **argv){
   }
   else
     llvm::outs()<<"No se ha encontrado la clase 'Usuario'"<<"\n";
-}
+}*/

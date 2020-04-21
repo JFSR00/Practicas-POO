@@ -1,11 +1,11 @@
 /* $Id: test-P1-consola.cpp 407 2018-03-17 20:19:10Z gerardo $
   Programa para probar (no demasiado exhaustivamente) 
   las clases Fecha y Cadena de P1.
-  V. "fecha.hpp" y "cadena.hpp" para más información.
+  V. "fecha.hpp" y "cadena.hpp" para mÃ¡s informaciÃ³n.
   Â©2000-2012 `El Equipo C'
   Â©2013 Los profesores de POO
   Â©2015 Gerardo - diferencia de fechas, iteradores de Cadena
-  Â©2016 Gerardo - unión de pruebas de Fecha y Cadena
+  Â©2016 Gerardo - uniÃ³n de pruebas de Fecha y Cadena
 */
 #include "fecha.hpp"
 #include "cadena.hpp"
@@ -26,13 +26,13 @@ int main()
   Fecha mannana = ++hoy;	// pre-incremento
   Fecha ayer = --copia_hoy;	// pre-decremento
 
-  cout << "Hoy es " << --hoy	// Impresión, operador de inserción
-       << "\nAyer fue " << ayer << ", y mañana será " << mannana << '.' << endl;
+  cout << "Hoy es " << --hoy	// ImpresiÃ³n, operador de inserciÃ³n
+       << "\nAyer fue " << ayer << ", y maÃ±ana serÃ¡ " << mannana << '.' << endl;
 
-  hoy += 7;			// Prueba de suma con asignación
-  cout << "Dentro de una semana será: " << hoy << endl;
+  hoy += 7;			// Prueba de suma con asignaciÃ³n
+  cout << "Dentro de una semana serÃ¡: " << hoy << endl;
   hoy += 365 * 3;
-  cout << "Dentro de 3 años y 1 semana será: " << hoy << endl;
+  cout << "Dentro de 3 aÃ±os y 1 semana serÃ¡: " << hoy << endl;
   hoy -= 365 * 3 + 7;
   cout << "Volvemos a hoy: " << hoy << endl;
 
@@ -42,33 +42,33 @@ int main()
     Fecha("31/2/2000");
   } catch(const Fecha::Invalida &e)
     {
-      cerr << "EXCEPCIÓN: " << e.por_que() << endl;
+      cerr << "EXCEPCIÃ“N: " << e.por_que() << endl;
     }
 
-  cout << "Yo nací: " << mi_nacimiento
-       << "\nDentro de una semana será: " << hoy + 7
+  cout << "Yo nacÃ­: " << mi_nacimiento
+       << "\nDentro de una semana serÃ¡: " << hoy + 7
        << "\nHoy: " << hoy
        << "\nHace 2 semanas fue: " << hoy - 14
 
-       << "\nEl día después del 28 de febrero de este año es: ";
-  Fecha f(28, 2);		// prueba de constructor de 2 parámetros
+       << "\nEl dÃ­a despuÃ©s del 28 de febrero de este aÃ±o es: ";
+  Fecha f(28, 2);		// prueba de constructor de 2 parÃ¡metros
   cout << ++f
-       << "\nY el de después del 28 de febrero de 2000 fue: ";
-  f = Fecha(28, 2, 2000);	// prueba de asignación
+       << "\nY el de despuÃ©s del 28 de febrero de 2000 fue: ";
+  f = Fecha(28, 2, 2000);	// prueba de asignaciÃ³n
   cout << ++f
-       << "\nTras Año Viejo viene: ";
+       << "\nTras AÃ±o Viejo viene: ";
   Fecha av(31,12);
-  cout << ++av << "\nY Año Viejo es: ";
+  cout << ++av << "\nY AÃ±o Viejo es: ";
   cout << --av
 
   // Prueba de constructor "cadena de caracteres"
-       << "\n20/1/2000 está mejor dicho como " << Fecha("20/1/2000") << endl;
+       << "\n20/1/2000 estÃ¡ mejor dicho como " << Fecha("20/1/2000") << endl;
 
   /* Pruebas de excepciones  */
 
   Fecha f1 = obtener_fecha_v1(), f2 = obtener_fecha_v2();
-  cout << "La 1ª fecha fue: \"" << f1
-       << "\", y la 2ª: \"" << f2 << "\"." << endl;
+  cout << "La 1Âª fecha fue: \"" << f1
+       << "\", y la 2Âª: \"" << f2 << "\"." << endl;
 
 /*****************************************************************************/
 /* Pruebas de la clase Cadena. */
@@ -76,8 +76,8 @@ int main()
   // Prueba de constructores
   Cadena s1(20, '['), s2(20, ']'),
     c1(" !Bravo "), c2("a "), c3("todos "),
-    s = s1 + c1;		// prueba de concatenación
-  s += c2;			// pruebas de concatenación con asignación
+    s = s1 + c1;		// prueba de concatenaciÃ³n
+  s += c2;			// pruebas de concatenaciÃ³n con asignaciÃ³n
   s += c3;
   s += "los ";
   s += "alumnos! ";
@@ -86,14 +86,14 @@ int main()
   cout << "\n" << s;
   Cadena t("Por haber hecho el esfuerzo de teclear este programa. Repito:\n");
   Cadena u;			// constructor predeterminado
-  u = t + s;			// pruebas de asignación, concatenación
+  u = t + s;			// pruebas de asignaciÃ³n, concatenaciÃ³n
   u = u;
   cout << u;
   Cadena v;
-  v = "Hola";			// asignación con conversión desde const char*
+  v = "Hola";			// asignaciÃ³n con conversiÃ³n desde const char*
   cout << v << endl;
   
-  // Pruebas de índices
+  // Pruebas de Ã­ndices
   size_t i = 87;
   cout << "El elemento " << i << " de la cadena es: " << u[i] << endl;
   u[94] = u[54] = 'p';
@@ -109,7 +109,7 @@ int main()
   Cadena nuevo = grande.substr(6, 5);  // nuevo <- "novum"
   cout << "substr(6, 5) de " << grande << ": \"" << nuevo << "\"" << endl;
   if (nuevo != "novum")
-    cerr << "*** ERROR *** Debería haber impreso \"novum\"" << endl;
+    cerr << "*** ERROR *** DeberÃ­a haber impreso \"novum\"" << endl;
   
   // Prueba de comparaciones
   cout << "Cadena a = \"novum\", b = \"Nihil novum sub solem\";\n a < b: " 
@@ -127,7 +127,7 @@ int main()
   cout << "Escribe un par de palabras, por favor: ";
   cin >> c;
   cout << "Palabra 1: " << c << endl;
-  cout << "Carácter actual: '" << static_cast<char>(cin.peek())
+  cout << "CarÃ¡cter actual: '" << static_cast<char>(cin.peek())
        << "'" << endl;
   cin >> c;
   cout << "Palabra 2: " << c << endl;
@@ -150,11 +150,11 @@ Fecha obtener_fecha_v1()
     try {
       cout << "Introduzca una fecha en el formato DD/MM/AAAA, por favor: ";
       Fecha f(12, 12, 2012);
-      cin >> f;			// operador de extracción
+      cin >> f;			// operador de extracciÃ³n
       return f;      // Fecha correcta: salimos.
     } catch(const Fecha::Invalida& e) {
       cerr << e.por_que() 
-	   << "\aInténtelo de nuevo.\n" << endl;
+	   << "\aIntÃ©ntelo de nuevo.\n" << endl;
       cin.clear();
     } // Fin while
 }

@@ -1,24 +1,22 @@
 #include <ctime>
 #include <ostream>
 #include <istream>
-#include <iostream>
+#include <locale>
 #include <cstring>
+#include <cstdio>
 #include "fecha.hpp"
 
 Fecha::Fecha(int d, int m, int a):d(d),m(m),a(a){f_hoy();verif_fecha();}
 
-//Fecha::Fecha(const Fecha &f):d(f.d),m(f.m),a(f.a){}
-
 Fecha::Fecha(const char* str){
-
-	if(sscanf(str, "%02d/%02d/%04d",&d,&m,&a) == 3){
+	if(sscanf(str, "%d/%d/%d",&d,&m,&a) == 3){
 		f_hoy();
 		verif_fecha();
 	}
 	else{throw Fecha::Invalida(ERROR_FORMATO);}
 }
 
-Fecha::Invalida::Invalida(const char* str, int c):error_(new char[strlen(str)]),error_code(c){strcpy(error_,str);}
+Fecha::Invalida::Invalida(const char* str, int c):error_(new char[strlen(str)+1]),error_code(c){strcpy(error_,str);}
 
 void Fecha::f_hoy() noexcept{
 	time_t t=time(nullptr);
@@ -129,20 +127,19 @@ Fecha Fecha::operator -(const int n) const{
 }
 
 const char* Fecha::cadena() const noexcept{
-	char *s=new char[sizeof("miÈrcoles 12 de septiembre de 2001")+1];
-	const char* mes[]={"enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"};
-	const char* dia[]={"domingo","lunes","martes","miÈrcoles","jueves","viernes","s·bado"};
+	static char *s=new char[sizeof("mi√©rcoles 12 de septiembre de 2001")+1]{'\0'};
 	tm f{0};
 
-	f.tm_mday = this->d;
-	f.tm_mon = this->m - 1;
-	f.tm_year = this->a - 1900;
+	std::locale::global(std::locale("es_ES.UTF-8"));
+
+	f.tm_mday = d;
+	f.tm_mon = m - 1;
+	f.tm_year = a - 1900;
 
 	mktime(&f);
+	strftime(s,sizeof("mi√©rcoles 12 de septiembre de 2001")+1,"%A %e de %B de %Y",&f);
 
-	sprintf(s,"%s %d de %s de %d", dia[f.tm_wday], f.tm_mday, mes[f.tm_mon], f.tm_year + 1900);
-
-	return (const char*)s;
+	return s;
 }
 
 bool const operator <(const Fecha& a, const Fecha& b) noexcept{
@@ -167,7 +164,7 @@ bool const operator ==(const Fecha& a, const Fecha& b) noexcept{return ((a.a==b.
 bool const operator !=(const Fecha& a, const Fecha& b) noexcept{return !(a==b);}
 
 std::ostream& operator <<(std::ostream& os, const Fecha& f){
-	os<<f.dia()<<"/"<<f.mes()<<"/"<<f.anno();
+	os<<f.cadena();
 	return os;
 }
 
@@ -184,7 +181,5 @@ std::istream& operator >>(std::istream& is, Fecha& f){
 	}
 
 	delete[] str;
-
 	return is;
-
 }

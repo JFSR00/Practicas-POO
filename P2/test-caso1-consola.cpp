@@ -5,7 +5,7 @@
  * Â©2009-2020 Los profesores de POO
  */
 
-#include "usuario.hpp"		// Usuario, Clave, mostrar_carro
+/*#include "usuario.hpp"		// Usuario, Clave, mostrar_carro
 #include "tarjeta.hpp"		// Tarjeta, Numero
 #include "articulo.hpp"		// Articulo
 #include "fecha.hpp"		// Fecha
@@ -168,4 +168,4 @@ void numero_incorrecto(Numero::Incorrecto e)
     std::cerr << "es de una longitud incorrecta." << std::endl;
     break;
   }
-}
+}*/

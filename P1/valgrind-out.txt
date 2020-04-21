@@ -1,0 +1,1887 @@
+==4238== Memcheck, a memory error detector
+==4238== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==4238== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==4238== Command: ./test-P1-consola
+==4238== Parent PID: 2049
+==4238== 
+--4238-- 
+--4238-- Valgrind options:
+--4238--    --leak-check=full
+--4238--    --show-leak-kinds=all
+--4238--    --track-origins=yes
+--4238--    --verbose
+--4238--    --log-file=valgrind-out.txt
+--4238-- Contents of /proc/version:
+--4238--   Linux version 4.15.0-88-generic (buildd@lgw01-amd64-036) (gcc version 7.4.0 (Ubuntu 7.4.0-1ubuntu1~18.04.1)) #88-Ubuntu SMP Tue Feb 11 20:11:34 UTC 2020
+--4238-- 
+--4238-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-avx-avx2
+--4238-- Page sizes: currently 4096, max supported 4096
+--4238-- Valgrind library directory: /usr/lib/valgrind
+--4238-- Reading syms from /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola
+--4238-- Reading syms from /lib/x86_64-linux-gnu/ld-2.27.so
+--4238--   Considering /lib/x86_64-linux-gnu/ld-2.27.so ..
+--4238--   .. CRC mismatch (computed 1b7c895e wanted 2943108a)
+--4238--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.27.so ..
+--4238--   .. CRC is valid
+--4238-- Reading syms from /usr/lib/valgrind/memcheck-amd64-linux
+--4238--   Considering /usr/lib/valgrind/memcheck-amd64-linux ..
+--4238--   .. CRC mismatch (computed 41ddb025 wanted 9972f546)
+--4238--    object doesn't have a symbol table
+--4238--    object doesn't have a dynamic symbol table
+--4238-- Scheduler: using generic scheduler lock implementation.
+--4238-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==4238== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-4238-by-poo-on-???
+==4238== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-4238-by-poo-on-???
+==4238== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-4238-by-poo-on-???
+==4238== 
+==4238== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==4238== don't want to do, unless you know exactly what you're doing,
+==4238== or are doing some strange experiment):
+==4238==   /usr/lib/valgrind/../../bin/vgdb --pid=4238 ...command...
+==4238== 
+==4238== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==4238==   /path/to/gdb ./test-P1-consola
+==4238== and then give GDB the following command
+==4238==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=4238
+==4238== --pid is optional if only one valgrind process is running
+==4238== 
+--4238-- REDIR: 0x401f2f0 (ld-linux-x86-64.so.2:strlen) redirected to 0x580608c1 (???)
+--4238-- REDIR: 0x401f0d0 (ld-linux-x86-64.so.2:index) redirected to 0x580608db (???)
+--4238-- Reading syms from /usr/lib/valgrind/vgpreload_core-amd64-linux.so
+--4238--   Considering /usr/lib/valgrind/vgpreload_core-amd64-linux.so ..
+--4238--   .. CRC mismatch (computed 50df1b30 wanted 4800a4cf)
+--4238--    object doesn't have a symbol table
+--4238-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--4238--   Considering /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so ..
+--4238--   .. CRC mismatch (computed f893b962 wanted 95ee359e)
+--4238--    object doesn't have a symbol table
+==4238== WARNING: new redirection conflicts with existing -- ignoring it
+--4238--     old: 0x0401f2f0 (strlen              ) R-> (0000.0) 0x580608c1 ???
+--4238--     new: 0x0401f2f0 (strlen              ) R-> (2007.0) 0x04c32db0 strlen
+--4238-- REDIR: 0x401d360 (ld-linux-x86-64.so.2:strcmp) redirected to 0x4c33ee0 (strcmp)
+--4238-- REDIR: 0x401f830 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4c374f0 (mempcpy)
+--4238-- Reading syms from /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25
+--4238--    object doesn't have a symbol table
+--4238-- Reading syms from /lib/x86_64-linux-gnu/libgcc_s.so.1
+--4238--    object doesn't have a symbol table
+--4238-- Reading syms from /lib/x86_64-linux-gnu/libc-2.27.so
+--4238--   Considering /lib/x86_64-linux-gnu/libc-2.27.so ..
+--4238--   .. CRC mismatch (computed b1c74187 wanted 042cc048)
+--4238--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.27.so ..
+--4238--   .. CRC is valid
+--4238-- Reading syms from /lib/x86_64-linux-gnu/libm-2.27.so
+--4238--   Considering /lib/x86_64-linux-gnu/libm-2.27.so ..
+--4238--   .. CRC mismatch (computed 7feae033 wanted b29b2508)
+--4238--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libm-2.27.so ..
+--4238--   .. CRC is valid
+--4238-- REDIR: 0x547bc70 (libc.so.6:memmove) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--4238-- REDIR: 0x547ad40 (libc.so.6:strncpy) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--4238-- REDIR: 0x547bf50 (libc.so.6:strcasecmp) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--4238-- REDIR: 0x547a790 (libc.so.6:strcat) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--4238-- REDIR: 0x547ad70 (libc.so.6:rindex) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--4238-- REDIR: 0x547d7c0 (libc.so.6:rawmemchr) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--4238-- REDIR: 0x547bde0 (libc.so.6:mempcpy) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--4238-- REDIR: 0x547bc10 (libc.so.6:bcmp) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--4238-- REDIR: 0x547ad00 (libc.so.6:strncmp) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--4238-- REDIR: 0x547a800 (libc.so.6:strcmp) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--4238-- REDIR: 0x547bd40 (libc.so.6:memset) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--4238-- REDIR: 0x54990f0 (libc.so.6:wcschr) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--4238-- REDIR: 0x547aca0 (libc.so.6:strnlen) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--4238-- REDIR: 0x547a870 (libc.so.6:strcspn) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--4238-- REDIR: 0x547bfa0 (libc.so.6:strncasecmp) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--4238-- REDIR: 0x547a840 (libc.so.6:strcpy) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--4238-- REDIR: 0x547c0e0 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--4238-- REDIR: 0x547ada0 (libc.so.6:strpbrk) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--4238-- REDIR: 0x547a7c0 (libc.so.6:index) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--4238-- REDIR: 0x547ac70 (libc.so.6:strlen) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--4238-- REDIR: 0x54856c0 (libc.so.6:memrchr) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--4238-- REDIR: 0x547bff0 (libc.so.6:strcasecmp_l) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--4238-- REDIR: 0x547bbe0 (libc.so.6:memchr) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--4238-- REDIR: 0x5499eb0 (libc.so.6:wcslen) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--4238-- REDIR: 0x547b050 (libc.so.6:strspn) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--4238-- REDIR: 0x547bf20 (libc.so.6:stpncpy) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--4238-- REDIR: 0x547bef0 (libc.so.6:stpcpy) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--4238-- REDIR: 0x547d7f0 (libc.so.6:strchrnul) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--4238-- REDIR: 0x547c040 (libc.so.6:strncasecmp_l) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--4238-- REDIR: 0x556b3c0 (libc.so.6:__strrchr_avx2) redirected to 0x4c32730 (rindex)
+--4238-- REDIR: 0x5474070 (libc.so.6:malloc) redirected to 0x4c2faa0 (malloc)
+--4238-- REDIR: 0x556b590 (libc.so.6:__strlen_avx2) redirected to 0x4c32cf0 (strlen)
+--4238-- REDIR: 0x4ecf2f0 (libstdc++.so.6:operator new[](unsigned long)) redirected to 0x4c30830 (operator new[](unsigned long))
+--4238-- REDIR: 0x5558950 (libc.so.6:__strcpy_ssse3) redirected to 0x4c32dd0 (strcpy)
+==4238== Invalid write of size 1
+==4238==    at 0x4C32E0D: strcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10ADDA: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:18)
+==4238==    by 0x10A9A2: __static_initialization_and_destruction_0(int, int) (fecha.hpp:62)
+==4238==    by 0x10AA29: _GLOBAL__sub_I_main (test-P1-consola.cpp:172)
+==4238==    by 0x10C6DC: __libc_csu_init (in /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola)
+==4238==    by 0x53FEB27: (below main) (libc-start.c:266)
+==4238==  Address 0x5b7dc8f is 0 bytes after a block of size 15 alloc'd
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10ADB0: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:18)
+==4238==    by 0x10A9A2: __static_initialization_and_destruction_0(int, int) (fecha.hpp:62)
+==4238==    by 0x10AA29: _GLOBAL__sub_I_main (test-P1-consola.cpp:172)
+==4238==    by 0x10C6DC: __libc_csu_init (in /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola)
+==4238==    by 0x53FEB27: (below main) (libc-start.c:266)
+==4238== 
+==4238== Invalid write of size 1
+==4238==    at 0x4C32E0D: strcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10ADDA: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:18)
+==4238==    by 0x10A9BA: __static_initialization_and_destruction_0(int, int) (fecha.hpp:63)
+==4238==    by 0x10AA29: _GLOBAL__sub_I_main (test-P1-consola.cpp:172)
+==4238==    by 0x10C6DC: __libc_csu_init (in /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola)
+==4238==    by 0x53FEB27: (below main) (libc-start.c:266)
+==4238==  Address 0x5b7dcdb is 0 bytes after a block of size 11 alloc'd
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10ADB0: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:18)
+==4238==    by 0x10A9BA: __static_initialization_and_destruction_0(int, int) (fecha.hpp:63)
+==4238==    by 0x10AA29: _GLOBAL__sub_I_main (test-P1-consola.cpp:172)
+==4238==    by 0x10C6DC: __libc_csu_init (in /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola)
+==4238==    by 0x53FEB27: (below main) (libc-start.c:266)
+==4238== 
+==4238== Invalid write of size 1
+==4238==    at 0x4C32E0D: strcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10ADDA: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:18)
+==4238==    by 0x10A9D2: __static_initialization_and_destruction_0(int, int) (fecha.hpp:64)
+==4238==    by 0x10AA29: _GLOBAL__sub_I_main (test-P1-consola.cpp:172)
+==4238==    by 0x10C6DC: __libc_csu_init (in /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola)
+==4238==    by 0x53FEB27: (below main) (libc-start.c:266)
+==4238==  Address 0x5b7dd2b is 0 bytes after a block of size 11 alloc'd
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10ADB0: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:18)
+==4238==    by 0x10A9D2: __static_initialization_and_destruction_0(int, int) (fecha.hpp:64)
+==4238==    by 0x10AA29: _GLOBAL__sub_I_main (test-P1-consola.cpp:172)
+==4238==    by 0x10C6DC: __libc_csu_init (in /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola)
+==4238==    by 0x53FEB27: (below main) (libc-start.c:266)
+==4238== 
+==4238== Invalid write of size 1
+==4238==    at 0x4C32E0D: strcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10ADDA: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:18)
+==4238==    by 0x10A9EA: __static_initialization_and_destruction_0(int, int) (fecha.hpp:65)
+==4238==    by 0x10AA29: _GLOBAL__sub_I_main (test-P1-consola.cpp:172)
+==4238==    by 0x10C6DC: __libc_csu_init (in /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola)
+==4238==    by 0x53FEB27: (below main) (libc-start.c:266)
+==4238==  Address 0x5b7dd7c is 0 bytes after a block of size 12 alloc'd
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10ADB0: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:18)
+==4238==    by 0x10A9EA: __static_initialization_and_destruction_0(int, int) (fecha.hpp:65)
+==4238==    by 0x10AA29: _GLOBAL__sub_I_main (test-P1-consola.cpp:172)
+==4238==    by 0x10C6DC: __libc_csu_init (in /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola)
+==4238==    by 0x53FEB27: (below main) (libc-start.c:266)
+==4238== 
+--4238-- REDIR: 0x5567ba0 (libc.so.6:__memcmp_avx2_movbe) redirected to 0x4c35e00 (bcmp)
+--4238-- REDIR: 0x5546d60 (libc.so.6:__strcmp_ssse3) redirected to 0x4c33da0 (strcmp)
+==4238== Invalid write of size 1
+==4238==    at 0x4C32E0D: strcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10ADDA: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:18)
+==4238==    by 0x10BAFA: __static_initialization_and_destruction_0(int, int) (fecha.hpp:62)
+==4238==    by 0x10BB58: _GLOBAL__sub_I__ZN5FechaC2Eiii (fecha.cpp:185)
+==4238==    by 0x10C6DC: __libc_csu_init (in /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola)
+==4238==    by 0x53FEB27: (below main) (libc-start.c:266)
+==4238==  Address 0x5b7ddcf is 0 bytes after a block of size 15 alloc'd
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10ADB0: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:18)
+==4238==    by 0x10BAFA: __static_initialization_and_destruction_0(int, int) (fecha.hpp:62)
+==4238==    by 0x10BB58: _GLOBAL__sub_I__ZN5FechaC2Eiii (fecha.cpp:185)
+==4238==    by 0x10C6DC: __libc_csu_init (in /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola)
+==4238==    by 0x53FEB27: (below main) (libc-start.c:266)
+==4238== 
+==4238== Invalid write of size 1
+==4238==    at 0x4C32E0D: strcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10ADDA: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:18)
+==4238==    by 0x10BB12: __static_initialization_and_destruction_0(int, int) (fecha.hpp:63)
+==4238==    by 0x10BB58: _GLOBAL__sub_I__ZN5FechaC2Eiii (fecha.cpp:185)
+==4238==    by 0x10C6DC: __libc_csu_init (in /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola)
+==4238==    by 0x53FEB27: (below main) (libc-start.c:266)
+==4238==  Address 0x5b7de1b is 0 bytes after a block of size 11 alloc'd
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10ADB0: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:18)
+==4238==    by 0x10BB12: __static_initialization_and_destruction_0(int, int) (fecha.hpp:63)
+==4238==    by 0x10BB58: _GLOBAL__sub_I__ZN5FechaC2Eiii (fecha.cpp:185)
+==4238==    by 0x10C6DC: __libc_csu_init (in /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola)
+==4238==    by 0x53FEB27: (below main) (libc-start.c:266)
+==4238== 
+==4238== Invalid write of size 1
+==4238==    at 0x4C32E0D: strcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10ADDA: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:18)
+==4238==    by 0x10BB2A: __static_initialization_and_destruction_0(int, int) (fecha.hpp:64)
+==4238==    by 0x10BB58: _GLOBAL__sub_I__ZN5FechaC2Eiii (fecha.cpp:185)
+==4238==    by 0x10C6DC: __libc_csu_init (in /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola)
+==4238==    by 0x53FEB27: (below main) (libc-start.c:266)
+==4238==  Address 0x5b7de6b is 0 bytes after a block of size 11 alloc'd
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10ADB0: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:18)
+==4238==    by 0x10BB2A: __static_initialization_and_destruction_0(int, int) (fecha.hpp:64)
+==4238==    by 0x10BB58: _GLOBAL__sub_I__ZN5FechaC2Eiii (fecha.cpp:185)
+==4238==    by 0x10C6DC: __libc_csu_init (in /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola)
+==4238==    by 0x53FEB27: (below main) (libc-start.c:266)
+==4238== 
+==4238== Invalid write of size 1
+==4238==    at 0x4C32E0D: strcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10ADDA: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:18)
+==4238==    by 0x10BB42: __static_initialization_and_destruction_0(int, int) (fecha.hpp:65)
+==4238==    by 0x10BB58: _GLOBAL__sub_I__ZN5FechaC2Eiii (fecha.cpp:185)
+==4238==    by 0x10C6DC: __libc_csu_init (in /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola)
+==4238==    by 0x53FEB27: (below main) (libc-start.c:266)
+==4238==  Address 0x5b7debc is 0 bytes after a block of size 12 alloc'd
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10ADB0: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:18)
+==4238==    by 0x10BB42: __static_initialization_and_destruction_0(int, int) (fecha.hpp:65)
+==4238==    by 0x10BB58: _GLOBAL__sub_I__ZN5FechaC2Eiii (fecha.cpp:185)
+==4238==    by 0x10C6DC: __libc_csu_init (in /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola)
+==4238==    by 0x53FEB27: (below main) (libc-start.c:266)
+==4238== 
+--4238-- REDIR: 0x5474950 (libc.so.6:free) redirected to 0x4c30cd0 (free)
+--4238-- REDIR: 0x556bad0 (libc.so.6:__memcpy_avx_unaligned_erms) redirected to 0x4c366e0 (memmove)
+--4238-- REDIR: 0x547b590 (libc.so.6:__GI_strstr) redirected to 0x4c37760 (__strstr_sse2)
+--4238-- REDIR: 0x4ecf240 (libstdc++.so.6:operator new(unsigned long)) redirected to 0x4c30110 (operator new(unsigned long))
+--4238-- REDIR: 0x5562510 (libc.so.6:__strncmp_sse42) redirected to 0x4c33570 (__strncmp_sse42)
+--4238-- REDIR: 0x556afa0 (libc.so.6:__strchr_avx2) redirected to 0x4c32950 (index)
+--4238-- REDIR: 0x5567420 (libc.so.6:__memchr_avx2) redirected to 0x4c33f80 (memchr)
+--4238-- REDIR: 0x556b1d0 (libc.so.6:__strchrnul_avx2) redirected to 0x4c37020 (strchrnul)
+--4238-- REDIR: 0x556bab0 (libc.so.6:__mempcpy_avx_unaligned_erms) redirected to 0x4c37130 (mempcpy)
+--4238-- REDIR: 0x555cc80 (libc.so.6:__stpcpy_ssse3) redirected to 0x4c35f60 (stpcpy)
+--4238-- REDIR: 0x5477030 (libc.so.6:calloc) redirected to 0x4c31a70 (calloc)
+--4238-- REDIR: 0x556cac0 (libc.so.6:__wcslen_avx2) redirected to 0x4c37ad0 (wcslen)
+--4238-- REDIR: 0x556b720 (libc.so.6:__strnlen_avx2) redirected to 0x4c32c90 (strnlen)
+--4238-- REDIR: 0x4ecd380 (libstdc++.so.6:operator delete(void*)) redirected to 0x4c311d0 (operator delete(void*))
+--4238-- REDIR: 0x4ecd3b0 (libstdc++.so.6:operator delete[](void*)) redirected to 0x4c316d0 (operator delete[](void*))
+--4238-- REDIR: 0x5499120 (libc.so.6:wcscmp) redirected to 0x4c37af0 (wcscmp)
+--4238-- REDIR: 0x55676f0 (libc.so.6:__rawmemchr_avx2) redirected to 0x4c37050 (rawmemchr)
+==4238== Invalid read of size 1
+==4238==    at 0x4C32D04: strlen (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4F50018: std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10A54B: main (test-P1-consola.cpp:45)
+==4238==  Address 0x5b7de1b is 0 bytes after a block of size 11 alloc'd
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10ADB0: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:18)
+==4238==    by 0x10BB12: __static_initialization_and_destruction_0(int, int) (fecha.hpp:63)
+==4238==    by 0x10BB58: _GLOBAL__sub_I__ZN5FechaC2Eiii (fecha.cpp:185)
+==4238==    by 0x10C6DC: __libc_csu_init (in /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola)
+==4238==    by 0x53FEB27: (below main) (libc-start.c:266)
+==4238== 
+--4238-- REDIR: 0x556bf50 (libc.so.6:__memset_avx2_unaligned_erms) redirected to 0x4c365d0 (memset)
+==4238== Invalid write of size 1
+==4238==    at 0x10BBD2: Cadena::Cadena(unsigned long, char) (cadena.cpp:10)
+==4238==    by 0x109C16: main (test-P1-consola.cpp:77)
+==4238==  Address 0x5bd8274 is 0 bytes after a block of size 20 alloc'd
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10BB7C: Cadena::Cadena(unsigned long, char) (cadena.cpp:6)
+==4238==    by 0x109C16: main (test-P1-consola.cpp:77)
+==4238== 
+==4238== Invalid write of size 1
+==4238==    at 0x10BBD2: Cadena::Cadena(unsigned long, char) (cadena.cpp:10)
+==4238==    by 0x109C2F: main (test-P1-consola.cpp:77)
+==4238==  Address 0x5bd82d4 is 0 bytes after a block of size 20 alloc'd
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10BB7C: Cadena::Cadena(unsigned long, char) (cadena.cpp:6)
+==4238==    by 0x109C2F: main (test-P1-consola.cpp:77)
+==4238== 
+==4238== Invalid read of size 1
+==4238==    at 0x4C32E03: strcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10BC2E: Cadena::Cadena(Cadena const&) (cadena.cpp:14)
+==4238==    by 0x10C1B5: Cadena::operator+(Cadena const&) const (cadena.cpp:88)
+==4238==    by 0x109C91: main (test-P1-consola.cpp:79)
+==4238==  Address 0x5bd8274 is 0 bytes after a block of size 20 alloc'd
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10BB7C: Cadena::Cadena(unsigned long, char) (cadena.cpp:6)
+==4238==    by 0x109C16: main (test-P1-consola.cpp:77)
+==4238== 
+--4238-- REDIR: 0x548e9e0 (libc.so.6:__strcat_ssse3) redirected to 0x4c32990 (strcat)
+==4238== Invalid read of size 1
+==4238==    at 0x4C32D04: strlen (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10BFFE: Cadena::operator+=(Cadena const&) (cadena.cpp:70)
+==4238==    by 0x109D08: main (test-P1-consola.cpp:84)
+==4238==  Address 0x5bd82d4 is 0 bytes after a block of size 20 alloc'd
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10BB7C: Cadena::Cadena(unsigned long, char) (cadena.cpp:6)
+==4238==    by 0x109C2F: main (test-P1-consola.cpp:77)
+==4238== 
+==4238== Invalid read of size 1
+==4238==    at 0x4C329CB: strcat (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10C03D: Cadena::operator+=(Cadena const&) (cadena.cpp:72)
+==4238==    by 0x109D08: main (test-P1-consola.cpp:84)
+==4238==  Address 0x5bd82d4 is 0 bytes after a block of size 20 alloc'd
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10BB7C: Cadena::Cadena(unsigned long, char) (cadena.cpp:6)
+==4238==    by 0x109C2F: main (test-P1-consola.cpp:77)
+==4238== 
+==4238== Invalid write of size 1
+==4238==    at 0x10BBD2: Cadena::Cadena(unsigned long, char) (cadena.cpp:10)
+==4238==    by 0x109D72: main (test-P1-consola.cpp:88)
+==4238==  Address 0x5bd8bd0 is 0 bytes after a block of size 0 alloc'd
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10BB7C: Cadena::Cadena(unsigned long, char) (cadena.cpp:6)
+==4238==    by 0x109D72: main (test-P1-consola.cpp:88)
+==4238== 
+==4238== Invalid write of size 1
+==4238==    at 0x10BBD2: Cadena::Cadena(unsigned long, char) (cadena.cpp:10)
+==4238==    by 0x109DEA: main (test-P1-consola.cpp:92)
+==4238==  Address 0x5bd8fd0 is 0 bytes after a block of size 0 alloc'd
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10BB7C: Cadena::Cadena(unsigned long, char) (cadena.cpp:6)
+==4238==    by 0x109DEA: main (test-P1-consola.cpp:92)
+==4238== 
+==4238== Invalid read of size 1
+==4238==    at 0x4C33DA3: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10C336: operator==(Cadena const&, Cadena const&) (cadena.cpp:109)
+==4238==    by 0x10C365: operator!=(Cadena const&, Cadena const&) (cadena.cpp:113)
+==4238==    by 0x10BDAE: Cadena::operator=(Cadena&&) (cadena.cpp:41)
+==4238==    by 0x10BE32: Cadena::operator=(char const*) (cadena.cpp:51)
+==4238==    by 0x109DFD: main (test-P1-consola.cpp:93)
+==4238==  Address 0x5bd8fd0 is 0 bytes after a block of size 0 alloc'd
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10BB7C: Cadena::Cadena(unsigned long, char) (cadena.cpp:6)
+==4238==    by 0x109DEA: main (test-P1-consola.cpp:92)
+==4238== 
+==4238== Invalid write of size 1
+==4238==    at 0x10BBD2: Cadena::Cadena(unsigned long, char) (cadena.cpp:10)
+==4238==    by 0x10BEE2: Cadena::substr(unsigned long, unsigned long) const (cadena.cpp:57)
+==4238==    by 0x109F4C: main (test-P1-consola.cpp:109)
+==4238==  Address 0x5bd9206 is 0 bytes after a block of size 6 alloc'd
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10BB7C: Cadena::Cadena(unsigned long, char) (cadena.cpp:6)
+==4238==    by 0x10BEE2: Cadena::substr(unsigned long, unsigned long) const (cadena.cpp:57)
+==4238==    by 0x109F4C: main (test-P1-consola.cpp:109)
+==4238== 
+==4238== Invalid write of size 1
+==4238==    at 0x10BBD2: Cadena::Cadena(unsigned long, char) (cadena.cpp:10)
+==4238==    by 0x10A1FD: main (test-P1-consola.cpp:126)
+==4238==  Address 0x5bd92a0 is 0 bytes after a block of size 0 alloc'd
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10BB7C: Cadena::Cadena(unsigned long, char) (cadena.cpp:6)
+==4238==    by 0x10A1FD: main (test-P1-consola.cpp:126)
+==4238== 
+==4238== 
+==4238== HEAP SUMMARY:
+==4238==     in use at exit: 13,177 bytes in 150 blocks
+==4238==   total heap usage: 2,103 allocs, 1,953 frees, 301,471 bytes allocated
+==4238== 
+==4238== Searching for pointers to 150 not-freed blocks
+==4238== Checked 121,088 bytes
+==4238== 
+==4238== 0 bytes in 1 blocks are definitely lost in loss record 1 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10BB7C: Cadena::Cadena(unsigned long, char) (cadena.cpp:6)
+==4238==    by 0x109DEA: main (test-P1-consola.cpp:92)
+==4238== 
+==4238== 0 bytes in 1 blocks are definitely lost in loss record 2 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10BB7C: Cadena::Cadena(unsigned long, char) (cadena.cpp:6)
+==4238==    by 0x10A1FD: main (test-P1-consola.cpp:126)
+==4238== 
+==4238== 2 bytes in 1 blocks are still reachable in loss record 3 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EED2A0: std::__cxx11::moneypunct<char, false>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE2C42: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 2 bytes in 1 blocks are still reachable in loss record 4 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EECD80: std::__cxx11::moneypunct<char, true>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE2C8F: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 2 bytes in 1 blocks are still reachable in loss record 5 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EEA690: std::moneypunct<char, false>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EFA5BF: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE316A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 2 bytes in 1 blocks are still reachable in loss record 6 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EEA170: std::moneypunct<char, true>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EFA625: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE316A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 3 bytes in 1 blocks are still reachable in loss record 7 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EEE524: std::__cxx11::numpunct<char>::_M_initialize_numpunct(__locale_struct*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE2B40: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 3 bytes in 1 blocks are still reachable in loss record 8 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EED268: std::__cxx11::moneypunct<char, false>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE2C42: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 3 bytes in 1 blocks are still reachable in loss record 9 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EECD48: std::__cxx11::moneypunct<char, true>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE2C8F: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 3 bytes in 1 blocks are still reachable in loss record 10 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EEE7B6: std::__cxx11::numpunct<wchar_t>::_M_initialize_numpunct(__locale_struct*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE2E61: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 3 bytes in 1 blocks are still reachable in loss record 11 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EEDF9F: std::__cxx11::moneypunct<wchar_t, false>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE2F5F: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 3 bytes in 1 blocks are still reachable in loss record 12 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EED9BF: std::__cxx11::moneypunct<wchar_t, true>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE2FAD: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 3 bytes in 1 blocks are still reachable in loss record 13 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EEBA14: std::numpunct<char>::_M_initialize_numpunct(__locale_struct*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EFA4E5: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE316A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 3 bytes in 1 blocks are still reachable in loss record 14 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EEA658: std::moneypunct<char, false>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EFA5BF: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE316A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 3 bytes in 1 blocks are still reachable in loss record 15 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EEA138: std::moneypunct<char, true>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EFA625: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE316A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 3 bytes in 1 blocks are still reachable in loss record 16 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EEBCA6: std::numpunct<wchar_t>::_M_initialize_numpunct(__locale_struct*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EFA7C6: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE316A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 3 bytes in 1 blocks are still reachable in loss record 17 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EEB38F: std::moneypunct<wchar_t, false>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EFA894: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE316A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 3 bytes in 1 blocks are still reachable in loss record 18 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EEADAF: std::moneypunct<wchar_t, true>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EFA8FA: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE316A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 4 bytes in 1 blocks are still reachable in loss record 19 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EED184: std::__cxx11::moneypunct<char, false>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE2C42: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 4 bytes in 1 blocks are still reachable in loss record 20 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EEA574: std::moneypunct<char, false>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EFA5BF: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE316A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 5 bytes in 1 blocks are still reachable in loss record 21 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EECC64: std::__cxx11::moneypunct<char, true>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE2C8F: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 5 bytes in 1 blocks are still reachable in loss record 22 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EEA054: std::moneypunct<char, true>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EFA625: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE316A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 5 bytes in 1 blocks are definitely lost in loss record 23 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10BC9D: Cadena::Cadena(char const*) (cadena.cpp:22)
+==4238==    by 0x10C5D2: operator>>(std::istream&, Cadena&) (cadena.cpp:152)
+==4238==    by 0x10A223: main (test-P1-consola.cpp:128)
+==4238== 
+==4238== 6 bytes in 1 blocks are definitely lost in loss record 24 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10BC9D: Cadena::Cadena(char const*) (cadena.cpp:22)
+==4238==    by 0x10C5D2: operator>>(std::istream&, Cadena&) (cadena.cpp:152)
+==4238==    by 0x10A2C3: main (test-P1-consola.cpp:132)
+==4238== 
+==4238== 8 bytes in 1 blocks are still reachable in loss record 25 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EEDFF9: std::__cxx11::moneypunct<wchar_t, false>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE2F5F: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 8 bytes in 1 blocks are still reachable in loss record 26 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EEDA19: std::__cxx11::moneypunct<wchar_t, true>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE2FAD: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 8 bytes in 1 blocks are still reachable in loss record 27 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EEB3E9: std::moneypunct<wchar_t, false>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EFA894: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE316A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 8 bytes in 1 blocks are still reachable in loss record 28 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EEAE09: std::moneypunct<wchar_t, true>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EFA8FA: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE316A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 11 bytes in 1 blocks are still reachable in loss record 29 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10ADB0: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:18)
+==4238==    by 0x10A9BA: __static_initialization_and_destruction_0(int, int) (fecha.hpp:63)
+==4238==    by 0x10AA29: _GLOBAL__sub_I_main (test-P1-consola.cpp:172)
+==4238==    by 0x10C6DC: __libc_csu_init (in /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola)
+==4238==    by 0x53FEB27: (below main) (libc-start.c:266)
+==4238== 
+==4238== 11 bytes in 1 blocks are still reachable in loss record 30 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10ADB0: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:18)
+==4238==    by 0x10A9D2: __static_initialization_and_destruction_0(int, int) (fecha.hpp:64)
+==4238==    by 0x10AA29: _GLOBAL__sub_I_main (test-P1-consola.cpp:172)
+==4238==    by 0x10C6DC: __libc_csu_init (in /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola)
+==4238==    by 0x53FEB27: (below main) (libc-start.c:266)
+==4238== 
+==4238== 11 bytes in 1 blocks are still reachable in loss record 31 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10ADB0: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:18)
+==4238==    by 0x10BB12: __static_initialization_and_destruction_0(int, int) (fecha.hpp:63)
+==4238==    by 0x10BB58: _GLOBAL__sub_I__ZN5FechaC2Eiii (fecha.cpp:185)
+==4238==    by 0x10C6DC: __libc_csu_init (in /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola)
+==4238==    by 0x53FEB27: (below main) (libc-start.c:266)
+==4238== 
+==4238== 11 bytes in 1 blocks are still reachable in loss record 32 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10ADB0: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:18)
+==4238==    by 0x10BB2A: __static_initialization_and_destruction_0(int, int) (fecha.hpp:64)
+==4238==    by 0x10BB58: _GLOBAL__sub_I__ZN5FechaC2Eiii (fecha.cpp:185)
+==4238==    by 0x10C6DC: __libc_csu_init (in /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola)
+==4238==    by 0x53FEB27: (below main) (libc-start.c:266)
+==4238== 
+==4238== 12 bytes in 1 blocks are still reachable in loss record 33 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10ADB0: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:18)
+==4238==    by 0x10A9EA: __static_initialization_and_destruction_0(int, int) (fecha.hpp:65)
+==4238==    by 0x10AA29: _GLOBAL__sub_I_main (test-P1-consola.cpp:172)
+==4238==    by 0x10C6DC: __libc_csu_init (in /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola)
+==4238==    by 0x53FEB27: (below main) (libc-start.c:266)
+==4238== 
+==4238== 12 bytes in 1 blocks are still reachable in loss record 34 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10ADB0: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:18)
+==4238==    by 0x10BB42: __static_initialization_and_destruction_0(int, int) (fecha.hpp:65)
+==4238==    by 0x10BB58: _GLOBAL__sub_I__ZN5FechaC2Eiii (fecha.cpp:185)
+==4238==    by 0x10C6DC: __libc_csu_init (in /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola)
+==4238==    by 0x53FEB27: (below main) (libc-start.c:266)
+==4238== 
+==4238== 12 bytes in 1 blocks are still reachable in loss record 35 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EE31DB: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 12 bytes in 1 blocks are still reachable in loss record 36 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4F3F62B: std::__timepunct<char>::__timepunct(__locale_struct*, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE2D27: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 12 bytes in 1 blocks are still reachable in loss record 37 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4F19C53: std::__cxx11::messages<char>::messages(__locale_struct*, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE2DBA: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 12 bytes in 1 blocks are still reachable in loss record 38 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4F659BB: std::__timepunct<wchar_t>::__timepunct(__locale_struct*, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE3045: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 12 bytes in 1 blocks are still reachable in loss record 39 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4F24173: std::__cxx11::messages<wchar_t>::messages(__locale_struct*, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE30D8: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 12 bytes in 1 blocks are still reachable in loss record 40 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4F3FD13: std::messages<char>::messages(__locale_struct*, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EFA762: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE316A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 12 bytes in 1 blocks are still reachable in loss record 41 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4F66093: std::messages<wchar_t>::messages(__locale_struct*, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EFAA0F: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE316A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 15 bytes in 1 blocks are still reachable in loss record 42 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10ADB0: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:18)
+==4238==    by 0x10A9A2: __static_initialization_and_destruction_0(int, int) (fecha.hpp:62)
+==4238==    by 0x10AA29: _GLOBAL__sub_I_main (test-P1-consola.cpp:172)
+==4238==    by 0x10C6DC: __libc_csu_init (in /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola)
+==4238==    by 0x53FEB27: (below main) (libc-start.c:266)
+==4238== 
+==4238== 15 bytes in 1 blocks are still reachable in loss record 43 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10ADB0: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:18)
+==4238==    by 0x10BAFA: __static_initialization_and_destruction_0(int, int) (fecha.hpp:62)
+==4238==    by 0x10BB58: _GLOBAL__sub_I__ZN5FechaC2Eiii (fecha.cpp:185)
+==4238==    by 0x10C6DC: __libc_csu_init (in /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola)
+==4238==    by 0x53FEB27: (below main) (libc-start.c:266)
+==4238== 
+==4238== 16 bytes in 1 blocks are still reachable in loss record 44 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EE2B5C: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 16 bytes in 1 blocks are still reachable in loss record 45 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EE2B8D: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 16 bytes in 1 blocks are still reachable in loss record 46 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EE2CAB: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 16 bytes in 1 blocks are still reachable in loss record 47 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EE2CDC: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 16 bytes in 1 blocks are still reachable in loss record 48 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EE2D43: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 16 bytes in 1 blocks are still reachable in loss record 49 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EE2D74: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 16 bytes in 1 blocks are still reachable in loss record 50 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EE2E7D: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 16 bytes in 1 blocks are still reachable in loss record 51 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EE2EAE: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 16 bytes in 1 blocks are still reachable in loss record 52 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EEE059: std::__cxx11::moneypunct<wchar_t, false>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE2F5F: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 16 bytes in 1 blocks are still reachable in loss record 53 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EE2FC9: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 16 bytes in 1 blocks are still reachable in loss record 54 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EE2FFA: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 16 bytes in 1 blocks are still reachable in loss record 55 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EE3061: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 16 bytes in 1 blocks are still reachable in loss record 56 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EE3092: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 16 bytes in 1 blocks are still reachable in loss record 57 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EE30F4: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 16 bytes in 1 blocks are still reachable in loss record 58 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EE3125: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 16 bytes in 1 blocks are still reachable in loss record 59 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EFA65C: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE316A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 16 bytes in 1 blocks are still reachable in loss record 60 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EFA6AC: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE316A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 16 bytes in 1 blocks are still reachable in loss record 61 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EFA6FC: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE316A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 16 bytes in 1 blocks are still reachable in loss record 62 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EEB449: std::moneypunct<wchar_t, false>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EFA894: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE316A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 16 bytes in 1 blocks are still reachable in loss record 63 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EFA927: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE316A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 16 bytes in 1 blocks are still reachable in loss record 64 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EFA96D: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE316A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 16 bytes in 1 blocks are still reachable in loss record 65 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EFA9B3: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE316A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 20 bytes in 1 blocks are still reachable in loss record 66 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EEDA79: std::__cxx11::moneypunct<wchar_t, true>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE2FAD: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 20 bytes in 1 blocks are still reachable in loss record 67 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EEAE69: std::moneypunct<wchar_t, true>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EFA8FA: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE316A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 21 bytes in 1 blocks are definitely lost in loss record 68 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10BBFB: Cadena::Cadena(Cadena const&) (cadena.cpp:13)
+==4238==    by 0x10C1B5: Cadena::operator+(Cadena const&) const (cadena.cpp:88)
+==4238==    by 0x109C91: main (test-P1-consola.cpp:79)
+==4238== 
+==4238== 24 bytes in 1 blocks are still reachable in loss record 69 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EE2AE3: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 24 bytes in 1 blocks are still reachable in loss record 70 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EE2B11: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 24 bytes in 1 blocks are still reachable in loss record 71 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EE2BBE: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 24 bytes in 1 blocks are still reachable in loss record 72 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EE2C11: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 24 bytes in 1 blocks are still reachable in loss record 73 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EE2C5E: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 24 bytes in 1 blocks are still reachable in loss record 74 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EE2E04: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 24 bytes in 1 blocks are still reachable in loss record 75 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EE2E32: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 24 bytes in 1 blocks are still reachable in loss record 76 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EE2EDF: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 24 bytes in 1 blocks are still reachable in loss record 77 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EE2F2D: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 24 bytes in 1 blocks are still reachable in loss record 78 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EE2F7B: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 24 bytes in 1 blocks are still reachable in loss record 79 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EFA4B8: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE316A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 24 bytes in 1 blocks are still reachable in loss record 80 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EFA523: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE316A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 24 bytes in 1 blocks are still reachable in loss record 81 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EFA590: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE316A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 24 bytes in 1 blocks are still reachable in loss record 82 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EFA5F6: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE316A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 24 bytes in 1 blocks are still reachable in loss record 83 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EFA799: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE316A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 24 bytes in 1 blocks are still reachable in loss record 84 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EFA7FD: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE316A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 24 bytes in 1 blocks are still reachable in loss record 85 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EFA865: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE316A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 24 bytes in 1 blocks are still reachable in loss record 86 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EFA8CB: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE316A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 29 bytes in 1 blocks are definitely lost in loss record 87 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10BBFB: Cadena::Cadena(Cadena const&) (cadena.cpp:13)
+==4238==    by 0x10C1DA: Cadena::operator+(Cadena const&) const (cadena.cpp:89)
+==4238==    by 0x109C91: main (test-P1-consola.cpp:79)
+==4238== 
+==4238== 31 bytes in 1 blocks are definitely lost in loss record 88 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10BC9D: Cadena::Cadena(char const*) (cadena.cpp:22)
+==4238==    by 0x10C050: Cadena::operator+=(Cadena const&) (cadena.cpp:73)
+==4238==    by 0x109CAA: main (test-P1-consola.cpp:80)
+==4238== 
+==4238== 32 bytes in 1 blocks are still reachable in loss record 89 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EE2DA5: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 32 bytes in 1 blocks are still reachable in loss record 90 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EE30C3: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 32 bytes in 1 blocks are still reachable in loss record 91 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EFA74C: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE316A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 32 bytes in 1 blocks are still reachable in loss record 92 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EFA9F9: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE316A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 36 bytes in 1 blocks are definitely lost in loss record 93 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10B6CC: Fecha::cadena() const (fecha.cpp:130)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x10978E: main (test-P1-consola.cpp:29)
+==4238== 
+==4238== 36 bytes in 1 blocks are definitely lost in loss record 94 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10B6CC: Fecha::cadena() const (fecha.cpp:130)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x1097B2: main (test-P1-consola.cpp:30)
+==4238== 
+==4238== 36 bytes in 1 blocks are definitely lost in loss record 95 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10B6CC: Fecha::cadena() const (fecha.cpp:130)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x1097D6: main (test-P1-consola.cpp:30)
+==4238== 
+==4238== 36 bytes in 1 blocks are definitely lost in loss record 96 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10B6CC: Fecha::cadena() const (fecha.cpp:130)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109834: main (test-P1-consola.cpp:33)
+==4238== 
+==4238== 36 bytes in 1 blocks are definitely lost in loss record 97 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10B6CC: Fecha::cadena() const (fecha.cpp:130)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109885: main (test-P1-consola.cpp:35)
+==4238== 
+==4238== 36 bytes in 1 blocks are definitely lost in loss record 98 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10B6CC: Fecha::cadena() const (fecha.cpp:130)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x1098D6: main (test-P1-consola.cpp:37)
+==4238== 
+==4238== 36 bytes in 1 blocks are definitely lost in loss record 99 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10B6CC: Fecha::cadena() const (fecha.cpp:130)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x10993F: main (test-P1-consola.cpp:48)
+==4238== 
+==4238== 36 bytes in 1 blocks are definitely lost in loss record 100 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10B6CC: Fecha::cadena() const (fecha.cpp:130)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109983: main (test-P1-consola.cpp:49)
+==4238== 
+==4238== 36 bytes in 1 blocks are definitely lost in loss record 101 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10B6CC: Fecha::cadena() const (fecha.cpp:130)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x1099A7: main (test-P1-consola.cpp:50)
+==4238== 
+==4238== 36 bytes in 1 blocks are definitely lost in loss record 102 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10B6CC: Fecha::cadena() const (fecha.cpp:130)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x1099EB: main (test-P1-consola.cpp:51)
+==4238== 
+==4238== 36 bytes in 1 blocks are definitely lost in loss record 103 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10B6CC: Fecha::cadena() const (fecha.cpp:130)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109A36: main (test-P1-consola.cpp:55)
+==4238== 
+==4238== 36 bytes in 1 blocks are definitely lost in loss record 104 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10B6CC: Fecha::cadena() const (fecha.cpp:130)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109A92: main (test-P1-consola.cpp:58)
+==4238== 
+==4238== 36 bytes in 1 blocks are definitely lost in loss record 105 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10B6CC: Fecha::cadena() const (fecha.cpp:130)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109ADD: main (test-P1-consola.cpp:61)
+==4238== 
+==4238== 36 bytes in 1 blocks are definitely lost in loss record 106 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10B6CC: Fecha::cadena() const (fecha.cpp:130)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109B0A: main (test-P1-consola.cpp:62)
+==4238== 
+==4238== 36 bytes in 1 blocks are definitely lost in loss record 107 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10B6CC: Fecha::cadena() const (fecha.cpp:130)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109B3E: main (test-P1-consola.cpp:65)
+==4238== 
+==4238== 36 bytes in 1 blocks are definitely lost in loss record 108 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10B6CC: Fecha::cadena() const (fecha.cpp:130)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BB5: main (test-P1-consola.cpp:70)
+==4238== 
+==4238== 36 bytes in 1 blocks are definitely lost in loss record 109 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10B6CC: Fecha::cadena() const (fecha.cpp:130)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 37 bytes in 1 blocks are definitely lost in loss record 110 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10BC9D: Cadena::Cadena(char const*) (cadena.cpp:22)
+==4238==    by 0x10C050: Cadena::operator+=(Cadena const&) (cadena.cpp:73)
+==4238==    by 0x109CC3: main (test-P1-consola.cpp:81)
+==4238== 
+==4238== 40 bytes in 1 blocks are still reachable in loss record 111 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EE33C1: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 40 bytes in 1 blocks are still reachable in loss record 112 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EE2D0D: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 40 bytes in 1 blocks are still reachable in loss record 113 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EE302B: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 41 bytes in 1 blocks are definitely lost in loss record 114 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10BC9D: Cadena::Cadena(char const*) (cadena.cpp:22)
+==4238==    by 0x10C12E: Cadena::operator+=(char const*) (cadena.cpp:82)
+==4238==    by 0x109CD9: main (test-P1-consola.cpp:82)
+==4238== 
+==4238== 50 bytes in 1 blocks are definitely lost in loss record 115 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10BC9D: Cadena::Cadena(char const*) (cadena.cpp:22)
+==4238==    by 0x10C12E: Cadena::operator+=(char const*) (cadena.cpp:82)
+==4238==    by 0x109CEF: main (test-P1-consola.cpp:83)
+==4238== 
+==4238== 63 bytes in 1 blocks are definitely lost in loss record 116 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10BBFB: Cadena::Cadena(Cadena const&) (cadena.cpp:13)
+==4238==    by 0x10C1B5: Cadena::operator+(Cadena const&) const (cadena.cpp:88)
+==4238==    by 0x109D8F: main (test-P1-consola.cpp:89)
+==4238== 
+==4238== 70 bytes in 1 blocks are definitely lost in loss record 117 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10BC9D: Cadena::Cadena(char const*) (cadena.cpp:22)
+==4238==    by 0x10C050: Cadena::operator+=(Cadena const&) (cadena.cpp:73)
+==4238==    by 0x109D08: main (test-P1-consola.cpp:84)
+==4238== 
+==4238== 96 bytes in 1 blocks are still reachable in loss record 118 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EE291D: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 112 bytes in 1 blocks are still reachable in loss record 119 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EED2D1: std::__cxx11::moneypunct<char, false>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE2C42: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 112 bytes in 1 blocks are still reachable in loss record 120 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EECDB1: std::__cxx11::moneypunct<char, true>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE2C8F: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 112 bytes in 1 blocks are still reachable in loss record 121 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EEA6C1: std::moneypunct<char, false>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EFA5BF: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE316A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 112 bytes in 1 blocks are still reachable in loss record 122 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EEA1A1: std::moneypunct<char, true>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EFA625: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE316A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 144 bytes in 1 blocks are still reachable in loss record 123 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EEE4B9: std::__cxx11::numpunct<char>::_M_initialize_numpunct(__locale_struct*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE2B40: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 144 bytes in 1 blocks are still reachable in loss record 124 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EEB9A9: std::numpunct<char>::_M_initialize_numpunct(__locale_struct*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EFA4E5: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE316A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 160 bytes in 1 blocks are still reachable in loss record 125 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EEE089: std::__cxx11::moneypunct<wchar_t, false>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE2F5F: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 160 bytes in 1 blocks are still reachable in loss record 126 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EEDAA9: std::__cxx11::moneypunct<wchar_t, true>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE2FAD: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 160 bytes in 1 blocks are still reachable in loss record 127 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EEB479: std::moneypunct<wchar_t, false>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EFA894: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE316A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 160 bytes in 1 blocks are still reachable in loss record 128 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EEAE99: std::moneypunct<wchar_t, true>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EFA8FA: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE316A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 336 bytes in 1 blocks are still reachable in loss record 129 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EEE749: std::__cxx11::numpunct<wchar_t>::_M_initialize_numpunct(__locale_struct*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE2E61: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 336 bytes in 1 blocks are still reachable in loss record 130 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EEBC39: std::numpunct<wchar_t>::_M_initialize_numpunct(__locale_struct*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EFA7C6: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE316A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 368 bytes in 1 blocks are still reachable in loss record 131 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EE2899: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 368 bytes in 1 blocks are still reachable in loss record 132 of 150
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EE28EA: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 376 bytes in 1 blocks are still reachable in loss record 133 of 150
+==4238==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x540CED1: duplocale (duplocale.c:53)
+==4238==    by 0x4F03DA8: std::ctype<char>::ctype(__locale_struct*, unsigned short const*, bool, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE2AC7: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 376 bytes in 1 blocks are still reachable in loss record 134 of 150
+==4238==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x540CED1: duplocale (duplocale.c:53)
+==4238==    by 0x4EDC27F: std::codecvt<char, char, __mbstate_t>::codecvt(__locale_struct*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE2AF5: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 376 bytes in 1 blocks are still reachable in loss record 135 of 150
+==4238==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x540CED1: duplocale (duplocale.c:53)
+==4238==    by 0x4EE2BF0: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 376 bytes in 1 blocks are still reachable in loss record 136 of 150
+==4238==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x540CED1: duplocale (duplocale.c:53)
+==4238==    by 0x4EEE8CE: std::__timepunct<char>::_M_initialize_timepunct(__locale_struct*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4F3F607: std::__timepunct<char>::__timepunct(__locale_struct*, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE2D27: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 376 bytes in 1 blocks are still reachable in loss record 137 of 150
+==4238==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x540CED1: duplocale (duplocale.c:53)
+==4238==    by 0x4F19C30: std::__cxx11::messages<char>::messages(__locale_struct*, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE2DBA: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 376 bytes in 1 blocks are still reachable in loss record 138 of 150
+==4238==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x540CED1: duplocale (duplocale.c:53)
+==4238==    by 0x4EF4FBF: std::ctype<wchar_t>::ctype(__locale_struct*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE2DE8: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 376 bytes in 1 blocks are still reachable in loss record 139 of 150
+==4238==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x540CED1: duplocale (duplocale.c:53)
+==4238==    by 0x4EDC2FF: std::codecvt<wchar_t, char, __mbstate_t>::codecvt(__locale_struct*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE2E16: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 376 bytes in 1 blocks are still reachable in loss record 140 of 150
+==4238==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x540CED1: duplocale (duplocale.c:53)
+==4238==    by 0x4EE2F0C: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 376 bytes in 1 blocks are still reachable in loss record 141 of 150
+==4238==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x540CED1: duplocale (duplocale.c:53)
+==4238==    by 0x4EEF24D: std::__timepunct<wchar_t>::_M_initialize_timepunct(__locale_struct*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4F65997: std::__timepunct<wchar_t>::__timepunct(__locale_struct*, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE3045: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 376 bytes in 1 blocks are still reachable in loss record 142 of 150
+==4238==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x540CED1: duplocale (duplocale.c:53)
+==4238==    by 0x4F24150: std::__cxx11::messages<wchar_t>::messages(__locale_struct*, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE30D8: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 376 bytes in 1 blocks are still reachable in loss record 143 of 150
+==4238==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x540CED1: duplocale (duplocale.c:53)
+==4238==    by 0x4EFA555: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE316A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 376 bytes in 1 blocks are still reachable in loss record 144 of 150
+==4238==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x540CED1: duplocale (duplocale.c:53)
+==4238==    by 0x4F3FCF0: std::messages<char>::messages(__locale_struct*, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EFA762: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE316A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 376 bytes in 1 blocks are still reachable in loss record 145 of 150
+==4238==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x540CED1: duplocale (duplocale.c:53)
+==4238==    by 0x4EFA82A: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE316A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 376 bytes in 1 blocks are still reachable in loss record 146 of 150
+==4238==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x540CED1: duplocale (duplocale.c:53)
+==4238==    by 0x4F66070: std::messages<wchar_t>::messages(__locale_struct*, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EFAA0F: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE316A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 400 bytes in 1 blocks are still reachable in loss record 147 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EEEFE9: std::__timepunct<char>::_M_initialize_timepunct(__locale_struct*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4F3F607: std::__timepunct<char>::__timepunct(__locale_struct*, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE2D27: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 400 bytes in 1 blocks are still reachable in loss record 148 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EEF959: std::__timepunct<wchar_t>::_M_initialize_timepunct(__locale_struct*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4F65997: std::__timepunct<wchar_t>::__timepunct(__locale_struct*, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE3045: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 576 bytes in 1 blocks are still reachable in loss record 149 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EE2AB0: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== 1,344 bytes in 1 blocks are still reachable in loss record 150 of 150
+==4238==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4EE2DD6: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x4EE33D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10B743: Fecha::cadena() const (fecha.cpp:133)
+==4238==    by 0x10B983: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4238==    by 0x109BD9: main (test-P1-consola.cpp:71)
+==4238== 
+==4238== LEAK SUMMARY:
+==4238==    definitely lost: 965 bytes in 29 blocks
+==4238==    indirectly lost: 0 bytes in 0 blocks
+==4238==      possibly lost: 0 bytes in 0 blocks
+==4238==    still reachable: 12,212 bytes in 121 blocks
+==4238==         suppressed: 0 bytes in 0 blocks
+==4238== 
+==4238== ERROR SUMMARY: 49 errors from 48 contexts (suppressed: 0 from 0)
+==4238== 
+==4238== 1 errors in context 1 of 48:
+==4238== Invalid write of size 1
+==4238==    at 0x10BBD2: Cadena::Cadena(unsigned long, char) (cadena.cpp:10)
+==4238==    by 0x10A1FD: main (test-P1-consola.cpp:126)
+==4238==  Address 0x5bd92a0 is 0 bytes after a block of size 0 alloc'd
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10BB7C: Cadena::Cadena(unsigned long, char) (cadena.cpp:6)
+==4238==    by 0x10A1FD: main (test-P1-consola.cpp:126)
+==4238== 
+==4238== 
+==4238== 1 errors in context 2 of 48:
+==4238== Invalid write of size 1
+==4238==    at 0x10BBD2: Cadena::Cadena(unsigned long, char) (cadena.cpp:10)
+==4238==    by 0x10BEE2: Cadena::substr(unsigned long, unsigned long) const (cadena.cpp:57)
+==4238==    by 0x109F4C: main (test-P1-consola.cpp:109)
+==4238==  Address 0x5bd9206 is 0 bytes after a block of size 6 alloc'd
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10BB7C: Cadena::Cadena(unsigned long, char) (cadena.cpp:6)
+==4238==    by 0x10BEE2: Cadena::substr(unsigned long, unsigned long) const (cadena.cpp:57)
+==4238==    by 0x109F4C: main (test-P1-consola.cpp:109)
+==4238== 
+==4238== 
+==4238== 1 errors in context 3 of 48:
+==4238== Invalid write of size 1
+==4238==    at 0x10BBD2: Cadena::Cadena(unsigned long, char) (cadena.cpp:10)
+==4238==    by 0x109DEA: main (test-P1-consola.cpp:92)
+==4238==  Address 0x5bd8fd0 is 0 bytes after a block of size 0 alloc'd
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10BB7C: Cadena::Cadena(unsigned long, char) (cadena.cpp:6)
+==4238==    by 0x109DEA: main (test-P1-consola.cpp:92)
+==4238== 
+==4238== 
+==4238== 1 errors in context 4 of 48:
+==4238== Invalid write of size 1
+==4238==    at 0x10BBD2: Cadena::Cadena(unsigned long, char) (cadena.cpp:10)
+==4238==    by 0x109D72: main (test-P1-consola.cpp:88)
+==4238==  Address 0x5bd8bd0 is 0 bytes after a block of size 0 alloc'd
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10BB7C: Cadena::Cadena(unsigned long, char) (cadena.cpp:6)
+==4238==    by 0x109D72: main (test-P1-consola.cpp:88)
+==4238== 
+==4238== 
+==4238== 1 errors in context 5 of 48:
+==4238== Invalid read of size 1
+==4238==    at 0x4C329CB: strcat (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10C03D: Cadena::operator+=(Cadena const&) (cadena.cpp:72)
+==4238==    by 0x109D08: main (test-P1-consola.cpp:84)
+==4238==  Address 0x5bd82d4 is 0 bytes after a block of size 20 alloc'd
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10BB7C: Cadena::Cadena(unsigned long, char) (cadena.cpp:6)
+==4238==    by 0x109C2F: main (test-P1-consola.cpp:77)
+==4238== 
+==4238== 
+==4238== 1 errors in context 6 of 48:
+==4238== Invalid read of size 1
+==4238==    at 0x4C32D04: strlen (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10BFFE: Cadena::operator+=(Cadena const&) (cadena.cpp:70)
+==4238==    by 0x109D08: main (test-P1-consola.cpp:84)
+==4238==  Address 0x5bd82d4 is 0 bytes after a block of size 20 alloc'd
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10BB7C: Cadena::Cadena(unsigned long, char) (cadena.cpp:6)
+==4238==    by 0x109C2F: main (test-P1-consola.cpp:77)
+==4238== 
+==4238== 
+==4238== 1 errors in context 7 of 48:
+==4238== Invalid read of size 1
+==4238==    at 0x4C32E03: strcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10BC2E: Cadena::Cadena(Cadena const&) (cadena.cpp:14)
+==4238==    by 0x10C1B5: Cadena::operator+(Cadena const&) const (cadena.cpp:88)
+==4238==    by 0x109C91: main (test-P1-consola.cpp:79)
+==4238==  Address 0x5bd8274 is 0 bytes after a block of size 20 alloc'd
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10BB7C: Cadena::Cadena(unsigned long, char) (cadena.cpp:6)
+==4238==    by 0x109C16: main (test-P1-consola.cpp:77)
+==4238== 
+==4238== 
+==4238== 1 errors in context 8 of 48:
+==4238== Invalid write of size 1
+==4238==    at 0x10BBD2: Cadena::Cadena(unsigned long, char) (cadena.cpp:10)
+==4238==    by 0x109C2F: main (test-P1-consola.cpp:77)
+==4238==  Address 0x5bd82d4 is 0 bytes after a block of size 20 alloc'd
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10BB7C: Cadena::Cadena(unsigned long, char) (cadena.cpp:6)
+==4238==    by 0x109C2F: main (test-P1-consola.cpp:77)
+==4238== 
+==4238== 
+==4238== 1 errors in context 9 of 48:
+==4238== Invalid write of size 1
+==4238==    at 0x10BBD2: Cadena::Cadena(unsigned long, char) (cadena.cpp:10)
+==4238==    by 0x109C16: main (test-P1-consola.cpp:77)
+==4238==  Address 0x5bd8274 is 0 bytes after a block of size 20 alloc'd
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10BB7C: Cadena::Cadena(unsigned long, char) (cadena.cpp:6)
+==4238==    by 0x109C16: main (test-P1-consola.cpp:77)
+==4238== 
+==4238== 
+==4238== 1 errors in context 10 of 48:
+==4238== Invalid read of size 1
+==4238==    at 0x4C32D04: strlen (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x4F50018: std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4238==    by 0x10A54B: main (test-P1-consola.cpp:45)
+==4238==  Address 0x5b7de1b is 0 bytes after a block of size 11 alloc'd
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10ADB0: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:18)
+==4238==    by 0x10BB12: __static_initialization_and_destruction_0(int, int) (fecha.hpp:63)
+==4238==    by 0x10BB58: _GLOBAL__sub_I__ZN5FechaC2Eiii (fecha.cpp:185)
+==4238==    by 0x10C6DC: __libc_csu_init (in /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola)
+==4238==    by 0x53FEB27: (below main) (libc-start.c:266)
+==4238== 
+==4238== 
+==4238== 1 errors in context 11 of 48:
+==4238== Invalid write of size 1
+==4238==    at 0x4C32E0D: strcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10ADDA: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:18)
+==4238==    by 0x10BB42: __static_initialization_and_destruction_0(int, int) (fecha.hpp:65)
+==4238==    by 0x10BB58: _GLOBAL__sub_I__ZN5FechaC2Eiii (fecha.cpp:185)
+==4238==    by 0x10C6DC: __libc_csu_init (in /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola)
+==4238==    by 0x53FEB27: (below main) (libc-start.c:266)
+==4238==  Address 0x5b7debc is 0 bytes after a block of size 12 alloc'd
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10ADB0: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:18)
+==4238==    by 0x10BB42: __static_initialization_and_destruction_0(int, int) (fecha.hpp:65)
+==4238==    by 0x10BB58: _GLOBAL__sub_I__ZN5FechaC2Eiii (fecha.cpp:185)
+==4238==    by 0x10C6DC: __libc_csu_init (in /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola)
+==4238==    by 0x53FEB27: (below main) (libc-start.c:266)
+==4238== 
+==4238== 
+==4238== 1 errors in context 12 of 48:
+==4238== Invalid write of size 1
+==4238==    at 0x4C32E0D: strcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10ADDA: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:18)
+==4238==    by 0x10BB2A: __static_initialization_and_destruction_0(int, int) (fecha.hpp:64)
+==4238==    by 0x10BB58: _GLOBAL__sub_I__ZN5FechaC2Eiii (fecha.cpp:185)
+==4238==    by 0x10C6DC: __libc_csu_init (in /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola)
+==4238==    by 0x53FEB27: (below main) (libc-start.c:266)
+==4238==  Address 0x5b7de6b is 0 bytes after a block of size 11 alloc'd
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10ADB0: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:18)
+==4238==    by 0x10BB2A: __static_initialization_and_destruction_0(int, int) (fecha.hpp:64)
+==4238==    by 0x10BB58: _GLOBAL__sub_I__ZN5FechaC2Eiii (fecha.cpp:185)
+==4238==    by 0x10C6DC: __libc_csu_init (in /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola)
+==4238==    by 0x53FEB27: (below main) (libc-start.c:266)
+==4238== 
+==4238== 
+==4238== 1 errors in context 13 of 48:
+==4238== Invalid write of size 1
+==4238==    at 0x4C32E0D: strcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10ADDA: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:18)
+==4238==    by 0x10BB12: __static_initialization_and_destruction_0(int, int) (fecha.hpp:63)
+==4238==    by 0x10BB58: _GLOBAL__sub_I__ZN5FechaC2Eiii (fecha.cpp:185)
+==4238==    by 0x10C6DC: __libc_csu_init (in /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola)
+==4238==    by 0x53FEB27: (below main) (libc-start.c:266)
+==4238==  Address 0x5b7de1b is 0 bytes after a block of size 11 alloc'd
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10ADB0: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:18)
+==4238==    by 0x10BB12: __static_initialization_and_destruction_0(int, int) (fecha.hpp:63)
+==4238==    by 0x10BB58: _GLOBAL__sub_I__ZN5FechaC2Eiii (fecha.cpp:185)
+==4238==    by 0x10C6DC: __libc_csu_init (in /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola)
+==4238==    by 0x53FEB27: (below main) (libc-start.c:266)
+==4238== 
+==4238== 
+==4238== 1 errors in context 14 of 48:
+==4238== Invalid write of size 1
+==4238==    at 0x4C32E0D: strcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10ADDA: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:18)
+==4238==    by 0x10BAFA: __static_initialization_and_destruction_0(int, int) (fecha.hpp:62)
+==4238==    by 0x10BB58: _GLOBAL__sub_I__ZN5FechaC2Eiii (fecha.cpp:185)
+==4238==    by 0x10C6DC: __libc_csu_init (in /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola)
+==4238==    by 0x53FEB27: (below main) (libc-start.c:266)
+==4238==  Address 0x5b7ddcf is 0 bytes after a block of size 15 alloc'd
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10ADB0: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:18)
+==4238==    by 0x10BAFA: __static_initialization_and_destruction_0(int, int) (fecha.hpp:62)
+==4238==    by 0x10BB58: _GLOBAL__sub_I__ZN5FechaC2Eiii (fecha.cpp:185)
+==4238==    by 0x10C6DC: __libc_csu_init (in /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola)
+==4238==    by 0x53FEB27: (below main) (libc-start.c:266)
+==4238== 
+==4238== 
+==4238== 1 errors in context 15 of 48:
+==4238== Invalid write of size 1
+==4238==    at 0x4C32E0D: strcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10ADDA: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:18)
+==4238==    by 0x10A9EA: __static_initialization_and_destruction_0(int, int) (fecha.hpp:65)
+==4238==    by 0x10AA29: _GLOBAL__sub_I_main (test-P1-consola.cpp:172)
+==4238==    by 0x10C6DC: __libc_csu_init (in /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola)
+==4238==    by 0x53FEB27: (below main) (libc-start.c:266)
+==4238==  Address 0x5b7dd7c is 0 bytes after a block of size 12 alloc'd
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10ADB0: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:18)
+==4238==    by 0x10A9EA: __static_initialization_and_destruction_0(int, int) (fecha.hpp:65)
+==4238==    by 0x10AA29: _GLOBAL__sub_I_main (test-P1-consola.cpp:172)
+==4238==    by 0x10C6DC: __libc_csu_init (in /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola)
+==4238==    by 0x53FEB27: (below main) (libc-start.c:266)
+==4238== 
+==4238== 
+==4238== 1 errors in context 16 of 48:
+==4238== Invalid write of size 1
+==4238==    at 0x4C32E0D: strcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10ADDA: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:18)
+==4238==    by 0x10A9D2: __static_initialization_and_destruction_0(int, int) (fecha.hpp:64)
+==4238==    by 0x10AA29: _GLOBAL__sub_I_main (test-P1-consola.cpp:172)
+==4238==    by 0x10C6DC: __libc_csu_init (in /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola)
+==4238==    by 0x53FEB27: (below main) (libc-start.c:266)
+==4238==  Address 0x5b7dd2b is 0 bytes after a block of size 11 alloc'd
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10ADB0: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:18)
+==4238==    by 0x10A9D2: __static_initialization_and_destruction_0(int, int) (fecha.hpp:64)
+==4238==    by 0x10AA29: _GLOBAL__sub_I_main (test-P1-consola.cpp:172)
+==4238==    by 0x10C6DC: __libc_csu_init (in /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola)
+==4238==    by 0x53FEB27: (below main) (libc-start.c:266)
+==4238== 
+==4238== 
+==4238== 1 errors in context 17 of 48:
+==4238== Invalid write of size 1
+==4238==    at 0x4C32E0D: strcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10ADDA: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:18)
+==4238==    by 0x10A9BA: __static_initialization_and_destruction_0(int, int) (fecha.hpp:63)
+==4238==    by 0x10AA29: _GLOBAL__sub_I_main (test-P1-consola.cpp:172)
+==4238==    by 0x10C6DC: __libc_csu_init (in /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola)
+==4238==    by 0x53FEB27: (below main) (libc-start.c:266)
+==4238==  Address 0x5b7dcdb is 0 bytes after a block of size 11 alloc'd
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10ADB0: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:18)
+==4238==    by 0x10A9BA: __static_initialization_and_destruction_0(int, int) (fecha.hpp:63)
+==4238==    by 0x10AA29: _GLOBAL__sub_I_main (test-P1-consola.cpp:172)
+==4238==    by 0x10C6DC: __libc_csu_init (in /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola)
+==4238==    by 0x53FEB27: (below main) (libc-start.c:266)
+==4238== 
+==4238== 
+==4238== 1 errors in context 18 of 48:
+==4238== Invalid write of size 1
+==4238==    at 0x4C32E0D: strcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10ADDA: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:18)
+==4238==    by 0x10A9A2: __static_initialization_and_destruction_0(int, int) (fecha.hpp:62)
+==4238==    by 0x10AA29: _GLOBAL__sub_I_main (test-P1-consola.cpp:172)
+==4238==    by 0x10C6DC: __libc_csu_init (in /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola)
+==4238==    by 0x53FEB27: (below main) (libc-start.c:266)
+==4238==  Address 0x5b7dc8f is 0 bytes after a block of size 15 alloc'd
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10ADB0: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:18)
+==4238==    by 0x10A9A2: __static_initialization_and_destruction_0(int, int) (fecha.hpp:62)
+==4238==    by 0x10AA29: _GLOBAL__sub_I_main (test-P1-consola.cpp:172)
+==4238==    by 0x10C6DC: __libc_csu_init (in /home/poo/POO/Santos_Relinque_JuanFrancisco/P1/test-P1-consola)
+==4238==    by 0x53FEB27: (below main) (libc-start.c:266)
+==4238== 
+==4238== 
+==4238== 2 errors in context 19 of 48:
+==4238== Invalid read of size 1
+==4238==    at 0x4C33DA3: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10C336: operator==(Cadena const&, Cadena const&) (cadena.cpp:109)
+==4238==    by 0x10C365: operator!=(Cadena const&, Cadena const&) (cadena.cpp:113)
+==4238==    by 0x10BDAE: Cadena::operator=(Cadena&&) (cadena.cpp:41)
+==4238==    by 0x10BE32: Cadena::operator=(char const*) (cadena.cpp:51)
+==4238==    by 0x109DFD: main (test-P1-consola.cpp:93)
+==4238==  Address 0x5bd8fd0 is 0 bytes after a block of size 0 alloc'd
+==4238==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4238==    by 0x10BB7C: Cadena::Cadena(unsigned long, char) (cadena.cpp:6)
+==4238==    by 0x109DEA: main (test-P1-consola.cpp:92)
+==4238== 
+==4238== ERROR SUMMARY: 49 errors from 48 contexts (suppressed: 0 from 0)

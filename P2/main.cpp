@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include "articulo.hpp"
+#include "usuario.hpp"
 
 using namespace std;
 
@@ -16,5 +17,8 @@ int main(){
 	a.precio()=1.45;
 	a.stock()=40332;
 	cout<<endl<<a<<endl<<a.stock();
+
+	Clave key("medion");
+	cout<<endl<<key.clave()<<endl<<key.verifica("holasdfas")<<endl<<key.verifica("medion");
 	return 0;
 }

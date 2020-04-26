@@ -29,6 +29,9 @@ bool Clave::verifica(const char* c){
 }
 
 // ------------| Clase Usuario |------------
+
+std::unordered_set<Cadena> Usuario::users_;
+
 Usuario::Usuario(Cadena i, Cadena n, Cadena a, Cadena d, Clave c):id_(i),nom_(n),apell_(a),dir_(d),cont_(c){
 	if(!users_.insert(i).second){throw Id_duplicado(i);}
 }

@@ -6,8 +6,10 @@
  */
 
 #include <iostream>
+#include <cstdio>
 #include "articulo.hpp"
 #include "usuario.hpp"
+#include "cadena.hpp"
 
 using namespace std;
 
@@ -24,10 +26,13 @@ int main(){
 
 	Usuario user("JFSR00","Juan Francisco","Santos Relinque","C/ Mirador de la Janda, 15","medion");
 	user.compra(a,4);
-	user.compra(b,0);
+	user.compra(b);
 	cout<<endl;
 	mostrar_carro(std::cout,user);
 	user.compra(a,0);
 	mostrar_carro(std::cout,user);
+	Numero prueba_("23435  325 325235 3");
+	cout<<endl<<endl<<prueba_;
+	//printf("%s",prueba_);
 	return 0;
 }

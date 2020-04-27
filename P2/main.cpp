@@ -13,7 +13,7 @@
 
 using namespace std;
 
-int main(){
+int fun(){
 	Articulo a(12,"Pablito clavo un clavito","12/12/2020",12.3456);
 	Articulo b(13,"Pablito se partio la mano por subnormal","13/12/2020",13.58999);
 	cout<<a<<endl<<a.stock();

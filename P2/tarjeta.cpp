@@ -7,8 +7,8 @@
 // ------------| Clase Numero |------------
 bool luhn(const Cadena&);
 
-Numero::Numero(Cadena c):num_(c){
-	Cadena::iterator end{std::remove_if(c.begin(), c.end(), isspace)};
+Numero::Numero(const Cadena& c):num_(c){
+	Cadena::iterator end{std::remove_if(num_.begin(), num_.end(), isspace)};
 
 	Cadena aux{c.substr(0,end-c.begin())};
 
@@ -22,7 +22,7 @@ Numero::Numero(Cadena c):num_(c){
 // ------------| Clase Tarjeta |------------
 std::set<Numero> Tarjeta::numeros_;
 
-Tarjeta::Tarjeta(Numero& t, Usuario& p, Fecha& f):tarj_(t),prop_(&p),cad_(f),act_(true){
+Tarjeta::Tarjeta(const Numero& t, Usuario& p, const Fecha& f):tarj_(t),prop_(&p),cad_(f),act_(true){
 	if(f < Fecha(0,0,0)){throw Tarjeta::Caducada(f);}
 	if(!numeros_.insert(t).second){throw Num_duplicado(t);}
 	prop_->es_titular_de(*this);

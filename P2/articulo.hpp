@@ -11,6 +11,7 @@ class Articulo{
 public:
 	// Constructor
 	Articulo(int,Cadena,Fecha,double,int =0);
+	Articulo(Cadena,Cadena,Fecha,double,int =0);
 
 	// Declaración de métodos consultores y modificadores
 	int referencia() const;

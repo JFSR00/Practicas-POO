@@ -13,7 +13,7 @@ class Usuario;
 
 class Numero{
 public:
-	Numero(Cadena);
+	Numero(const Cadena&);
 
 	operator const char*() const;
 
@@ -36,7 +36,7 @@ class Tarjeta{
 public:
 	typedef enum{Otro, VISA, Mastercard, Maestro, JCB, AmericanExpress} Tipo;
 
-	Tarjeta(Numero&, Usuario&, Fecha&);
+	Tarjeta(const Numero&, Usuario&, const Fecha&);
 	Tarjeta(const Tarjeta&) = delete;
 	Tarjeta& operator =(const Tarjeta&) = delete;
 	~Tarjeta();

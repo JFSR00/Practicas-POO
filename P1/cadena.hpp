@@ -95,4 +95,20 @@ bool operator !=(const Cadena&, const Cadena&) noexcept;
 std::ostream& operator <<(std::ostream&, const Cadena&);
 std::istream& operator >>(std::istream&, Cadena&);
 
+// Para uso en la P2 en adelante
+// Función hash
+namespace std{	// Estaremos dentro del espacio de nombres std
+	template<>	// Es una especialización de una plantilla para Cadena
+	struct hash<Cadena>{	// Es una clase con solo un operador publico
+		size_t operator() (const Cadena& cad) const	// El operador función
+		{
+			hash<string> hs;				// Creamos un objeto hash de string
+			const char* p = cad.c_str();	// Obtenemos la cadena de la Cadena
+			string s(p);					// Creamos un string desde una cadena
+			size_t res = hs(s);				// El hash del string. Como hs.operator()(s);
+			return res;						// Devolvemos el hash del string
+		}
+	};
+}
+
 #endif

@@ -83,6 +83,8 @@ private:
 // --------------| Inline clase Numero |--------------
 inline Numero::operator const char*() const{return num_.c_str();}
 
+inline Numero::Razon Numero::Incorrecto::razon(){return err_;}
+
 inline bool operator <(Numero& a, Numero& b){return (a.num_<b.num_);}
 
 // --------------| Inline clase Tarjeta |--------------

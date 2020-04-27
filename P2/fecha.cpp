@@ -127,7 +127,7 @@ Fecha Fecha::operator -(const int n) const{
 }
 
 const char* Fecha::cadena() const noexcept{
-	static char *s=new char[sizeof("miÃ©rcoles 12 de septiembre de 2001")+1]{'\0'};
+	static char *s=new char[sizeof("miércoles 12 de septiembre de 2001")+1]{'\0'};
 	tm f{0};
 
 	std::locale::global(std::locale("es_ES.UTF-8"));
@@ -137,7 +137,7 @@ const char* Fecha::cadena() const noexcept{
 	f.tm_year = a - 1900;
 
 	mktime(&f);
-	strftime(s,sizeof("miÃ©rcoles 12 de septiembre de 2001")+1,"%A %e de %B de %Y",&f);
+	strftime(s,sizeof("miércoles 12 de septiembre de 2001")+1,"%A %e de %B de %Y",&f);
 
 	return s;
 }

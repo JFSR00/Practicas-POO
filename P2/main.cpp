@@ -31,8 +31,13 @@ int main(){
 	mostrar_carro(std::cout,user);
 	user.compra(a,0);
 	mostrar_carro(std::cout,user);
-	Numero prueba_("23435  325 325235 3");
-	cout<<endl<<endl<<prueba_;
-	//printf("%s",prueba_);
+	try{
+		Numero prueba_("23435  325 325234 5");
+		cout<<endl<<endl<<prueba_;
+	}catch(Numero::Incorrecto& e){
+		Numero tarjeta_("4766 6492 1322 9784");
+		cout<<endl<<tarjeta_;
+	}
+
 	return 0;
 }

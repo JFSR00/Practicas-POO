@@ -36,20 +36,20 @@ Usuario::Usuario(Cadena i, Cadena n, Cadena a, Cadena d, Clave c):id_(i),nom_(n)
 	if(!users_.insert(i).second){throw Id_duplicado(i);}
 }
 
-void Usuario::es_titular_de(Tarjeta& t){}
-void Usuario::no_es_titular_de(Tarjeta& t){}
-/*
-De la asociación con la clase Tarjeta se encargarán los métodos de nombre es_titular_de
-y no_es_titular_de, que recibirán como parámetro una Tarjeta con la que el Usuario se
-asociará o de la que se desligará.
-*/
+void Usuario::es_titular_de(Tarjeta& t){
+	if(this == t.titular()){cards_.insert(std::make_pair(t.numero(),&t));}
+}
+void Usuario::no_es_titular_de(Tarjeta& t){
+	t.anula_titular();
+	cards_.erase(t.numero());
+}
 
-Usuario::~Usuario(){}
-/*
-El destructor tendrá que desligar sus tarjetas, llamando al método Tarjeta::anula_titular
-sobre cada una de ellas. Solamente la clase Usuario podrá llamar a este método de
-Tarjeta. Vea § 5.5.
-*/
+Usuario::~Usuario(){
+	for(auto i=cards_.begin();i!=cards_.end();i++){
+		i->second->anula_titular();
+	}
+	users_.erase(id_);
+}
 
 void Usuario::compra(Articulo& a, unsigned int cant){
 	if(cant){arts_[&a] = cant;}

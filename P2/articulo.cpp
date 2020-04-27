@@ -1,6 +1,7 @@
 #include "articulo.hpp"
 #include <iomanip>
 #include <iostream>
+#include <locale>
 
 Articulo::Articulo(int r, Cadena t, Fecha f, double p, int s): ref_(r), tit_(t), f_publi_(f), prec_(p), stock_(s){}
 

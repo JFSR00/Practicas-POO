@@ -11,6 +11,9 @@
 #include "articulo.hpp"
 #include "tarjeta.hpp"
 
+class Numero;
+class Tarjeta;
+
 class Clave{
 public:
 	Clave(const char*);

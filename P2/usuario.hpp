@@ -18,7 +18,7 @@ class Clave{
 public:
 	Clave(const char*);
 
-	Cadena clave();
+	const Cadena clave() const;
 	bool verifica(const char*);
 
 	typedef enum{CORTA, ERROR_CRYPT} Razon;
@@ -78,7 +78,7 @@ private:
 // --------------| Inline clase Clave |--------------
 inline Clave::Razon Clave::Incorrecta::razon(){return err_;}
 
-inline Cadena Clave::clave(){return key_;}
+inline const Cadena Clave::clave() const{return key_;}
 
 // --------------| Inline clase Usuario |--------------
 inline Cadena Usuario::Id_duplicado::idd() const{return error_;}

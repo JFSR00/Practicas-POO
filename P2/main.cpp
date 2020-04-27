@@ -39,5 +39,10 @@ int main(){
 		cout<<endl<<tarjeta_;
 	}
 
+	Numero tarjeta_("4766 6492 1322 9784");
+	Fecha f("0/4/2022");
+	Tarjeta mia(tarjeta_,user,f);
+	cout<<endl<<mia<<endl<<endl<<user;
+
 	return 0;
 }

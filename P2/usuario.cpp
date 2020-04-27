@@ -4,6 +4,7 @@ extern "C" {
 }
 #include <cstring>
 #include <random>
+#include <iostream>
 #include "usuario.hpp"
 
 // ------------| Clase Clave |------------
@@ -56,7 +57,13 @@ void Usuario::compra(Articulo& a, unsigned int cant){
 	else{arts_.erase(&a);}
 }
 
-std::ostream& operator <<(std::ostream& os, const Usuario& u){return os;}
+std::ostream& operator <<(std::ostream& os, const Usuario& u){
+	os<<u.id_<<" ["<<u.cont_.clave()<<"] "<<u.nom_<<" "<<u.apell_<<std::endl<<u.dir_<<std::endl<<"Tarjetas:\n\n";
+	for(auto i=u.cards_.begin();i!=u.cards_.end();i++){
+		os<<*i->second<<std::endl<<std::endl;
+	}
+	return os;
+}
 /*
 Se sobrecargará el operador de inserción en flujo (<<) para mostrar o imprimir un Usuario
 en un flujo de salida. El formato será:

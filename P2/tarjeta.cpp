@@ -1,5 +1,7 @@
 #include <algorithm>
 #include <cctype>
+#include <iomanip>
+#include <iostream>
 #include "tarjeta.hpp"
 
 // ------------| Clase Numero |------------
@@ -18,10 +20,12 @@ Numero::Numero(Cadena c):num_(c){
 }
 
 // ------------| Clase Tarjeta |------------
-Tarjeta::Tarjeta(const Numero& t, const Usuario& p, const Fecha& f):tarj_(t),prop_(&p),cad_(f),act_(true){
+std::set<Numero> Tarjeta::numeros_;
+
+Tarjeta::Tarjeta(Numero& t, Usuario& p, Fecha& f):tarj_(t),prop_(&p),cad_(f),act_(true){
 	if(f < Fecha(0,0,0)){throw Tarjeta::Caducada(f);}
 	if(!numeros_.insert(t).second){throw Num_duplicado(t);}
-	p.es_titular_de(*this);
+	prop_->es_titular_de(*this);
 }
 
 Tarjeta::~Tarjeta(){
@@ -29,20 +33,20 @@ Tarjeta::~Tarjeta(){
 	numeros_.erase(tarj_);
 }
 
-Tarjeta::Tipo Tarjeta::tipo(){
+const Tarjeta::Tipo Tarjeta::tipo() const{
 	Tipo ret;
-	switch(tarj_.Numero()[0]){
-	case 3:
-		if(tarj_.Numero()[1]=='4'||tarj_.Numero()[1]=='7'){ret= AmericanExpress;}
+	switch(Cadena(tarj_)[0]){
+	case '3':
+		if(Cadena(tarj_)[1]=='4'||Cadena(tarj_)[1]=='7'){ret= AmericanExpress;}
 		else{ret = JCB;}
 		break;
-	case 4:
+	case '4':
 		ret = VISA;
 		break;
-	case 5:
+	case '5':
 		ret = Mastercard;
 		break;
-	case 6:
+	case '6':
 		ret = Maestro;
 		break;
 	default:
@@ -52,32 +56,47 @@ Tarjeta::Tipo Tarjeta::tipo(){
 	return ret;
 }
 
+std::ostream& operator <<(std::ostream& os, const Tarjeta::Tipo& t){
+	switch(t){
+	case Tarjeta::Otro:
+		os<<"Otro";
+		break;
+	case Tarjeta::VISA:
+		os<<"VISA";
+		break;
+	case Tarjeta::Mastercard:
+		os<<"Mastercard";
+		break;
+	case Tarjeta::Maestro:
+		os<<"Maestro";
+		break;
+	case Tarjeta::JCB:
+		os<<"JCB";
+		break;
+	case Tarjeta::AmericanExpress:
+		os<<"American Express";
+		break;
+	}
+	return os;
+}
+
 std::ostream& operator <<(std::ostream& os, const Tarjeta& t){
+	os<<t.tipo()<<std::endl<<t.numero()<<std::endl;
+	for(unsigned int i=0;i<t.titular()->nombre().length();i++){
+		os.put(toupper(t.titular()->nombre()[i]));
+	}
+	os.put(' ');
+	for(unsigned int i=0;i<t.titular()->apellidos().length();i++){
+		os.put(toupper(t.titular()->apellidos()[i]));
+	}
+	os<<std::endl<<"Caduca: "<<std::setfill('0')<<std::setw(2)<<t.caducidad().mes()<<"/"<<t.caducidad().anno()%100<<std::endl;
 
 	return os;
 }
 
 /*
-• Se sobrecargará el operador de inserción en flujo (<<) para mostrar o imprimir una
-Tarjeta en un flujo de salida. El formato será:
-
-	tipo
-	número
-	titular facial
-	Caduca: MM/AA
-
-donde MM es el mes de la fecha de caducidad, expresado con dos dígitos y AA son los
-dos últimos dígitos del año; por ejemplo: 05/09 sería mayo de 2009.
-
-El titular facial es el nombre y apellidos del propietario de la tarjeta, en mayúsculas.
-
-Si quiere, por estética, puede dibujar líneas rodeando la información impresa de la
+• Si quiere, por estética, puede dibujar líneas rodeando la información impresa de la
 tarjeta, simulando, aun pobremente, su aspecto. Esto es opcional.
-
-Para imprimir el nombre del tipo de la tarjeta (VISA, American Express. . . ), deberá
-sobrecargar también el operador de inserción para Tarjeta::Tipo.
-
-Ejemplo de impresión de una Tarjeta (las líneas son opcionales):
  ____________________
 /					 \
 | American Express	 |

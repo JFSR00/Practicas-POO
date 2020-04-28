@@ -19,14 +19,14 @@ public:
 	Clave(const char*);
 
 	const Cadena clave() const;
-	bool verifica(const char*);
+	bool verifica(const char*) const;
 
 	typedef enum{CORTA, ERROR_CRYPT} Razon;
 	class Incorrecta{
 		Razon err_;
 	public:
-		Incorrecta(Razon r):err_(r){};
-		Razon razon();
+		Incorrecta(const Razon r):err_(r){};
+		Razon razon() const;
 	};
 
 private:
@@ -76,7 +76,7 @@ private:
 };
 
 // --------------| Inline clase Clave |--------------
-inline Clave::Razon Clave::Incorrecta::razon(){return err_;}
+inline Clave::Razon Clave::Incorrecta::razon() const{return err_;}
 
 inline const Cadena Clave::clave() const{return key_;}
 

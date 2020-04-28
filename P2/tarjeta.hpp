@@ -24,7 +24,7 @@ public:
 		Razon err_;
 	public:
 		Incorrecto(Razon r):err_(r){};
-		Razon razon();
+		Razon razon() const;
 	};
 
 private:
@@ -50,7 +50,7 @@ public:
 	bool activa(bool =true);
 	void anula_titular();
 
-	friend bool operator <(Tarjeta&, Tarjeta&);
+	friend bool operator <(const Tarjeta&, const Tarjeta&);
 	friend std::ostream& operator <<(std::ostream&, const Tarjeta::Tipo&);
 	friend std::ostream& operator <<(std::ostream&, const Tarjeta&);
 
@@ -58,14 +58,14 @@ public:
 		Fecha err_;
 	public:
 		Caducada(Fecha f):err_(f){};
-		Fecha cuando();
+		Fecha cuando() const;
 	};
 
 	class Num_duplicado{
 		Numero n_;
 	public:
 		Num_duplicado(Numero n):n_(n){};
-		Numero que();
+		Numero que() const;
 	};
 
 	class Desactivada{};
@@ -83,13 +83,13 @@ private:
 // --------------| Inline clase Numero |--------------
 inline Numero::operator const char*() const{return num_.c_str();}
 
-inline Numero::Razon Numero::Incorrecto::razon(){return err_;}
+inline Numero::Razon Numero::Incorrecto::razon() const{return err_;}
 
 inline bool operator <(Numero& a, Numero& b){return (a.num_<b.num_);}
 
 // --------------| Inline clase Tarjeta |--------------
-inline Fecha Tarjeta::Caducada::cuando(){return err_;}
-inline Numero Tarjeta::Num_duplicado::que(){return n_;}
+inline Fecha Tarjeta::Caducada::cuando() const{return err_;}
+inline Numero Tarjeta::Num_duplicado::que() const{return n_;}
 
 inline const Numero Tarjeta::numero() const{return tarj_;}
 inline const Usuario* Tarjeta::titular() const{return prop_;}
@@ -99,7 +99,7 @@ inline bool Tarjeta::activa() const{return act_;}
 inline bool Tarjeta::activa(bool a){act_=a;return act_;}
 inline void Tarjeta::anula_titular(){prop_=nullptr;act_=false;}
 
-inline bool operator <(Tarjeta& a, Tarjeta& b){return (a.tarj_<b.tarj_);}
+inline bool operator <(const Tarjeta& a, const Tarjeta& b){return (a.tarj_<b.tarj_);}
 
 std::ostream& operator <<(std::ostream&, const Tarjeta::Tipo&);
 std::ostream& operator <<(std::ostream&, const Tarjeta&);

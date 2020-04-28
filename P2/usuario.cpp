@@ -22,7 +22,7 @@ Clave::Clave(const char* c){
 	}else{throw Clave::Incorrecta(ERROR_CRYPT);}
 }
 
-bool Clave::verifica(const char* c){
+bool Clave::verifica(const char* c) const{
 	char* key = crypt(c,key_.c_str());
 	if(key!=nullptr){
 		return key==key_;

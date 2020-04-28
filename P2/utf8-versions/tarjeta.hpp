@@ -44,8 +44,7 @@ public:
 	const Numero& numero() const;
 	const Usuario* titular() const;
 	const Fecha& caducidad() const;
-	const bool activa() const;
-
+	bool activa() const;
 	const Tipo tipo() const;
 
 	bool activa(bool =true);
@@ -95,7 +94,7 @@ inline Numero Tarjeta::Num_duplicado::que() const{return n_;}
 inline const Numero& Tarjeta::numero() const{return tarj_;}
 inline const Usuario* Tarjeta::titular() const{return prop_;}
 inline const Fecha& Tarjeta::caducidad() const{return cad_;}
-inline const bool Tarjeta::activa() const{return act_;}
+inline bool Tarjeta::activa() const{return act_;}
 
 inline bool Tarjeta::activa(bool a){act_=a;return act_;}
 inline void Tarjeta::anula_titular(){prop_=nullptr;act_=false;}

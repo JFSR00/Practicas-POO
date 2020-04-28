@@ -54,7 +54,7 @@ Cadena& Cadena::operator =(const char* cad) noexcept{
 
 Cadena Cadena::substr(unsigned i, unsigned tam) const{
 	if(!(i>=tam_||(i+tam)>tam_||(i+tam)<i)){
-		Cadena str(tam + 1);
+		Cadena str(tam);
 		for(unsigned j=0;j<tam;j++){
 			str.s_[j]=this->s_[j+i];
 		}

@@ -65,11 +65,11 @@ std::ostream& operator <<(std::ostream& os, const Usuario& u){
 	return os;
 }
 /*
-Se sobrecargarÃ¡ el operador de inserciÃ³n en flujo (<<) para mostrar o imprimir un Usuario
-en un flujo de salida. El formato serÃ¡:
+Se sobrecargará el operador de inserción en flujo (<<) para mostrar o imprimir un Usuario
+en un flujo de salida. El formato será:
 
 	identificador [clave cifrada] nombre apellidos
-	direcciÃ³n
+	dirección
 	Tarjetas:
 	<lista de tarjetas>
 
@@ -95,7 +95,7 @@ Ejemplo:
 */
 
 std::ostream& mostrar_carro(std::ostream& os, const Usuario& u){
-	os<<"Carrito de compra de "<<u.id()<<" [ArtÃ­culos: "<<u.n_articulos()<<"]\nCant.\tArtÃ­culo\n===========================================================\n";
+	os<<"Carrito de compra de "<<u.id()<<" [Artículos: "<<u.n_articulos()<<"]\nCant.\tArtículo\n===========================================================\n";
 
 	Usuario::Articulos::const_iterator it = u.compra().begin();
 	while(it != u.compra().end())

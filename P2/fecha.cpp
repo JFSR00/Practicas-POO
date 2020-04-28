@@ -145,9 +145,9 @@ const char* Fecha::cadena() const noexcept{
 bool const operator <(const Fecha& a, const Fecha& b) noexcept{
 	if(a.a<b.a){return true;}
 	else{
-		if(a.m<b.m){return true;}
+		if(a.m<b.m && a.a==b.a){return true;}
 		else{
-			if(a.d<b.d){return true;}
+			if(a.d<b.d && a.m==b.m && a.a==b.a){return true;}
 			else{return false;}
 		}
 	}

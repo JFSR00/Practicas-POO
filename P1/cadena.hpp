@@ -2,8 +2,9 @@
 
 #ifndef CADENA_HPP_
 #define CADENA_HPP_
-#include<ostream>
-#include<istream>
+#include <ostream>
+#include <istream>
+#include <string>
 
 class Cadena{
 public:
@@ -95,7 +96,6 @@ bool operator !=(const Cadena&, const Cadena&) noexcept;
 std::ostream& operator <<(std::ostream&, const Cadena&);
 std::istream& operator >>(std::istream&, Cadena&);
 
-// Para uso en la P2 en adelante
 // Función hash
 namespace std{	// Estaremos dentro del espacio de nombres std
 	template<>	// Es una especialización de una plantilla para Cadena

@@ -1,4 +1,4 @@
-ï»¿#include <algorithm>
+#include <algorithm>
 #include <cctype>
 #include <iomanip>
 #include <iostream>
@@ -98,7 +98,7 @@ std::ostream& operator <<(std::ostream& os, const Tarjeta& t){
 }
 
 /*
-â€¢ Si quiere, por estÃ©tica, puede dibujar lÃ­neas rodeando la informaciÃ³n impresa de la
+• Si quiere, por estética, puede dibujar líneas rodeando la información impresa de la
 tarjeta, simulando, aun pobremente, su aspecto. Esto es opcional.
  ____________________
 /					 \

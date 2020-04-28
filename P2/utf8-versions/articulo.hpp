@@ -23,7 +23,7 @@ public:
 	int& stock();
 
 	// DeclaraciÃ³n de sobrecarga de oerador <<
-	//friend std::ostream& operator <<(std::ostream&, Articulo&);
+	friend std::ostream& operator <<(std::ostream&, Articulo&);
 
 private:
 	// Atributos de la clase

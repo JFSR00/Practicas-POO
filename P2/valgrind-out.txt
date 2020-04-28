@@ -1,0 +1,1609 @@
+==4265== Memcheck, a memory error detector
+==4265== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==4265== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==4265== Command: ./test-P2-auto
+==4265== Parent PID: 1413
+==4265== 
+==4265== 
+==4265== HEAP SUMMARY:
+==4265==     in use at exit: 12,833 bytes in 174 blocks
+==4265==   total heap usage: 2,548 allocs, 2,374 frees, 517,303 bytes allocated
+==4265== 
+==4265== 1 bytes in 1 blocks are definitely lost in loss record 1 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x44FED9: Cadena::Cadena(unsigned long, char) (cadena.cpp:6)
+==4265==    by 0x447A8E: Clave::Clave(char const*) (usuario.cpp:11)
+==4265==    by 0x404710: __cxx_global_var_init.21 (test-caso1-2-auto.cpp:20)
+==4265==    by 0x404BE4: _GLOBAL__sub_I_test_caso1_2_auto.cpp (test-caso1-2-auto.cpp:0)
+==4265==    by 0x451B2C: __libc_csu_init (in /home/poo/Descargas/Practicas-POO-master/P2/test-P2-auto)
+==4265==    by 0x59D4B27: (below main) (libc-start.c:266)
+==4265== 
+==4265== 1 bytes in 1 blocks are definitely lost in loss record 2 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x44FED9: Cadena::Cadena(unsigned long, char) (cadena.cpp:6)
+==4265==    by 0x41ECDB: test_cadena(_fctkern_t*) (test-caso0-cadena-auto.cpp:112)
+==4265==    by 0x441741: main (test-auto.cpp:95)
+==4265== 
+==4265== 1 bytes in 1 blocks are definitely lost in loss record 3 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x44FED9: Cadena::Cadena(unsigned long, char) (cadena.cpp:6)
+==4265==    by 0x424FFD: test_cadena(_fctkern_t*) (test-caso0-cadena-auto.cpp:355)
+==4265==    by 0x441741: main (test-auto.cpp:95)
+==4265== 
+==4265== 1 bytes in 1 blocks are definitely lost in loss record 4 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x44FED9: Cadena::Cadena(unsigned long, char) (cadena.cpp:6)
+==4265==    by 0x42538B: test_cadena(_fctkern_t*) (test-caso0-cadena-auto.cpp:363)
+==4265==    by 0x441741: main (test-auto.cpp:95)
+==4265== 
+==4265== 1 bytes in 1 blocks are definitely lost in loss record 5 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x44FED9: Cadena::Cadena(unsigned long, char) (cadena.cpp:6)
+==4265==    by 0x42578D: test_cadena(_fctkern_t*) (test-caso0-cadena-auto.cpp:372)
+==4265==    by 0x441741: main (test-auto.cpp:95)
+==4265== 
+==4265== 1 bytes in 1 blocks are definitely lost in loss record 6 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x44FED9: Cadena::Cadena(unsigned long, char) (cadena.cpp:6)
+==4265==    by 0x425B8F: test_cadena(_fctkern_t*) (test-caso0-cadena-auto.cpp:381)
+==4265==    by 0x441741: main (test-auto.cpp:95)
+==4265== 
+==4265== 1 bytes in 1 blocks are definitely lost in loss record 7 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x44FED9: Cadena::Cadena(unsigned long, char) (cadena.cpp:6)
+==4265==    by 0x447A8E: Clave::Clave(char const*) (usuario.cpp:11)
+==4265==    by 0x4302EC: test_p2(_fctkern_t*) (test-caso1-2-auto.cpp:80)
+==4265==    by 0x44174D: main (test-auto.cpp:97)
+==4265== 
+==4265== 1 bytes in 1 blocks are definitely lost in loss record 8 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x44FED9: Cadena::Cadena(unsigned long, char) (cadena.cpp:6)
+==4265==    by 0x447A8E: Clave::Clave(char const*) (usuario.cpp:11)
+==4265==    by 0x430738: test_p2(_fctkern_t*) (test-caso1-2-auto.cpp:88)
+==4265==    by 0x44174D: main (test-auto.cpp:97)
+==4265== 
+==4265== 1 bytes in 1 blocks are definitely lost in loss record 9 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x44FED9: Cadena::Cadena(unsigned long, char) (cadena.cpp:6)
+==4265==    by 0x447A8E: Clave::Clave(char const*) (usuario.cpp:11)
+==4265==    by 0x430763: test_p2(_fctkern_t*) (test-caso1-2-auto.cpp:88)
+==4265==    by 0x44174D: main (test-auto.cpp:97)
+==4265== 
+==4265== 1 bytes in 1 blocks are definitely lost in loss record 10 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x44FED9: Cadena::Cadena(unsigned long, char) (cadena.cpp:6)
+==4265==    by 0x447A8E: Clave::Clave(char const*) (usuario.cpp:11)
+==4265==    by 0x430D63: test_p2(_fctkern_t*) (test-caso1-2-auto.cpp:97)
+==4265==    by 0x44174D: main (test-auto.cpp:97)
+==4265== 
+==4265== 1 bytes in 1 blocks are definitely lost in loss record 11 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x44FED9: Cadena::Cadena(unsigned long, char) (cadena.cpp:6)
+==4265==    by 0x447A8E: Clave::Clave(char const*) (usuario.cpp:11)
+==4265==    by 0x430FF6: test_p2(_fctkern_t*) (test-caso1-2-auto.cpp:103)
+==4265==    by 0x44174D: main (test-auto.cpp:97)
+==4265== 
+==4265== 1 bytes in 1 blocks are definitely lost in loss record 12 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x44FED9: Cadena::Cadena(unsigned long, char) (cadena.cpp:6)
+==4265==    by 0x447A8E: Clave::Clave(char const*) (usuario.cpp:11)
+==4265==    by 0x433961: test_p2(_fctkern_t*) (test-caso1-2-auto.cpp:208)
+==4265==    by 0x44174D: main (test-auto.cpp:97)
+==4265== 
+==4265== 1 bytes in 1 blocks are definitely lost in loss record 13 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x44FED9: Cadena::Cadena(unsigned long, char) (cadena.cpp:6)
+==4265==    by 0x447A8E: Clave::Clave(char const*) (usuario.cpp:11)
+==4265==    by 0x435E02: test_p2(_fctkern_t*) (test-caso1-2-auto.cpp:299)
+==4265==    by 0x44174D: main (test-auto.cpp:97)
+==4265== 
+==4265== 1 bytes in 1 blocks are definitely lost in loss record 14 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x44FED9: Cadena::Cadena(unsigned long, char) (cadena.cpp:6)
+==4265==    by 0x447A8E: Clave::Clave(char const*) (usuario.cpp:11)
+==4265==    by 0x43623F: test_p2(_fctkern_t*) (test-caso1-2-auto.cpp:308)
+==4265==    by 0x44174D: main (test-auto.cpp:97)
+==4265== 
+==4265== 2 bytes in 1 blocks are still reachable in loss record 15 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x51252A0: std::__cxx11::moneypunct<char, false>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511AC42: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 2 bytes in 1 blocks are still reachable in loss record 16 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x5124D80: std::__cxx11::moneypunct<char, true>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511AC8F: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 2 bytes in 1 blocks are still reachable in loss record 17 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x5122690: std::moneypunct<char, false>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x51325BF: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B16A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 2 bytes in 1 blocks are still reachable in loss record 18 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x5122170: std::moneypunct<char, true>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x5132625: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B16A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 2 bytes in 1 blocks are still reachable in loss record 19 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x5178A40: std::__numpunct_cache<char>::_M_cache(std::locale const&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x517BB3D: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x517BBD3: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x51881A4: std::ostream& std::ostream::_M_insert<long>(long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x43596B: test_p2(_fctkern_t*) (test-caso1-2-auto.cpp:288)
+==4265==    by 0x44174D: main (test-auto.cpp:97)
+==4265== 
+==4265== 3 bytes in 1 blocks are still reachable in loss record 20 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x5126524: std::__cxx11::numpunct<char>::_M_initialize_numpunct(__locale_struct*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511AB40: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 3 bytes in 1 blocks are still reachable in loss record 21 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x5125268: std::__cxx11::moneypunct<char, false>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511AC42: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 3 bytes in 1 blocks are still reachable in loss record 22 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x5124D48: std::__cxx11::moneypunct<char, true>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511AC8F: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 3 bytes in 1 blocks are still reachable in loss record 23 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x51267B6: std::__cxx11::numpunct<wchar_t>::_M_initialize_numpunct(__locale_struct*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511AE61: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 3 bytes in 1 blocks are still reachable in loss record 24 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x5125F9F: std::__cxx11::moneypunct<wchar_t, false>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511AF5F: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 3 bytes in 1 blocks are still reachable in loss record 25 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x51259BF: std::__cxx11::moneypunct<wchar_t, true>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511AFAD: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 3 bytes in 1 blocks are still reachable in loss record 26 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x5123A14: std::numpunct<char>::_M_initialize_numpunct(__locale_struct*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x51324E5: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B16A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 3 bytes in 1 blocks are still reachable in loss record 27 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x5122658: std::moneypunct<char, false>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x51325BF: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B16A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 3 bytes in 1 blocks are still reachable in loss record 28 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x5122138: std::moneypunct<char, true>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x5132625: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B16A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 3 bytes in 1 blocks are still reachable in loss record 29 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x5123CA6: std::numpunct<wchar_t>::_M_initialize_numpunct(__locale_struct*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x51327C6: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B16A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 3 bytes in 1 blocks are still reachable in loss record 30 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x512338F: std::moneypunct<wchar_t, false>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x5132894: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B16A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 3 bytes in 1 blocks are still reachable in loss record 31 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x5122DAF: std::moneypunct<wchar_t, true>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x51328FA: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B16A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 4 bytes in 1 blocks are still reachable in loss record 32 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x5125184: std::__cxx11::moneypunct<char, false>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511AC42: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 4 bytes in 1 blocks are still reachable in loss record 33 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x5122574: std::moneypunct<char, false>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x51325BF: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B16A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 4 bytes in 1 blocks are still reachable in loss record 34 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x5178AA5: std::__numpunct_cache<char>::_M_cache(std::locale const&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x517BB3D: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x517BBD3: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x51881A4: std::ostream& std::ostream::_M_insert<long>(long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x43596B: test_p2(_fctkern_t*) (test-caso1-2-auto.cpp:288)
+==4265==    by 0x44174D: main (test-auto.cpp:97)
+==4265== 
+==4265== 5 bytes in 1 blocks are still reachable in loss record 35 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x5124C64: std::__cxx11::moneypunct<char, true>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511AC8F: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 5 bytes in 1 blocks are still reachable in loss record 36 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x5122054: std::moneypunct<char, true>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x5132625: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B16A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 5 bytes in 1 blocks are still reachable in loss record 37 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x5178AFA: std::__numpunct_cache<char>::_M_cache(std::locale const&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x517BB3D: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x517BBD3: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x51881A4: std::ostream& std::ostream::_M_insert<long>(long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x43596B: test_p2(_fctkern_t*) (test-caso1-2-auto.cpp:288)
+==4265==    by 0x44174D: main (test-auto.cpp:97)
+==4265== 
+==4265== 5 bytes in 1 blocks are definitely lost in loss record 38 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x45000C: Cadena::Cadena(char const*) (cadena.cpp:22)
+==4265==    by 0x41E722: test_cadena(_fctkern_t*) (test-caso0-cadena-auto.cpp:98)
+==4265==    by 0x441741: main (test-auto.cpp:95)
+==4265== 
+==4265== 5 bytes in 1 blocks are definitely lost in loss record 39 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x45000C: Cadena::Cadena(char const*) (cadena.cpp:22)
+==4265==    by 0x4248EB: test_cadena(_fctkern_t*) (test-caso0-cadena-auto.cpp:339)
+==4265==    by 0x441741: main (test-auto.cpp:95)
+==4265== 
+==4265== 5 bytes in 1 blocks are definitely lost in loss record 40 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x45000C: Cadena::Cadena(char const*) (cadena.cpp:22)
+==4265==    by 0x424C73: test_cadena(_fctkern_t*) (test-caso0-cadena-auto.cpp:347)
+==4265==    by 0x441741: main (test-auto.cpp:95)
+==4265== 
+==4265== 8 bytes in 1 blocks are still reachable in loss record 41 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x5125FF9: std::__cxx11::moneypunct<wchar_t, false>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511AF5F: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 8 bytes in 1 blocks are still reachable in loss record 42 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x5125A19: std::__cxx11::moneypunct<wchar_t, true>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511AFAD: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 8 bytes in 1 blocks are still reachable in loss record 43 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x51233E9: std::moneypunct<wchar_t, false>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x5132894: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B16A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 8 bytes in 1 blocks are still reachable in loss record 44 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x5122E09: std::moneypunct<wchar_t, true>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x51328FA: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B16A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 8 bytes in 1 blocks are definitely lost in loss record 45 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x45000C: Cadena::Cadena(char const*) (cadena.cpp:22)
+==4265==    by 0x41F952: test_cadena(_fctkern_t*) (test-caso0-cadena-auto.cpp:140)
+==4265==    by 0x441741: main (test-auto.cpp:95)
+==4265== 
+==4265== 11 bytes in 1 blocks are definitely lost in loss record 46 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x4518E2: operator>>(std::istream&, Fecha&) (fecha.cpp:172)
+==4265==    by 0x4148BA: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:588)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 11 bytes in 1 blocks are definitely lost in loss record 47 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x4518E2: operator>>(std::istream&, Fecha&) (fecha.cpp:172)
+==4265==    by 0x414E36: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:603)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 11 bytes in 1 blocks are definitely lost in loss record 48 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x4518E2: operator>>(std::istream&, Fecha&) (fecha.cpp:172)
+==4265==    by 0x4153B2: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:618)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 11 bytes in 1 blocks are definitely lost in loss record 49 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x44FF6A: Cadena::Cadena(Cadena const&) (cadena.cpp:13)
+==4265==    by 0x45054A: Cadena::operator+(Cadena const&) const (cadena.cpp:88)
+==4265==    by 0x41FD2B: test_cadena(_fctkern_t*) (test-caso0-cadena-auto.cpp:150)
+==4265==    by 0x441741: main (test-auto.cpp:95)
+==4265== 
+==4265== 11 bytes in 1 blocks are definitely lost in loss record 50 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x44FF6A: Cadena::Cadena(Cadena const&) (cadena.cpp:13)
+==4265==    by 0x45054A: Cadena::operator+(Cadena const&) const (cadena.cpp:88)
+==4265==    by 0x41FD7A: test_cadena(_fctkern_t*) (test-caso0-cadena-auto.cpp:151)
+==4265==    by 0x441741: main (test-auto.cpp:95)
+==4265== 
+==4265== 11 bytes in 1 blocks are definitely lost in loss record 51 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x44FF6A: Cadena::Cadena(Cadena const&) (cadena.cpp:13)
+==4265==    by 0x45054A: Cadena::operator+(Cadena const&) const (cadena.cpp:88)
+==4265==    by 0x41FDC6: test_cadena(_fctkern_t*) (test-caso0-cadena-auto.cpp:151)
+==4265==    by 0x441741: main (test-auto.cpp:95)
+==4265== 
+==4265== 12 bytes in 1 blocks are still reachable in loss record 52 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x45120F: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:19)
+==4265==    by 0x4041B1: __cxx_global_var_init.2 (fecha.hpp:63)
+==4265==    by 0x404232: _GLOBAL__sub_I_test_caso0_fecha_auto.cpp (test-caso0-fecha-auto.cpp:0)
+==4265==    by 0x451B2C: __libc_csu_init (in /home/poo/Descargas/Practicas-POO-master/P2/test-P2-auto)
+==4265==    by 0x59D4B27: (below main) (libc-start.c:266)
+==4265== 
+==4265== 12 bytes in 1 blocks are still reachable in loss record 53 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x45120F: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:19)
+==4265==    by 0x4041E1: __cxx_global_var_init.4 (fecha.hpp:64)
+==4265==    by 0x404237: _GLOBAL__sub_I_test_caso0_fecha_auto.cpp (test-caso0-fecha-auto.cpp:0)
+==4265==    by 0x451B2C: __libc_csu_init (in /home/poo/Descargas/Practicas-POO-master/P2/test-P2-auto)
+==4265==    by 0x59D4B27: (below main) (libc-start.c:266)
+==4265== 
+==4265== 12 bytes in 1 blocks are still reachable in loss record 54 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x45120F: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:19)
+==4265==    by 0x4042E1: __cxx_global_var_init.2 (fecha.hpp:63)
+==4265==    by 0x404362: _GLOBAL__sub_I_test_caso0_cadena_auto.cpp (test-caso0-cadena-auto.cpp:0)
+==4265==    by 0x451B2C: __libc_csu_init (in /home/poo/Descargas/Practicas-POO-master/P2/test-P2-auto)
+==4265==    by 0x59D4B27: (below main) (libc-start.c:266)
+==4265== 
+==4265== 12 bytes in 1 blocks are still reachable in loss record 55 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x45120F: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:19)
+==4265==    by 0x404311: __cxx_global_var_init.4 (fecha.hpp:64)
+==4265==    by 0x404367: _GLOBAL__sub_I_test_caso0_cadena_auto.cpp (test-caso0-cadena-auto.cpp:0)
+==4265==    by 0x451B2C: __libc_csu_init (in /home/poo/Descargas/Practicas-POO-master/P2/test-P2-auto)
+==4265==    by 0x59D4B27: (below main) (libc-start.c:266)
+==4265== 
+==4265== 12 bytes in 1 blocks are still reachable in loss record 56 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x45120F: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:19)
+==4265==    by 0x404411: __cxx_global_var_init.2 (fecha.hpp:63)
+==4265==    by 0x404BB2: _GLOBAL__sub_I_test_caso1_2_auto.cpp (test-caso1-2-auto.cpp:0)
+==4265==    by 0x451B2C: __libc_csu_init (in /home/poo/Descargas/Practicas-POO-master/P2/test-P2-auto)
+==4265==    by 0x59D4B27: (below main) (libc-start.c:266)
+==4265== 
+==4265== 12 bytes in 1 blocks are still reachable in loss record 57 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x45120F: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:19)
+==4265==    by 0x404441: __cxx_global_var_init.4 (fecha.hpp:64)
+==4265==    by 0x404BB7: _GLOBAL__sub_I_test_caso1_2_auto.cpp (test-caso1-2-auto.cpp:0)
+==4265==    by 0x451B2C: __libc_csu_init (in /home/poo/Descargas/Practicas-POO-master/P2/test-P2-auto)
+==4265==    by 0x59D4B27: (below main) (libc-start.c:266)
+==4265== 
+==4265== 12 bytes in 1 blocks are still reachable in loss record 58 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x45120F: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:19)
+==4265==    by 0x404CB1: __cxx_global_var_init.2 (fecha.hpp:63)
+==4265==    by 0x404D32: _GLOBAL__sub_I_test_auto.cpp (test-auto.cpp:0)
+==4265==    by 0x451B2C: __libc_csu_init (in /home/poo/Descargas/Practicas-POO-master/P2/test-P2-auto)
+==4265==    by 0x59D4B27: (below main) (libc-start.c:266)
+==4265== 
+==4265== 12 bytes in 1 blocks are still reachable in loss record 59 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x45120F: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:19)
+==4265==    by 0x404CE1: __cxx_global_var_init.4 (fecha.hpp:64)
+==4265==    by 0x404D37: _GLOBAL__sub_I_test_auto.cpp (test-auto.cpp:0)
+==4265==    by 0x451B2C: __libc_csu_init (in /home/poo/Descargas/Practicas-POO-master/P2/test-P2-auto)
+==4265==    by 0x59D4B27: (below main) (libc-start.c:266)
+==4265== 
+==4265== 12 bytes in 1 blocks are still reachable in loss record 60 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x45120F: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:19)
+==4265==    by 0x404DE1: __cxx_global_var_init.2 (fecha.hpp:63)
+==4265==    by 0x404EB2: _GLOBAL__sub_I_usuario.cpp (usuario.cpp:0)
+==4265==    by 0x451B2C: __libc_csu_init (in /home/poo/Descargas/Practicas-POO-master/P2/test-P2-auto)
+==4265==    by 0x59D4B27: (below main) (libc-start.c:266)
+==4265== 
+==4265== 12 bytes in 1 blocks are still reachable in loss record 61 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x45120F: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:19)
+==4265==    by 0x404E11: __cxx_global_var_init.4 (fecha.hpp:64)
+==4265==    by 0x404EB7: _GLOBAL__sub_I_usuario.cpp (usuario.cpp:0)
+==4265==    by 0x451B2C: __libc_csu_init (in /home/poo/Descargas/Practicas-POO-master/P2/test-P2-auto)
+==4265==    by 0x59D4B27: (below main) (libc-start.c:266)
+==4265== 
+==4265== 12 bytes in 1 blocks are still reachable in loss record 62 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x45120F: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:19)
+==4265==    by 0x404F71: __cxx_global_var_init.2 (fecha.hpp:63)
+==4265==    by 0x405042: _GLOBAL__sub_I_tarjeta.cpp (tarjeta.cpp:0)
+==4265==    by 0x451B2C: __libc_csu_init (in /home/poo/Descargas/Practicas-POO-master/P2/test-P2-auto)
+==4265==    by 0x59D4B27: (below main) (libc-start.c:266)
+==4265== 
+==4265== 12 bytes in 1 blocks are still reachable in loss record 63 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x45120F: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:19)
+==4265==    by 0x404FA1: __cxx_global_var_init.4 (fecha.hpp:64)
+==4265==    by 0x405047: _GLOBAL__sub_I_tarjeta.cpp (tarjeta.cpp:0)
+==4265==    by 0x451B2C: __libc_csu_init (in /home/poo/Descargas/Practicas-POO-master/P2/test-P2-auto)
+==4265==    by 0x59D4B27: (below main) (libc-start.c:266)
+==4265== 
+==4265== 12 bytes in 1 blocks are still reachable in loss record 64 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x45120F: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:19)
+==4265==    by 0x4050B1: __cxx_global_var_init.1 (fecha.hpp:63)
+==4265==    by 0x40517D: _GLOBAL__sub_I_articulo.cpp (articulo.cpp:0)
+==4265==    by 0x451B2C: __libc_csu_init (in /home/poo/Descargas/Practicas-POO-master/P2/test-P2-auto)
+==4265==    by 0x59D4B27: (below main) (libc-start.c:266)
+==4265== 
+==4265== 12 bytes in 1 blocks are still reachable in loss record 65 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x45120F: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:19)
+==4265==    by 0x4050E1: __cxx_global_var_init.3 (fecha.hpp:64)
+==4265==    by 0x405182: _GLOBAL__sub_I_articulo.cpp (articulo.cpp:0)
+==4265==    by 0x451B2C: __libc_csu_init (in /home/poo/Descargas/Practicas-POO-master/P2/test-P2-auto)
+==4265==    by 0x59D4B27: (below main) (libc-start.c:266)
+==4265== 
+==4265== 12 bytes in 1 blocks are still reachable in loss record 66 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x45120F: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:19)
+==4265==    by 0x405241: __cxx_global_var_init.1 (fecha.hpp:63)
+==4265==    by 0x4052BD: _GLOBAL__sub_I_fecha.cpp (fecha.cpp:0)
+==4265==    by 0x451B2C: __libc_csu_init (in /home/poo/Descargas/Practicas-POO-master/P2/test-P2-auto)
+==4265==    by 0x59D4B27: (below main) (libc-start.c:266)
+==4265== 
+==4265== 12 bytes in 1 blocks are still reachable in loss record 67 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x45120F: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:19)
+==4265==    by 0x405271: __cxx_global_var_init.3 (fecha.hpp:64)
+==4265==    by 0x4052C2: _GLOBAL__sub_I_fecha.cpp (fecha.cpp:0)
+==4265==    by 0x451B2C: __libc_csu_init (in /home/poo/Descargas/Practicas-POO-master/P2/test-P2-auto)
+==4265==    by 0x59D4B27: (below main) (libc-start.c:266)
+==4265== 
+==4265== 12 bytes in 1 blocks are still reachable in loss record 68 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x511B1DB: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 12 bytes in 1 blocks are still reachable in loss record 69 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x517762B: std::__timepunct<char>::__timepunct(__locale_struct*, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511AD27: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 12 bytes in 1 blocks are still reachable in loss record 70 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x5151C53: std::__cxx11::messages<char>::messages(__locale_struct*, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511ADBA: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 12 bytes in 1 blocks are still reachable in loss record 71 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x519D9BB: std::__timepunct<wchar_t>::__timepunct(__locale_struct*, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B045: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 12 bytes in 1 blocks are still reachable in loss record 72 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x515C173: std::__cxx11::messages<wchar_t>::messages(__locale_struct*, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B0D8: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 12 bytes in 1 blocks are still reachable in loss record 73 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x5177D13: std::messages<char>::messages(__locale_struct*, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x5132762: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B16A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 12 bytes in 1 blocks are still reachable in loss record 74 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x519E093: std::messages<wchar_t>::messages(__locale_struct*, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x5132A0F: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B16A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 13 bytes in 1 blocks are still reachable in loss record 75 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x45120F: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:19)
+==4265==    by 0x404211: __cxx_global_var_init.6 (fecha.hpp:65)
+==4265==    by 0x40423C: _GLOBAL__sub_I_test_caso0_fecha_auto.cpp (test-caso0-fecha-auto.cpp:0)
+==4265==    by 0x451B2C: __libc_csu_init (in /home/poo/Descargas/Practicas-POO-master/P2/test-P2-auto)
+==4265==    by 0x59D4B27: (below main) (libc-start.c:266)
+==4265== 
+==4265== 13 bytes in 1 blocks are still reachable in loss record 76 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x45120F: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:19)
+==4265==    by 0x404341: __cxx_global_var_init.6 (fecha.hpp:65)
+==4265==    by 0x40436C: _GLOBAL__sub_I_test_caso0_cadena_auto.cpp (test-caso0-cadena-auto.cpp:0)
+==4265==    by 0x451B2C: __libc_csu_init (in /home/poo/Descargas/Practicas-POO-master/P2/test-P2-auto)
+==4265==    by 0x59D4B27: (below main) (libc-start.c:266)
+==4265== 
+==4265== 13 bytes in 1 blocks are still reachable in loss record 77 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x45120F: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:19)
+==4265==    by 0x404471: __cxx_global_var_init.6 (fecha.hpp:65)
+==4265==    by 0x404BBC: _GLOBAL__sub_I_test_caso1_2_auto.cpp (test-caso1-2-auto.cpp:0)
+==4265==    by 0x451B2C: __libc_csu_init (in /home/poo/Descargas/Practicas-POO-master/P2/test-P2-auto)
+==4265==    by 0x59D4B27: (below main) (libc-start.c:266)
+==4265== 
+==4265== 13 bytes in 1 blocks are still reachable in loss record 78 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x45120F: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:19)
+==4265==    by 0x404D11: __cxx_global_var_init.6 (fecha.hpp:65)
+==4265==    by 0x404D3C: _GLOBAL__sub_I_test_auto.cpp (test-auto.cpp:0)
+==4265==    by 0x451B2C: __libc_csu_init (in /home/poo/Descargas/Practicas-POO-master/P2/test-P2-auto)
+==4265==    by 0x59D4B27: (below main) (libc-start.c:266)
+==4265== 
+==4265== 13 bytes in 1 blocks are still reachable in loss record 79 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x45120F: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:19)
+==4265==    by 0x404E41: __cxx_global_var_init.6 (fecha.hpp:65)
+==4265==    by 0x404EBC: _GLOBAL__sub_I_usuario.cpp (usuario.cpp:0)
+==4265==    by 0x451B2C: __libc_csu_init (in /home/poo/Descargas/Practicas-POO-master/P2/test-P2-auto)
+==4265==    by 0x59D4B27: (below main) (libc-start.c:266)
+==4265== 
+==4265== 13 bytes in 1 blocks are still reachable in loss record 80 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x45120F: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:19)
+==4265==    by 0x404FD1: __cxx_global_var_init.6 (fecha.hpp:65)
+==4265==    by 0x40504C: _GLOBAL__sub_I_tarjeta.cpp (tarjeta.cpp:0)
+==4265==    by 0x451B2C: __libc_csu_init (in /home/poo/Descargas/Practicas-POO-master/P2/test-P2-auto)
+==4265==    by 0x59D4B27: (below main) (libc-start.c:266)
+==4265== 
+==4265== 13 bytes in 1 blocks are still reachable in loss record 81 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x45120F: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:19)
+==4265==    by 0x405111: __cxx_global_var_init.5 (fecha.hpp:65)
+==4265==    by 0x405187: _GLOBAL__sub_I_articulo.cpp (articulo.cpp:0)
+==4265==    by 0x451B2C: __libc_csu_init (in /home/poo/Descargas/Practicas-POO-master/P2/test-P2-auto)
+==4265==    by 0x59D4B27: (below main) (libc-start.c:266)
+==4265== 
+==4265== 13 bytes in 1 blocks are still reachable in loss record 82 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x45120F: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:19)
+==4265==    by 0x4052A1: __cxx_global_var_init.5 (fecha.hpp:65)
+==4265==    by 0x4052C7: _GLOBAL__sub_I_fecha.cpp (fecha.cpp:0)
+==4265==    by 0x451B2C: __libc_csu_init (in /home/poo/Descargas/Practicas-POO-master/P2/test-P2-auto)
+==4265==    by 0x59D4B27: (below main) (libc-start.c:266)
+==4265== 
+==4265== 16 bytes in 1 blocks are still reachable in loss record 83 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x45120F: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:19)
+==4265==    by 0x40417E: __cxx_global_var_init.1 (fecha.hpp:62)
+==4265==    by 0x40422D: _GLOBAL__sub_I_test_caso0_fecha_auto.cpp (test-caso0-fecha-auto.cpp:0)
+==4265==    by 0x451B2C: __libc_csu_init (in /home/poo/Descargas/Practicas-POO-master/P2/test-P2-auto)
+==4265==    by 0x59D4B27: (below main) (libc-start.c:266)
+==4265== 
+==4265== 16 bytes in 1 blocks are still reachable in loss record 84 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x45120F: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:19)
+==4265==    by 0x4042AE: __cxx_global_var_init.1 (fecha.hpp:62)
+==4265==    by 0x40435D: _GLOBAL__sub_I_test_caso0_cadena_auto.cpp (test-caso0-cadena-auto.cpp:0)
+==4265==    by 0x451B2C: __libc_csu_init (in /home/poo/Descargas/Practicas-POO-master/P2/test-P2-auto)
+==4265==    by 0x59D4B27: (below main) (libc-start.c:266)
+==4265== 
+==4265== 16 bytes in 1 blocks are still reachable in loss record 85 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x45120F: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:19)
+==4265==    by 0x4043DE: __cxx_global_var_init.1 (fecha.hpp:62)
+==4265==    by 0x404BAD: _GLOBAL__sub_I_test_caso1_2_auto.cpp (test-caso1-2-auto.cpp:0)
+==4265==    by 0x451B2C: __libc_csu_init (in /home/poo/Descargas/Practicas-POO-master/P2/test-P2-auto)
+==4265==    by 0x59D4B27: (below main) (libc-start.c:266)
+==4265== 
+==4265== 16 bytes in 1 blocks are still reachable in loss record 86 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x45120F: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:19)
+==4265==    by 0x404C7E: __cxx_global_var_init.1 (fecha.hpp:62)
+==4265==    by 0x404D2D: _GLOBAL__sub_I_test_auto.cpp (test-auto.cpp:0)
+==4265==    by 0x451B2C: __libc_csu_init (in /home/poo/Descargas/Practicas-POO-master/P2/test-P2-auto)
+==4265==    by 0x59D4B27: (below main) (libc-start.c:266)
+==4265== 
+==4265== 16 bytes in 1 blocks are still reachable in loss record 87 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x45120F: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:19)
+==4265==    by 0x404DAE: __cxx_global_var_init.1 (fecha.hpp:62)
+==4265==    by 0x404EAD: _GLOBAL__sub_I_usuario.cpp (usuario.cpp:0)
+==4265==    by 0x451B2C: __libc_csu_init (in /home/poo/Descargas/Practicas-POO-master/P2/test-P2-auto)
+==4265==    by 0x59D4B27: (below main) (libc-start.c:266)
+==4265== 
+==4265== 16 bytes in 1 blocks are still reachable in loss record 88 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x45120F: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:19)
+==4265==    by 0x404F3E: __cxx_global_var_init.1 (fecha.hpp:62)
+==4265==    by 0x40503D: _GLOBAL__sub_I_tarjeta.cpp (tarjeta.cpp:0)
+==4265==    by 0x451B2C: __libc_csu_init (in /home/poo/Descargas/Practicas-POO-master/P2/test-P2-auto)
+==4265==    by 0x59D4B27: (below main) (libc-start.c:266)
+==4265== 
+==4265== 16 bytes in 1 blocks are still reachable in loss record 89 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x45120F: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:19)
+==4265==    by 0x40507E: __cxx_global_var_init (fecha.hpp:62)
+==4265==    by 0x405178: _GLOBAL__sub_I_articulo.cpp (articulo.cpp:0)
+==4265==    by 0x451B2C: __libc_csu_init (in /home/poo/Descargas/Practicas-POO-master/P2/test-P2-auto)
+==4265==    by 0x59D4B27: (below main) (libc-start.c:266)
+==4265== 
+==4265== 16 bytes in 1 blocks are still reachable in loss record 90 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x45120F: Fecha::Invalida::Invalida(char const*, int) (fecha.cpp:19)
+==4265==    by 0x40520E: __cxx_global_var_init (fecha.hpp:62)
+==4265==    by 0x4052B8: _GLOBAL__sub_I_fecha.cpp (fecha.cpp:0)
+==4265==    by 0x451B2C: __libc_csu_init (in /home/poo/Descargas/Practicas-POO-master/P2/test-P2-auto)
+==4265==    by 0x59D4B27: (below main) (libc-start.c:266)
+==4265== 
+==4265== 16 bytes in 1 blocks are still reachable in loss record 91 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x511AB5C: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 16 bytes in 1 blocks are still reachable in loss record 92 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x511AB8D: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 16 bytes in 1 blocks are still reachable in loss record 93 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x511ACAB: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 16 bytes in 1 blocks are still reachable in loss record 94 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x511ACDC: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 16 bytes in 1 blocks are still reachable in loss record 95 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x511AD43: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 16 bytes in 1 blocks are still reachable in loss record 96 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x511AD74: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 16 bytes in 1 blocks are still reachable in loss record 97 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x511AE7D: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 16 bytes in 1 blocks are still reachable in loss record 98 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x511AEAE: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 16 bytes in 1 blocks are still reachable in loss record 99 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x5126059: std::__cxx11::moneypunct<wchar_t, false>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511AF5F: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 16 bytes in 1 blocks are still reachable in loss record 100 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x511AFC9: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 16 bytes in 1 blocks are still reachable in loss record 101 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x511AFFA: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 16 bytes in 1 blocks are still reachable in loss record 102 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x511B061: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 16 bytes in 1 blocks are still reachable in loss record 103 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x511B092: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 16 bytes in 1 blocks are still reachable in loss record 104 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x511B0F4: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 16 bytes in 1 blocks are still reachable in loss record 105 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x511B125: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 16 bytes in 1 blocks are still reachable in loss record 106 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x513265C: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B16A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 16 bytes in 1 blocks are still reachable in loss record 107 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x51326AC: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B16A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 16 bytes in 1 blocks are still reachable in loss record 108 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x51326FC: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B16A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 16 bytes in 1 blocks are still reachable in loss record 109 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x5123449: std::moneypunct<wchar_t, false>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x5132894: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B16A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 16 bytes in 1 blocks are still reachable in loss record 110 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x5132927: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B16A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 16 bytes in 1 blocks are still reachable in loss record 111 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x513296D: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B16A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 16 bytes in 1 blocks are still reachable in loss record 112 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x51329B3: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B16A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 20 bytes in 1 blocks are still reachable in loss record 113 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x5125A79: std::__cxx11::moneypunct<wchar_t, true>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511AFAD: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 20 bytes in 1 blocks are still reachable in loss record 114 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x5122E69: std::moneypunct<wchar_t, true>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x51328FA: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B16A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 24 bytes in 1 blocks are still reachable in loss record 115 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x511AAE3: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 24 bytes in 1 blocks are still reachable in loss record 116 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x511AB11: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 24 bytes in 1 blocks are still reachable in loss record 117 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x511ABBE: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 24 bytes in 1 blocks are still reachable in loss record 118 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x511AC11: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 24 bytes in 1 blocks are still reachable in loss record 119 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x511AC5E: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 24 bytes in 1 blocks are still reachable in loss record 120 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x511AE04: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 24 bytes in 1 blocks are still reachable in loss record 121 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x511AE32: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 24 bytes in 1 blocks are still reachable in loss record 122 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x511AEDF: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 24 bytes in 1 blocks are still reachable in loss record 123 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x511AF2D: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 24 bytes in 1 blocks are still reachable in loss record 124 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x511AF7B: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 24 bytes in 1 blocks are still reachable in loss record 125 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x51324B8: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B16A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 24 bytes in 1 blocks are still reachable in loss record 126 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x5132523: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B16A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 24 bytes in 1 blocks are still reachable in loss record 127 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x5132590: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B16A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 24 bytes in 1 blocks are still reachable in loss record 128 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x51325F6: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B16A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 24 bytes in 1 blocks are still reachable in loss record 129 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x5132799: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B16A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 24 bytes in 1 blocks are still reachable in loss record 130 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x51327FD: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B16A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 24 bytes in 1 blocks are still reachable in loss record 131 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x5132865: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B16A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 24 bytes in 1 blocks are still reachable in loss record 132 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x51328CB: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B16A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 32 bytes in 1 blocks are still reachable in loss record 133 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x511ADA5: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 32 bytes in 1 blocks are still reachable in loss record 134 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x511B0C3: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 32 bytes in 1 blocks are still reachable in loss record 135 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x513274C: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B16A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 32 bytes in 1 blocks are still reachable in loss record 136 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x51329F9: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B16A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 37 bytes in 1 blocks are still reachable in loss record 137 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x451508: Fecha::cadena() const (fecha.cpp:130)
+==4265==    by 0x411DD0: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:448)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 40 bytes in 1 blocks are still reachable in loss record 138 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x511B3C1: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 40 bytes in 1 blocks are still reachable in loss record 139 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x511AD0D: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 40 bytes in 1 blocks are still reachable in loss record 140 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x511B02B: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 96 bytes in 1 blocks are still reachable in loss record 141 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x511A91D: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 112 bytes in 1 blocks are still reachable in loss record 142 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x51252D1: std::__cxx11::moneypunct<char, false>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511AC42: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 112 bytes in 1 blocks are still reachable in loss record 143 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x5124DB1: std::__cxx11::moneypunct<char, true>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511AC8F: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 112 bytes in 1 blocks are still reachable in loss record 144 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x51226C1: std::moneypunct<char, false>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x51325BF: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B16A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 112 bytes in 1 blocks are still reachable in loss record 145 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x51221A1: std::moneypunct<char, true>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x5132625: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B16A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 144 bytes in 1 blocks are still reachable in loss record 146 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x51264B9: std::__cxx11::numpunct<char>::_M_initialize_numpunct(__locale_struct*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511AB40: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 144 bytes in 1 blocks are still reachable in loss record 147 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x51239A9: std::numpunct<char>::_M_initialize_numpunct(__locale_struct*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x51324E5: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B16A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 144 bytes in 1 blocks are still reachable in loss record 148 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x517BAD9: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x517BBD3: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x51881A4: std::ostream& std::ostream::_M_insert<long>(long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x43596B: test_p2(_fctkern_t*) (test-caso1-2-auto.cpp:288)
+==4265==    by 0x44174D: main (test-auto.cpp:97)
+==4265== 
+==4265== 160 bytes in 1 blocks are still reachable in loss record 149 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x5126089: std::__cxx11::moneypunct<wchar_t, false>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511AF5F: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 160 bytes in 1 blocks are still reachable in loss record 150 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x5125AA9: std::__cxx11::moneypunct<wchar_t, true>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511AFAD: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 160 bytes in 1 blocks are still reachable in loss record 151 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x5123479: std::moneypunct<wchar_t, false>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x5132894: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B16A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 160 bytes in 1 blocks are still reachable in loss record 152 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x5122E99: std::moneypunct<wchar_t, true>::_M_initialize_moneypunct(__locale_struct*, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x51328FA: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B16A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 336 bytes in 1 blocks are still reachable in loss record 153 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x5126749: std::__cxx11::numpunct<wchar_t>::_M_initialize_numpunct(__locale_struct*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511AE61: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 336 bytes in 1 blocks are still reachable in loss record 154 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x5123C39: std::numpunct<wchar_t>::_M_initialize_numpunct(__locale_struct*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x51327C6: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B16A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 368 bytes in 1 blocks are still reachable in loss record 155 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x511A899: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 368 bytes in 1 blocks are still reachable in loss record 156 of 174
+==4265==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x511A8EA: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 376 bytes in 1 blocks are still reachable in loss record 157 of 174
+==4265==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x59E2ED1: duplocale (duplocale.c:53)
+==4265==    by 0x513BDA8: std::ctype<char>::ctype(__locale_struct*, unsigned short const*, bool, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511AAC7: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 376 bytes in 1 blocks are still reachable in loss record 158 of 174
+==4265==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x59E2ED1: duplocale (duplocale.c:53)
+==4265==    by 0x511427F: std::codecvt<char, char, __mbstate_t>::codecvt(__locale_struct*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511AAF5: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 376 bytes in 1 blocks are still reachable in loss record 159 of 174
+==4265==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x59E2ED1: duplocale (duplocale.c:53)
+==4265==    by 0x511ABF0: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 376 bytes in 1 blocks are still reachable in loss record 160 of 174
+==4265==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x59E2ED1: duplocale (duplocale.c:53)
+==4265==    by 0x51268CE: std::__timepunct<char>::_M_initialize_timepunct(__locale_struct*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x5177607: std::__timepunct<char>::__timepunct(__locale_struct*, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511AD27: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 376 bytes in 1 blocks are still reachable in loss record 161 of 174
+==4265==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x59E2ED1: duplocale (duplocale.c:53)
+==4265==    by 0x5151C30: std::__cxx11::messages<char>::messages(__locale_struct*, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511ADBA: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 376 bytes in 1 blocks are still reachable in loss record 162 of 174
+==4265==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x59E2ED1: duplocale (duplocale.c:53)
+==4265==    by 0x512CFBF: std::ctype<wchar_t>::ctype(__locale_struct*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511ADE8: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 376 bytes in 1 blocks are still reachable in loss record 163 of 174
+==4265==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x59E2ED1: duplocale (duplocale.c:53)
+==4265==    by 0x51142FF: std::codecvt<wchar_t, char, __mbstate_t>::codecvt(__locale_struct*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511AE16: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 376 bytes in 1 blocks are still reachable in loss record 164 of 174
+==4265==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x59E2ED1: duplocale (duplocale.c:53)
+==4265==    by 0x511AF0C: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 376 bytes in 1 blocks are still reachable in loss record 165 of 174
+==4265==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x59E2ED1: duplocale (duplocale.c:53)
+==4265==    by 0x512724D: std::__timepunct<wchar_t>::_M_initialize_timepunct(__locale_struct*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x519D997: std::__timepunct<wchar_t>::__timepunct(__locale_struct*, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B045: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 376 bytes in 1 blocks are still reachable in loss record 166 of 174
+==4265==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x59E2ED1: duplocale (duplocale.c:53)
+==4265==    by 0x515C150: std::__cxx11::messages<wchar_t>::messages(__locale_struct*, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B0D8: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 376 bytes in 1 blocks are still reachable in loss record 167 of 174
+==4265==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x59E2ED1: duplocale (duplocale.c:53)
+==4265==    by 0x5132555: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B16A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 376 bytes in 1 blocks are still reachable in loss record 168 of 174
+==4265==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x59E2ED1: duplocale (duplocale.c:53)
+==4265==    by 0x5177CF0: std::messages<char>::messages(__locale_struct*, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x5132762: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B16A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 376 bytes in 1 blocks are still reachable in loss record 169 of 174
+==4265==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x59E2ED1: duplocale (duplocale.c:53)
+==4265==    by 0x513282A: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B16A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 376 bytes in 1 blocks are still reachable in loss record 170 of 174
+==4265==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x59E2ED1: duplocale (duplocale.c:53)
+==4265==    by 0x519E070: std::messages<wchar_t>::messages(__locale_struct*, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x5132A0F: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B16A: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 400 bytes in 1 blocks are still reachable in loss record 171 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x5126FE9: std::__timepunct<char>::_M_initialize_timepunct(__locale_struct*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x5177607: std::__timepunct<char>::__timepunct(__locale_struct*, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511AD27: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 400 bytes in 1 blocks are still reachable in loss record 172 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x5127959: std::__timepunct<wchar_t>::_M_initialize_timepunct(__locale_struct*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x519D997: std::__timepunct<wchar_t>::__timepunct(__locale_struct*, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B045: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 576 bytes in 1 blocks are still reachable in loss record 173 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x511AAB0: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== 1,344 bytes in 1 blocks are still reachable in loss record 174 of 174
+==4265==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4265==    by 0x511ADD6: std::locale::_Impl::_Impl(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x511B3D4: std::locale::locale(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==4265==    by 0x451577: Fecha::cadena() const (fecha.cpp:133)
+==4265==    by 0x451893: operator<<(std::ostream&, Fecha const&) (fecha.cpp:167)
+==4265==    by 0x4158E3: test_fecha(_fctkern_t*) (test-caso0-fecha-auto.cpp:632)
+==4265==    by 0x441735: main (test-auto.cpp:94)
+==4265== 
+==4265== LEAK SUMMARY:
+==4265==    definitely lost: 103 bytes in 24 blocks
+==4265==    indirectly lost: 0 bytes in 0 blocks
+==4265==      possibly lost: 0 bytes in 0 blocks
+==4265==    still reachable: 12,730 bytes in 150 blocks
+==4265==         suppressed: 0 bytes in 0 blocks
+==4265== 
+==4265== For counts of detected and suppressed errors, rerun with: -v
+==4265== ERROR SUMMARY: 24 errors from 24 contexts (suppressed: 0 from 0)

@@ -12,12 +12,3 @@ std::ostream& operator <<(std::ostream& os, Articulo& a){
 	os<<"["<<a.referencia()<<"] \""<<a.titulo()<<"\", "<<a.f_publi().anno()<<". "<<std::fixed<<std::setprecision(2)<<a.precio()<<" €";
 	return os;
 }
-/*
-int referencia() const;
-Cadena titulo() const;
-Fecha f_publi() const;
-double precio() const;
-double& precio();
-int stock() const;
-int& stock();
-*/

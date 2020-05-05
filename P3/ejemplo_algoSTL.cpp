@@ -9,7 +9,7 @@
  * ©2014-2020 Gerardo
  */
 
-#include <vector>		// vector
+/*#include <vector>		// vector
 #include <algorithm>		// copy, count_if
 #include <utility>		// bind2nd, binary_function
 #include <iostream>		// cout, operator <<, endl
@@ -29,13 +29,13 @@ using namespace std;
   << " que " << (c) << endl
 
 inline bool mayor_q_7(int x) { return x > 7; } // Función para el 1er. caso
-
+*/
 /***
  * Dado un vector de enteros, imprimirlo de varias formas y contar
  * cuántos elementos son mayores que cierto valor dado,
  * usando el algoritmo count_if de varias maneras.
  */
-
+/*
 int main()
 {
 #ifndef __clang__
@@ -53,7 +53,7 @@ int main()
   int vv[] = { -32, 2, 1, 5, 7, 9, 3, 0, 4, 2, -32 };
   vector<int> v(vv, vv + sizeof vv / sizeof(int));
   // Alternativa 2: contenedor vacío + inserciones, en este caso con push_back
-  vector<int> v(9); v.push_back(-32); v.push_back(2); /*...*/; v.push_back(-32);
+  vector<int> v(9); v.push_back(-32); v.push_back(2); *//*...*//*; v.push_back(-32);
 #endif
 
   // Impresión del vector: 4 formas
@@ -147,4 +147,4 @@ int main()
   cout << "7- Función anónima (lambda).................: ";
   n = count_if(begin(v), end(v),f);
   cuantos_hay_mayores_que(0);
-}
+}*/

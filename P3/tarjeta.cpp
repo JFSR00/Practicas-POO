@@ -10,7 +10,7 @@ bool luhn(const Cadena&);
 Numero::Numero(const Cadena& c):num_(c){
 	if(c.length()==0){throw Numero::Incorrecto(LONGITUD);}
 
-	Cadena::iterator end{std::remove_if(num_.begin(), num_.end(), isspace)};
+	Cadena::iterator end{std::remove_if(num_.begin(), num_.end(), [](char* x){return (x==' '||x=='\t'||x=='\n'||x=='\v'||x=='\f'||x=='\r')})};
 
 	Cadena aux{num_.substr(0,end-num_.begin())};
 

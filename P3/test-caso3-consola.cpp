@@ -5,7 +5,7 @@
  * ©2009-2020 Inma, Juanma, Fidel, Gerardo
  */
 
-#include <cstdlib>
+/*#include <cstdlib>
 #include <exception>
 #include <iostream>
 #include <locale>
@@ -185,4 +185,4 @@ int main()
   }
   std::cout << "\nNúmero total de pedidos: "
 	    << Pedido::n_total_pedidos() << std::endl;
-}
+}*/

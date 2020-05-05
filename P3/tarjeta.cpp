@@ -1,5 +1,5 @@
 ﻿#include <algorithm>
-#include <cctype>
+#include <functional>
 #include <iomanip>
 #include <iostream>
 #include "tarjeta.hpp"
@@ -7,15 +7,21 @@
 // ------------| Clase Numero |------------
 bool luhn(const Cadena&);
 
+struct EsDigito{
+	bool operator() (const char& c) const {return ((c>='0') && (c<='9'));}
+	typedef char argument_type;
+};
+
 Numero::Numero(const Cadena& c):num_(c){
+	std::unary_negate<EsDigito> NoEsDigito ((EsDigito()));
 	if(c.length()==0){throw Numero::Incorrecto(LONGITUD);}
 
-	Cadena::iterator end{std::remove_if(num_.begin(), num_.end(), [](char* x){return (x==' '||x=='\t'||x=='\n'||x=='\v'||x=='\f'||x=='\r')})};
+	Cadena::iterator end{std::remove_if(num_.begin(), num_.end(), [](char x){return (x==' '||x=='\t'||x=='\n'||x=='\v'||x=='\f'||x=='\r');})}; // Hago todas estas comaparaciones para que sea equivalente a "isspace", siendo así más correcto
 
 	Cadena aux{num_.substr(0,end-num_.begin())};
 
 	if(aux.length() < 13 || aux.length() > 19){throw Numero::Incorrecto(LONGITUD);}
-	if((std::count_if(aux.begin(), aux.end(), isdigit)) != aux.length()){throw Numero::Incorrecto(DIGITOS);}
+	if(aux.end()!=std::find_if(aux.begin(),aux.end(),NoEsDigito)){throw Numero::Incorrecto(DIGITOS);}
 
 	if(!luhn(aux)){throw Numero::Incorrecto(NO_VALIDO);}
 	num_ = aux;

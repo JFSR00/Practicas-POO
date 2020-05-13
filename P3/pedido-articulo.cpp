@@ -29,18 +29,16 @@ std::ostream& operator <<(std::ostream& os, Pedido_Articulo::ItemsPedido& itm_){
 }
 
 std::ostream& operator <<(std::ostream& os, Pedido_Articulo::Pedidos& ped_){
-	unsigned count_=0, cantTotal_=0;
+	unsigned cantTotal_=0;
 	double total_=0;
-	std::ostream aux_os;
+	os<<"[Pedidos: "<<ped_.size()<<"]\n=================================================================="
+	<<"PVP\tCantidad\tFecha de venta"<<"==================================================================\n";
 	for(auto i: ped_){
-		aux_os<<i.second<<i.first->fecha()<<std::endl;
+		os<<i.second<<i.first->fecha()<<std::endl;
 		cantTotal_+=i.second.cantidad();
 		total_+=i.second.precio_venta();
-		count_++;
 	}
-	os<<"[Pedidos: "<<count_<<"]\n=================================================================="
-	<<"PVP\tCantidad\tFecha de venta"<<"==================================================================\n"
-	<<aux_os<<"=================================================================="<<std::fixed<<std::setprecision(2)
+	os<<"=================================================================="<<std::fixed<<std::setprecision(2)
 	<<total_<<" €\t"<<cantTotal_;
 	return os;
 }

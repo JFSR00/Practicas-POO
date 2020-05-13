@@ -21,9 +21,11 @@ public:
 
 	double precio_venta() const;
 	unsigned cantidad() const;
+
 private:
 	double precio_venta_;
 	unsigned cantidad_;
+
 };
 
 inline double LineaPedido::precio_venta() const{return precio_venta_;}
@@ -34,11 +36,13 @@ std::ostream& operator <<(std::ostream&, LineaPedido&);
 // ---------------| Clase Pedido_Articulo |---------------
 
 class OrdenaPedidos{
-
+public:
+	bool operator()(Pedido*, Pedido*) const;
 };
 
 class OrdenaArticulos{
-
+public:
+	bool operator()(Articulo*, Articulo*) const;
 };
 
 class Pedido_Articulo{
@@ -49,82 +53,66 @@ public:
 	void pedir(Pedido&, Articulo&, double, unsigned =1);
 	void pedir(Articulo&, Pedido&, double, unsigned =1);
 
+	ItemsPedido detalle(Pedido&) const;
+	Pedidos ventas(Articulo&) const;
+
 private:
 	std::map<Pedido*, ItemsPedido, OrdenaPedidos> PedArt;
 	std::map<Articulo*, Pedidos, OrdenaArticulos> ArtPed;
 };
 
+inline bool OrdenaPedidos::operator ()(Pedido* p1, Pedido* p2) const{return p1->numero()>p2->numero();}
+inline bool OrdenaArticulos::operator ()(Articulo* a1, Articulo* a2) const{return a1->referencia()>a2->referencia();}
+
+inline void Pedido_Articulo::pedir(Articulo& a,Pedido& p, double pr, unsigned c){pedir(p,a,pr,c);}
+inline Pedido_Articulo::ItemsPedido Pedido_Articulo::detalle(Pedido& p) const{return PedArt.find(&p)->second;}
+inline Pedido_Articulo::Pedidos Pedido_Articulo::ventas(Articulo& a) const{return ArtPed.find(&a)->second;}
+
 /*
-Los atributos de la clase serán dos diccionarios, uno por cada sentido de la relación:
-	• El que representa la asociación desde Pedido a Articulo será del tipo
-	std::map<Pedido*, ItemsPedido, OrdenaPedidos>
-	donde ItemsPedido será un tipo público de la clase Pedido_Articulo definido como
-	un diccionario std::map<Articulo*, LineaPedido, OrdenaArticulos>.
-	OrdenaPedidos es una clase de objetos función para ordenar los pedidos ascendentemente
-	por número, y OrdenaArticulos es otra clase de objetos función para
-	ordenar los artículos ascendentemente por referencia.
+Se sobrecargarÃ¡ el operador de inserciÃ³n en flujo de salida << para los tipos Pedido_
+Articulo::ItemsPedido y Pedido_Articulo::Pedidos. El primero, ademÃ¡s de los detalles
+del pedido, mostrarÃ¡ el importe total y el nÃºmero de ejemplares del pedido. El segundo
+mostrarÃ¡ precio, cantidad y fecha de cada venta y el importe total de las ventas del
+artÃ­culo. Ejemplo de salida de los detalles de un pedido:
 
-	• La asociación en el sentido inverso (desde Articulo a Pedido) se representará por un
-	diccionario del tipo std::map<Articulo*, Pedidos, OrdenaArticulos>, donde
-	Pedidos será un tipo público de la clase Pedido_Articulo definido como
-	std::map<Pedido*, LineaPedido, OrdenaPedidos>.
-
-Para la creación de enlaces bidireccionales entre pedidos y artículos la clase proporcionará
-el método pedir, que tendrá cuatro parámetros en el orden: pedido, articulo,
-precio, cantidad (por omisión, 1). Este método se sobrecargará invirtiendo los dos primeros
-parámetros. No devolverá nada.
-
-El método detalle devolverá la colección de artículos de un pedido (que se le pasa,
-por referencia) junto a su precio de venta y cantidad comprada; o sea, una referencia
-constante a ItemsPedido.
-
-Para obtener los enlaces en el sentido contrario se proporcionará un método ventas, que
-devolverá todos los pedidos de un artículo (que se le pasa, por referencia) con precio
-de venta y cantidad; o sea, un Pedidos.
-
-Se sobrecargará el operador de inserción en flujo de salida << para los tipos Pedido_
-Articulo::ItemsPedido y Pedido_Articulo::Pedidos. El primero, además de los detalles
-del pedido, mostrará el importe total y el número de ejemplares del pedido. El segundo
-mostrará precio, cantidad y fecha de cada venta y el importe total de las ventas del
-artículo. Ejemplo de salida de los detalles de un pedido:
-
-PVP 	Cantidad	Artículo
+PVP Cantidad ArtÃ­culo
 ==================================================================
-35,20 €	2			[100] "Programación Orientada a Objetos"
-29,95 €	1			[110] "Fundamentos de C++"
+35,20 â‚¬ 2 [100] "ProgramaciÃ³n Orientada a Objetos"
+29,95 â‚¬ 1 [110] "Fundamentos de C++"
 ==================================================================
-Total	100,35 €
+Total 100,35 â‚¬
 
 Ejemplo de salida de pedidos:
 
 [Pedidos: 3]
 ==================================================================
-PVP		Cantidad	Fecha de venta
+PVP Cantidad Fecha de venta
 ==================================================================
-39,95 €	2			miércoles 19 de abril de 2017
-34,90 €	1			jueves 20 de abril de 2017
-34,90 €	1			lunes 5 de abril de 2010
+39,95 â‚¬ 2 miÃ©rcoles 19 de abril de 2017
+6
+34,90 â‚¬ 1 jueves 20 de abril de 2017
+34,90 â‚¬ 1 lunes 5 de abril de 2010
 ==================================================================
-149,70 €	4
+149,70 â‚¬ 4
 
-Un método llamado mostrarDetallePedidos imprimirá en el flujo de salida proporcionado
-el detalle de todos los pedidos realizados hasta la fecha, así como el importe de todas
+Un mÃ©todo llamado mostrarDetallePedidos imprimirÃ¡ en el flujo de salida proporcionado
+el detalle de todos los pedidos realizados hasta la fecha, asÃ­ como el importe de todas
 las ventas. Ejemplo:
 
-Pedido núm. 1
+Pedido nÃºm. 1
 Cliente: lucas Fecha: viernes 10 de marzo de 2017
 
 detalle de ese pedido, como en ejemplo anterior
 Resto de los pedidos ...
 
-TOTAL VENTAS 981,60 €
+TOTAL VENTAS 981,60 â‚¬
 
-El método mostrarVentasArticulos visualizará en el flujo de salida proporcionado todas
-las ventas agrupadas por artículos. Ejemplo:
+El mÃ©todo mostrarVentasArticulos visualizarÃ¡ en el flujo de salida proporcionado todas
+las ventas agrupadas por artÃ­culos. Ejemplo:
 
 Ventas de [110] "Fundamentos de C++"
 
-pedidos de ese artículo, como en ejemplo anterior
-Resto de los artículos vendidos ...
+pedidos de ese artÃ­culo, como en ejemplo anterior
+Resto de los artÃ­culos vendidos ...
  */
 #endif /* PEDIDO_ARTICULO_HPP_ */

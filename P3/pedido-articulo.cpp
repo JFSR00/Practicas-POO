@@ -10,3 +10,7 @@ std::ostream& operator <<(std::ostream& os, LineaPedido& l){
 }
 
 // ---------------| Clase Pedido_Articulo |---------------
+void Pedido_Articulo::pedir(Pedido& p, Articulo& a, double pr, unsigned c){
+	PedArt[&p].insert(std::make_pair(&a,LineaPedido(pr,c)));
+	ArtPed[&a].insert(std::make_pair(&p,LineaPedido(pr,c)));
+}

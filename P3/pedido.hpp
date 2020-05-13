@@ -13,21 +13,26 @@
 class Pedido{
 public:
 	Pedido();
+
+	int numero() const;
+	const Tarjeta* tarjeta();
+	Fecha fecha() const;
+	double total() const;
+
 private:
-	int N_pedidos;
+	int N_pedido;
 	Tarjeta* tarjeta_;
 	Fecha fecha_;
 	double total_;
 	int num_;
 };
+inline int Pedido::numero() const{return N_pedido;}
+inline const Tarjeta* Pedido::tarjeta(){return tarjeta_;}
+inline Fecha Pedido::fecha() const{return fecha_;}
+inline double Pedido::total() const{return total_;}
 
 #endif /* PEDIDO_HPP_ */
-/*
-int numero() const
-const Tarjeta* tarjeta()
-Fecha fecha() const
-double total() const
- */
+
 /*
 El constructor realiza la compra de los artículos, para lo cual utiliza cinco parámetros:
 

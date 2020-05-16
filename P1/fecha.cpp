@@ -127,7 +127,6 @@ Fecha Fecha::operator -(const int n) const{
 }
 
 const char* Fecha::cadena() const noexcept{
-	static char *s=new char[sizeof("miércoles 12 de septiembre de 2001")+1]{'\0'};
 	tm f{0};
 
 	std::locale::global(std::locale("es_ES.UTF-8"));

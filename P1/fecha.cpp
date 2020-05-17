@@ -127,6 +127,7 @@ Fecha Fecha::operator -(const int n) const{
 }
 
 const char* Fecha::cadena() const noexcept{
+	static char *s=new char[sizeof("miércoles 12 de septiembre de 2001")+1]{'\0'};
 	tm f{0};
 
 	std::locale::global(std::locale("es_ES.UTF-8"));
@@ -138,6 +139,8 @@ const char* Fecha::cadena() const noexcept{
 	mktime(&f);
 	strftime(s,sizeof("miércoles 12 de septiembre de 2001")+1,"%A %e de %B de %Y",&f);
 
+	std::locale::global(std::locale("C"));	// De esta forma se solucionan algunos errores de valgrind
+											// según leí en algunos foros, y realmente da resultados
 	return s;
 }
 

@@ -62,7 +62,7 @@ static const Fecha::Invalida ERROR_DIA{"Dia erroneo"};
 static const Fecha::Invalida ERROR_MES{"Mes erroneo"};
 static const Fecha::Invalida ERROR_ANNO{"Anno erroneo"};
 
-inline const char* Fecha::Invalida::por_que() const {return error_;};
+inline const char* Fecha::Invalida::por_que() const {return error_;}
 
 // Sobrecarga de operadores booleanos
 bool const operator <(const Fecha&, const Fecha&) noexcept;

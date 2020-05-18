@@ -9,21 +9,19 @@ class Fecha {
 public:
 	class Invalida{
 		char *error_;
-		int error_code;
 	public:
-		Invalida(const char*, int);
-		const char* por_que() const {return error_;};
-		int const e_code() const {return error_code;};
+		Invalida(const char*);
+		const char* por_que() const;
 	};
 
-	// Años máximo y mínimo:
+	// Aï¿½os mï¿½ximo y mï¿½nimo:
 	static const int AnnoMaximo=2037, AnnoMinimo=1902;
 
 	// Constructores
 	explicit Fecha(int d=0, int m=0, int a=0);
 	Fecha(const char*);
 
-	// Métodos de obtención de datos
+	// Mï¿½todos de obtenciï¿½n de datos
 	int const dia() const noexcept {return d;};
 	int const mes() const noexcept {return m;};
 	int const anno() const noexcept {return a;};
@@ -38,7 +36,7 @@ public:
 	Fecha operator +(const int) const;
 	Fecha operator -(const int) const;
 
-	// Declaración de sobrecarga de operadores booleanos
+	// Declaraciï¿½n de sobrecarga de operadores booleanos
 	friend bool const operator <(const Fecha&, const Fecha&) noexcept;
 	friend bool const operator <=(const Fecha&, const Fecha&) noexcept;
 	friend bool const operator >(const Fecha&, const Fecha&) noexcept;
@@ -46,23 +44,25 @@ public:
 	friend bool const operator ==(const Fecha&, const Fecha&) noexcept;
 	friend bool const operator !=(const Fecha&, const Fecha&) noexcept;
 
-	// Conversión a cadena
+	// Conversiï¿½n a cadena
 	const char* cadena() const noexcept;
 
 private:
 	int d, m, a;
 
-	// Métodos para la validación de la fecha y la construcción de la fecha del día actual
+	// Mï¿½todos para la validaciï¿½n de la fecha y la construcciï¿½n de la fecha del dï¿½a actual
 	void f_hoy() noexcept;
 	void const verif_fecha() const;
 
 };
 
 // Mensajes de error:
-static const Fecha::Invalida ERROR_FORMATO{"Formato erroneo",0};
-static const Fecha::Invalida ERROR_DIA{"Dia erroneo",1};
-static const Fecha::Invalida ERROR_MES{"Mes erroneo",2};
-static const Fecha::Invalida ERROR_ANNO{"Anno erroneo",3};
+static const Fecha::Invalida ERROR_FORMATO{"Formato erroneo"};
+static const Fecha::Invalida ERROR_DIA{"Dia erroneo"};
+static const Fecha::Invalida ERROR_MES{"Mes erroneo"};
+static const Fecha::Invalida ERROR_ANNO{"Anno erroneo"};
+
+inline const char* Fecha::Invalida::por_que() const {return error_;};
 
 // Sobrecarga de operadores booleanos
 bool const operator <(const Fecha&, const Fecha&) noexcept;
@@ -72,7 +72,7 @@ bool const operator >=(const Fecha&, const Fecha&) noexcept;
 bool const operator ==(const Fecha&, const Fecha&) noexcept;
 bool const operator !=(const Fecha&, const Fecha&) noexcept;
 
-// Sobrecarga operadores de inserción y extracción
+// Sobrecarga operadores de inserciï¿½n y extracciï¿½n
 std::ostream& operator <<(std::ostream&, const Fecha&);
 std::istream& operator >>(std::istream&, Fecha&);
 

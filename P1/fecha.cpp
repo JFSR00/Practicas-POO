@@ -16,7 +16,7 @@ Fecha::Fecha(const char* str){
 	else{throw Fecha::Invalida(ERROR_FORMATO);}
 }
 
-Fecha::Invalida::Invalida(const char* str, int c):error_(new char[strlen(str)+1]),error_code(c){strcpy(error_,str);}
+Fecha::Invalida::Invalida(const char* str):error_(new char[strlen(str)+1]){strcpy(error_,str);}
 
 void Fecha::f_hoy() noexcept{
 	time_t t=time(nullptr);

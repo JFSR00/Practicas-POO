@@ -11,6 +11,10 @@ std::ostream& operator <<(std::ostream& os, LineaPedido& l){
 }
 
 // ---------------| Clase Pedido_Articulo |---------------
+
+bool OrdenaPedidos::operator ()(Pedido* p1, Pedido* p2) const{return p1->numero() > p2->numero();}
+bool OrdenaArticulos::operator ()(Articulo* a1, Articulo* a2) const{return a1->referencia()>a2->referencia();}
+
 void Pedido_Articulo::pedir(Pedido& p, Articulo& a, double pr, unsigned c){
 	PedArt[&p].insert(std::make_pair(&a,LineaPedido(pr,c)));
 	ArtPed[&a].insert(std::make_pair(&p,LineaPedido(pr,c)));

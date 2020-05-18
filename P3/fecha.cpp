@@ -16,7 +16,7 @@ Fecha::Fecha(const char* str){
 	else{throw Fecha::Invalida(ERROR_FORMATO);}
 }
 
-Fecha::Invalida::Invalida(const char* str, int c):error_(new char[strlen(str)+1]),error_code(c){strcpy(error_,str);}
+Fecha::Invalida::Invalida(const char* str):error_(new char[strlen(str)+1]){strcpy(error_,str);}
 
 void Fecha::f_hoy() noexcept{
 	time_t t=time(nullptr);
@@ -139,6 +139,8 @@ const char* Fecha::cadena() const noexcept{
 	mktime(&f);
 	strftime(s,sizeof("miércoles 12 de septiembre de 2001")+1,"%A %e de %B de %Y",&f);
 
+	std::locale::global(std::locale("C"));	// De esta forma se solucionan algunos errores de valgrind
+											// según leí en algunos foros, y realmente da resultados
 	return s;
 }
 
@@ -177,6 +179,7 @@ std::istream& operator >>(std::istream& is, Fecha& f){
 	f = Fecha(str);
 	}catch(Fecha::Invalida& e){
 		is.setstate(std::ios_base::failbit);
+		delete[] str;
 		throw e;
 	}
 

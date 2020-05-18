@@ -31,10 +31,4 @@ private:
 	std::map<Pedido*, Usuario*> PedUsu;
 };
 
-inline void Usuario_Pedido::asocia(Usuario& u, Pedido& p){UsuPed[&u].insert(&p); PedUsu[&p] = &u;}
-inline void Usuario_Pedido::asocia(Pedido& p, Usuario& u){asocia(u,p);}
-
-inline const Usuario_Pedido::Pedidos& Usuario_Pedido::pedidos(Usuario& u){return UsuPed[&u];}
-inline const Usuario* Usuario_Pedido::cliente(Pedido& p){return PedUsu[&p];}
-
 #endif /* USUARIO_PEDIDO_HPP_ */

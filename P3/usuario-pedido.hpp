@@ -13,6 +13,7 @@
 #include "usuario.hpp"
 #include "pedido.hpp"
 
+class Usuario;
 class Pedido;
 
 class Usuario_Pedido{

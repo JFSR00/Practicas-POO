@@ -13,7 +13,7 @@ public:
 	Articulo(int,Cadena,Fecha,double,int =0);
 	Articulo(Cadena,Cadena,Fecha,double,int =0);
 
-	// DeclaraciÃ³n de mÃ©todos consultores y modificadores
+	// Declaración de métodos consultores y modificadores
 	int referencia() const;
 	Cadena titulo() const;
 	Fecha f_publi() const;
@@ -21,9 +21,6 @@ public:
 	double& precio();
 	int stock() const;
 	int& stock();
-
-	// DeclaraciÃ³n de sobrecarga de oerador <<
-	//friend std::ostream& operator <<(std::ostream&, Articulo&);
 
 private:
 	// Atributos de la clase
@@ -43,7 +40,7 @@ inline double& Articulo::precio(){return prec_;}
 inline int Articulo::stock() const{return stock_;}
 inline int& Articulo::stock(){return stock_;}
 
-// Sobrecarga de oerador <<
+// Sobrecarga de operador <<
 std::ostream& operator <<(std::ostream&, Articulo&);
 
 #endif

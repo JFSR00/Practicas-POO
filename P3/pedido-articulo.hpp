@@ -37,12 +37,12 @@ std::ostream& operator <<(std::ostream&, LineaPedido&);
 
 class OrdenaPedidos{
 public:
-	bool operator()(Pedido*, Pedido*) const;
+	bool operator()(const Pedido*, const Pedido*) const;
 };
 
 class OrdenaArticulos{
 public:
-	bool operator()(Articulo*, Articulo*) const;
+	bool operator()(const Articulo*, const Articulo*) const;
 };
 
 class Pedido_Articulo{
@@ -64,8 +64,8 @@ private:
 	std::map<Articulo*, Pedidos, OrdenaArticulos> ArtPed;
 };
 
-inline bool OrdenaPedidos::operator ()(Pedido* p1, Pedido* p2) const{return p1->numero()>p2->numero();}
-inline bool OrdenaArticulos::operator ()(Articulo* a1, Articulo* a2) const{return a1->referencia()>a2->referencia();}
+inline bool OrdenaPedidos::operator ()(const Pedido* p1, const Pedido* p2) const{return p1->numero() > p2->numero();}
+inline bool OrdenaArticulos::operator ()(const Articulo* a1, const Articulo* a2) const{return a1->referencia()>a2->referencia();}
 
 inline void Pedido_Articulo::pedir(Articulo& a,Pedido& p, double pr, unsigned c){pedir(p,a,pr,c);}
 inline Pedido_Articulo::ItemsPedido Pedido_Articulo::detalle(Pedido& p) const{return PedArt.find(&p)->second;}

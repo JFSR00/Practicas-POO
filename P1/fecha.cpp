@@ -179,6 +179,7 @@ std::istream& operator >>(std::istream& is, Fecha& f){
 	f = Fecha(str);
 	}catch(Fecha::Invalida& e){
 		is.setstate(std::ios_base::failbit);
+		delete[] str;
 		throw e;
 	}
 

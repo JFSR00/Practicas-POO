@@ -39,6 +39,7 @@ Cadena& Cadena::operator =(const Cadena& cad) noexcept{
 
 Cadena& Cadena::operator =(Cadena&& cad) noexcept{
 	if(cad!=*this){
+		delete[] s_;
 		s_ = cad.s_;
 		tam_ = cad.tam_;
 		cad.s_ = nullptr;

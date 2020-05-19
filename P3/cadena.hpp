@@ -15,26 +15,26 @@ public:
 	Cadena(const char*);
 	~Cadena() noexcept;
 
-	// Sobrecarga de operadores de asignaci髇
+	// Sobrecarga de operadores de asignaci贸n
 	Cadena& operator =(const Cadena&) noexcept;
 	Cadena& operator =(Cadena&&) noexcept;
 	Cadena& operator =(const char*) noexcept;
 
-	// Conversi髇 impl韈ita a cadena
+	// Conversi贸n impl铆cita a cadena
 	const char* c_str() const noexcept;
 
-	// M閠odos de obtenci髇 de datos de la cadena
+	// M茅todos de obtenci贸n de datos de la cadena
 	unsigned length() const noexcept;
 	Cadena substr(unsigned, unsigned) const;
 
-	// Sobrecarga de operadores de concatenaci髇
+	// Sobrecarga de operadores de concatenaci贸n
 	Cadena& operator +=(const Cadena&) noexcept;
 	Cadena& operator +=(const char*) noexcept;
 	Cadena const operator +(const Cadena&) const noexcept;
 
-	// Sobrecarga de operador [] para obtenci髇 de caracter a partir de 韓dice
-	// y m閠odo "at" para realizar la misma operaci髇 pero comprobando que el 韓dice
-	// se馻la un car醕ter dentro de la cadena
+	// Sobrecarga de operador [] para obtenci贸n de caracter a partir de 铆ndice
+	// y m茅todo "at" para realizar la misma operaci贸n pero comprobando que el 铆ndice
+	// se帽ala un car谩cter dentro de la cadena
 	char const operator [](unsigned) const noexcept;
 	char& operator [](unsigned) noexcept;
 	char const at(unsigned) const;
@@ -96,11 +96,11 @@ bool operator !=(const Cadena&, const Cadena&) noexcept;
 std::ostream& operator <<(std::ostream&, const Cadena&);
 std::istream& operator >>(std::istream&, Cadena&);
 
-// Funci髇 hash
+// Funci贸n hash
 namespace std{	// Estaremos dentro del espacio de nombres std
-	template<>	// Es una especializaci髇 de una plantilla para Cadena
+	template<>	// Es una especializaci贸n de una plantilla para Cadena
 	struct hash<Cadena>{	// Es una clase con solo un operador publico
-		size_t operator() (const Cadena& cad) const	// El operador funci髇
+		size_t operator() (const Cadena& cad) const	// El operador funci贸n
 		{
 			hash<string> hs;				// Creamos un objeto hash de string
 			const char* p = cad.c_str();	// Obtenemos la cadena de la Cadena

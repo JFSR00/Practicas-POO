@@ -68,7 +68,7 @@ const Tarjeta::Tipo Tarjeta::tipo() const{
 std::ostream& operator <<(std::ostream& os, const Tarjeta::Tipo& t){
 	switch(t){
 	case Tarjeta::Otro:
-		os<<"Otro";
+		os<<"Tipo indeterminado";
 		break;
 	case Tarjeta::VISA:
 		os<<"VISA";

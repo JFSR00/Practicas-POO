@@ -34,7 +34,7 @@ private:
 inline double LineaPedido::precio_venta() const{return precio_venta_;}
 inline unsigned LineaPedido::cantidad() const{return cantidad_;}
 
-std::ostream& operator <<(std::ostream&, LineaPedido&);
+std::ostream& operator <<(std::ostream&, const LineaPedido&);
 
 // ---------------| Clase Pedido_Articulo |---------------
 
@@ -67,11 +67,7 @@ private:
 	std::map<Articulo*, Pedidos, OrdenaArticulos> ArtPed;
 };
 
-inline void Pedido_Articulo::pedir(Articulo& a,Pedido& p, double pr, unsigned c){pedir(p,a,pr,c);}
-inline Pedido_Articulo::ItemsPedido Pedido_Articulo::detalle(Pedido& p) const{return PedArt.find(&p)->second;}
-inline Pedido_Articulo::Pedidos Pedido_Articulo::ventas(Articulo& a) const{return ArtPed.find(&a)->second;}
-
-std::ostream& operator <<(std::ostream&, Pedido_Articulo::ItemsPedido&);
-std::ostream& operator <<(std::ostream&, Pedido_Articulo::Pedidos&);
+std::ostream& operator <<(std::ostream&, const Pedido_Articulo::ItemsPedido&);
+std::ostream& operator <<(std::ostream&, const Pedido_Articulo::Pedidos&);
 
 #endif /* PEDIDO_ARTICULO_HPP_ */

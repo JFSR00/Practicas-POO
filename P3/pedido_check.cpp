@@ -4,7 +4,7 @@
  * y Usuario_Pedido
  * ©2020 Los profesores de POO 
  */
-/*#include "caclibrary.h"
+#include "caclibrary.h"
 #include <vector>
 #include <iostream>
 
@@ -192,4 +192,4 @@ int main(int argc, const char **argv){
   }
   else
     llvm::outs()<<"No se ha encontrado la clase 'Usuario_Pedido'"<<"\n";
-}*/
+}

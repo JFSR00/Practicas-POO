@@ -3,7 +3,7 @@
  * ©2020 POO - Pedro, Inma, Fidel, Gerardo
  */
 
-/*#include "caclibrary.h"
+#include "caclibrary.h"
 
 #include <vector>
 #include <iostream>
@@ -163,13 +163,13 @@ int main(int argc, const char **argv)
        "Revisa el enunciado respecto al n.º de constructores de Pedido");
     c4.defaultArgumentsInMethod({"Pedido"}, {{"?"}}, "Pedido", 
 				{"?"}, {1}, {{"Fecha()"}}, 
-            "Revisa el enunciado respecto a la construcción de un Pedido.");*/
+            "Revisa el enunciado respecto a la construcción de un Pedido.");
     
     /* Ponemos "?" como lista de parámetros porque solo debe haber un
        constructor. La regla funcionará cualquiera que sea el orden en
        el que se pongan los inicializadores en el constructor.
     */
-    /*c4.listInitializerConstructor("Pedido", {"?"}, {"int",
+    c4.listInitializerConstructor("Pedido", {"?"}, {"int",
 	  "const class Tarjeta *", "class Fecha", "double"}, 
       "Revisa la lista de inicialización del constructor."); 
     c4.function({"operator<<"},
@@ -216,12 +216,12 @@ int main(int argc, const char **argv)
        "Revisa el enunciado respecto a conversiones implícitas.");
     c5.function({"operator<<"}, {{"class std::basic_ostream<char> &",
 	    "const class LineaPedido &"}}, 
-      "Revisa el lugar de la declaración de los operadores.");*/
+      "Revisa el lugar de la declaración de los operadores.");
 
     /* 'pedir' sobrecargado puede hacerse mediante la búsqueda de
        dos métodos con diferentes parametros. 
     */
-    /*c5.method({"pedir","pedir"},{{"class Pedido &",
+    c5.method({"pedir","pedir"},{{"class Pedido &",
 	    "class Articulo &", "double", "unsigned int"},
 	  {"class Articulo &", "class Pedido &", "double", 
 	      "unsigned int"}}, "Pedido_Articulo", {"noconst","noconst"},
@@ -250,4 +250,4 @@ int main(int argc, const char **argv)
   }
   else
     llvm::outs() << "No se ha encontrado la clase 'Usuario_Pedido'.\n";
-}*/
+}

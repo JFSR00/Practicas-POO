@@ -78,7 +78,9 @@ private:
 // --------------| Inline clase Clave |--------------
 inline Clave::Razon Clave::Incorrecta::razon() const{return err_;}
 
-inline const Cadena Clave::clave() const{return key_;}
+inline const Cadena Clave::clave() const {
+	return key_;
+}
 
 // --------------| Inline clase Usuario |--------------
 inline Cadena Usuario::Id_duplicado::idd() const{return error_;}
@@ -87,8 +89,12 @@ inline Cadena Usuario::id() const{return id_;}
 inline Cadena Usuario::nombre() const{return nom_;}
 inline Cadena Usuario::apellidos() const{return apell_;}
 inline Cadena Usuario::direccion() const{return dir_;}
-inline const Usuario::Tarjetas& Usuario::tarjetas() const{return cards_;}
-inline const Usuario::Articulos& Usuario::compra() const{return arts_;}
+inline const Usuario::Tarjetas& Usuario::tarjetas() const {
+	return cards_;
+}
+inline const Usuario::Articulos& Usuario::compra() const {
+	return arts_;
+}
 
 inline unsigned int Usuario::n_articulos() const{return arts_.size();}
 

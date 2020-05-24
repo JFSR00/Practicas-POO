@@ -3,6 +3,7 @@
 #include "usuario-pedido.hpp"
 #include "pedido-articulo.hpp"
 #include <iomanip>
+#include <typeinfo>
 
 int Pedido::N_pedidos=0;
 
@@ -21,15 +22,25 @@ Pedido::Pedido(Usuario_Pedido& UP, Pedido_Articulo& PA, Usuario& u, const Tarjet
 
 	Usuario::Articulos carro{u.compra()};
 	for(auto i: carro){
-		if((unsigned int)i.first->stock() < i.second){
-			const_cast<Usuario::Articulos&>(u.compra()).clear();
-			throw Pedido::SinStock{i.first};
+		if(ArticuloAlmacenable *aa{dynamic_cast<ArticuloAlmacenable*>(i.first)}){
+			if((unsigned int)aa->stock() < i.second){
+				const_cast<Usuario::Articulos&>(u.compra()).clear();
+				throw Pedido::SinStock{i.first};
+			}
+			aa->stock() -= i.second;
+			PA.pedir(*this, *i.first, i.first->precio(), i.second);
+			total_ += i.first->precio()*i.second;
+			u.compra(*i.first, 0);
+		}else if(LibroDigital *ld{dynamic_cast<LibroDigital*>(i.first)}){
+			if(ld->f_expir()>Fecha(0)){
+				PA.pedir(*this, *i.first, i.first->precio(), i.second);
+				total_ += i.first->precio()*i.second;
+				u.compra(*i.first, 0);
+			}
 		}
-		i.first->stock() -= i.second;
-		PA.pedir(*this, *i.first, i.first->precio(), i.second);
-		total_ += i.first->precio()*i.second;
-		u.compra(*i.first, 0);
 	}
+
+	if(PA.detalle(*this).empty()){throw Pedido::Vacio{&u};}
 
 	UP.asocia(*this,u);
 	N_pedidos++;

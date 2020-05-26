@@ -5,6 +5,7 @@ extern "C" {
 #include <cstring>
 #include <random>
 #include <iostream>
+#include <iomanip>
 #include "usuario.hpp"
 
 // ------------| Clase Clave |------------
@@ -64,44 +65,15 @@ std::ostream& operator <<(std::ostream& os, const Usuario& u){
 	}
 	return os;
 }
-/*
-Se sobrecargará el operador de inserción en flujo (<<) para mostrar o imprimir un Usuario
-en un flujo de salida. El formato será:
-
-	identificador [clave cifrada] nombre apellidos
-	dirección
-	Tarjetas:
-	<lista de tarjetas>
-
-Ejemplo:
-
-	miguel [2456DJyasw0iY] Miguel Mares Miramontes
-	C/ del Paseo, 59 (El Ronquillo)
-	Tarjetas:
-	 ________________________
-	/						 \
-	| Mastercard			 |
-	| 5555555555554444		 |
-	| MIGUEL MARES MIRAMONTES|
-	| Caduca: 01/23			 |
-	\________________________/
-	 ________________________
-	/						 \
-	| Mastercard			 |
-	| 5610591081018250		 |
-	| MIGUEL MARES MIRAMONTES|
-	| Caduca: 02/21			 |
-	\________________________/
-*/
 
 std::ostream& mostrar_carro(std::ostream& os, const Usuario& u){
 	os<<"Carrito de compra de "<<u.id()<<" [Artículos: "<<u.n_articulos()<<"]\nCant.\tArtículo\n===========================================================\n";
 
-	Usuario::Articulos::const_iterator it = u.compra().begin();
-	while(it != u.compra().end())
+	for(auto i: u.compra())
 	{
-		os<<it->second<<"\t"<<*it->first<<std::endl;
-		it++;
+		os<<i.second<<"\t["<<i.first->referencia()<<"] \""<<i.first->titulo()<<"\", "<<i.first->f_publi().anno()<<". "
+		<<std::fixed<<std::setprecision(2)<<i.first->precio()<<" €."<<std::endl;
+		
 	}
 	return os;
 }

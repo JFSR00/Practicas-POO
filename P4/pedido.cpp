@@ -20,27 +20,35 @@ Pedido::Pedido(Usuario_Pedido& UP, Pedido_Articulo& PA, Usuario& u, const Tarjet
 	if(t.caducidad() < fecha_){throw Tarjeta::Caducada{t.caducidad()};}
 	if(!t.activa()){throw Tarjeta::Desactivada{};}
 
+	bool vacio = true;
 	Usuario::Articulos carro{u.compra()};
-	for(auto i: carro){
+	for(auto i: u.compra()){
 		if(ArticuloAlmacenable *aa{dynamic_cast<ArticuloAlmacenable*>(i.first)}){
 			if((unsigned int)aa->stock() < i.second){
 				const_cast<Usuario::Articulos&>(u.compra()).clear();
 				throw Pedido::SinStock{i.first};
 			}
+			vacio=false;
 			aa->stock() -= i.second;
-			PA.pedir(*this, *i.first, i.first->precio(), i.second);
 			total_ += i.first->precio()*i.second;
-			u.compra(*i.first, 0);
 		}else if(LibroDigital *ld{dynamic_cast<LibroDigital*>(i.first)}){
 			if(ld->f_expir()>Fecha(0)){
-				PA.pedir(*this, *i.first, i.first->precio(), i.second);
+				vacio=false;
 				total_ += i.first->precio()*i.second;
-				u.compra(*i.first, 0);
+			}else{
+				carro.erase(i.first);
 			}
+		}else{
+			throw std::logic_error("Pedido: Artículo no reconocido");
 		}
 	}
 
-	if(PA.detalle(*this).empty()){throw Pedido::Vacio{&u};}
+	if(vacio){throw Pedido::Vacio{&u};}
+
+	for(auto i: carro){
+		PA.pedir(*this, *i.first, i.first->precio(), i.second);
+		u.compra(*i.first, 0);
+	}
 
 	UP.asocia(*this,u);
 	N_pedidos++;

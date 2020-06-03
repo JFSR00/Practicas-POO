@@ -3,8 +3,10 @@
 #include "pedido-articulo.hpp"
 
 // ---------------| Clase LineaPedido |---------------
+// Constructor de la clase LineaPedido
 LineaPedido::LineaPedido(double p, unsigned c):precio_venta_(p), cantidad_(c){}
 
+// Implementación de la sobrecarga del operador de inserción de flujo
 std::ostream& operator <<(std::ostream& os, const LineaPedido& l){
 	os<<std::fixed<<std::setprecision(2)<<l.precio_venta()<<" €"<<"\t"<<l.cantidad();
 	return os;

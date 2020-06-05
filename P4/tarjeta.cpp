@@ -35,6 +35,7 @@ Numero::Numero(const Cadena& c):num_(c){
 // Declaración del contenedor de números de las tarjetas existentes
 std::set<Numero> Tarjeta::numeros_;
 
+// Constructor de la clase Tarjeta
 Tarjeta::Tarjeta(const Numero& t, Usuario& p, const Fecha& f):tarj_(t),prop_(&p),cad_(f),act_(true){
 	Fecha hoy;
 	if(f < hoy){throw Tarjeta::Caducada(f);}
@@ -42,11 +43,15 @@ Tarjeta::Tarjeta(const Numero& t, Usuario& p, const Fecha& f):tarj_(t),prop_(&p)
 	prop_->es_titular_de(*this);
 }
 
+// Destructor de la clase tarjeta
+// Debe encargarse de desvincular la tarjeta con su propietario y eliminar el número de esta tarjeta del conjunto de números de
+// tarjetas
 Tarjeta::~Tarjeta(){
 	if(prop_!=nullptr){prop_->no_es_titular_de(*this);}
 	numeros_.erase(tarj_);
 }
 
+// Implementación del método observador tipo() para conocer el tipo de tarjeta en cuestión  apartir de su número
 const Tarjeta::Tipo Tarjeta::tipo() const{
 	Tipo ret;
 	switch(Cadena(tarj_)[0]){
@@ -70,6 +75,7 @@ const Tarjeta::Tipo Tarjeta::tipo() const{
 	return ret;
 }
 
+// Implementación del operador de inserción de flujo para el tipo de tarjeta
 std::ostream& operator <<(std::ostream& os, const Tarjeta::Tipo& t){
 	switch(t){
 	case Tarjeta::Otro:
@@ -94,6 +100,7 @@ std::ostream& operator <<(std::ostream& os, const Tarjeta::Tipo& t){
 	return os;
 }
 
+// Implementación del operador de inserción de flujo para los datos de la tarjeta
 std::ostream& operator <<(std::ostream& os, const Tarjeta& t){
 	os<<t.tipo()<<std::endl<<t.numero()<<std::endl;
 	for(unsigned int i=0;i<t.titular()->nombre().length();i++){

@@ -1,9 +1,4 @@
-/*
- * pedido.hpp
- *
- *  Created on: 7 may. 2020
- *      Author: Juan Francisco
- */
+/* Juan Francisco Santos Relinque */
 
 #ifndef PEDIDO_HPP_
 #define PEDIDO_HPP_
@@ -79,4 +74,4 @@ inline Articulo& Pedido::SinStock::articulo() const{return *art_;}
 // Sobrecarga del operador de inserción de flujo
 std::ostream& operator <<(std::ostream&, const Pedido&);
 
-#endif /* PEDIDO_HPP_ */
+#endif

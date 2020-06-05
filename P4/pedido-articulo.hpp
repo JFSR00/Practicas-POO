@@ -1,9 +1,4 @@
-/*
- * pedido-articulo.hpp
- *
- *  Created on: 7 may. 2020
- *      Author: Juan Francisco
- */
+/* Juan Francisco Santos Relinque */
 
 #ifndef PEDIDO_ARTICULO_HPP_
 #define PEDIDO_ARTICULO_HPP_
@@ -14,6 +9,7 @@
 #include "pedido.hpp"
 #include "articulo.hpp"
 
+// Declaración anticipada de las clases Pedido y Articulo
 class Pedido;
 class Articulo;
 
@@ -83,4 +79,4 @@ private:
 std::ostream& operator <<(std::ostream&, const Pedido_Articulo::ItemsPedido&);
 std::ostream& operator <<(std::ostream&, const Pedido_Articulo::Pedidos&);
 
-#endif /* PEDIDO_ARTICULO_HPP_ */
+#endif

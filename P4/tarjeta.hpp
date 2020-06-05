@@ -33,11 +33,9 @@ public:
 		Incorrecto(Razon r):err_(r){};
 		Razon razon() const;
 	};
-
 private:
 	// Atributo de la clase Numero
 	Cadena num_;	// Contiene el número representado por un objeto de esta clase
-
 };
 
 // ---------------| Clase Tarjeta |---------------
@@ -64,11 +62,11 @@ public:
 	bool activa(bool =true);
 	void anula_titular();
 
-	// Declaración de la sobrecarga del operador menor que para la comparación de objetos Tarjeta
+	// Declaración de la sobrecarga del operador menor que para la comparación de objetos Tarjeta como friend
 	friend bool operator <(const Tarjeta&, const Tarjeta&);
 
 	// Declaración de la sobrecarga del operador de inserción de flujo para la inserción de los datos de una
-	// tarjeta o para insertar su tipo
+	// tarjeta o para insertar su tipo, como friend
 	friend std::ostream& operator <<(std::ostream&, const Tarjeta::Tipo&);
 	friend std::ostream& operator <<(std::ostream&, const Tarjeta&);
 

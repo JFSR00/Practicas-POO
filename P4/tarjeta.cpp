@@ -5,18 +5,22 @@
 #include "tarjeta.hpp"
 
 // ------------| Clase Numero |------------
+// Declaración anticipada de la función luhn, contenida en el fichero proporcionado por los profesores luhn.cpp
 bool luhn(const Cadena&);
 
+// Implementación del objeto función EsDigito para su posterior uso en el constructor de la clase Numero
 struct EsDigito{
 	bool operator() (const char& c) const {return ((c>='0') && (c<='9'));}
 	typedef char argument_type;
 };
 
+// Constructor de la clase Numero
 Numero::Numero(const Cadena& c):num_(c){
 	std::unary_negate<EsDigito> NoEsDigito ((EsDigito()));
 	if(c.length()==0){throw Numero::Incorrecto(LONGITUD);}
 
-	Cadena::iterator end{std::remove_if(num_.begin(), num_.end(), [](char x){return (x==' '||x=='\t'||x=='\n'||x=='\v'||x=='\f'||x=='\r');})}; // Hago todas estas comaparaciones para que sea equivalente a "isspace", siendo así más correcto
+	// Hago todas estas comaparaciones para que sea equivalente a "isspace", siendo así más correcto
+	Cadena::iterator end{std::remove_if(num_.begin(), num_.end(), [](char x){return (x==' '||x=='\t'||x=='\n'||x=='\v'||x=='\f'||x=='\r');})};
 
 	Cadena aux{num_.substr(0,end-num_.begin())};
 
@@ -28,6 +32,7 @@ Numero::Numero(const Cadena& c):num_(c){
 }
 
 // ------------| Clase Tarjeta |------------
+// Declaración del contenedor de números de las tarjetas existentes
 std::set<Numero> Tarjeta::numeros_;
 
 Tarjeta::Tarjeta(const Numero& t, Usuario& p, const Fecha& f):tarj_(t),prop_(&p),cad_(f),act_(true){
@@ -102,15 +107,3 @@ std::ostream& operator <<(std::ostream& os, const Tarjeta& t){
 
 	return os;
 }
-
-/*
-• Si quiere, por estética, puede dibujar líneas rodeando la información impresa de la
-tarjeta, simulando, aun pobremente, su aspecto. Esto es opcional.
- ____________________
-/					 \
-| American Express	 |
-| 378282246310005	 |
-| SISEBUTO RUSCALLEDA|
-| Caduca: 11/23		 |
-\____________________/
-*/
